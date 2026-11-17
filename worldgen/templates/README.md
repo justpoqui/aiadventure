@@ -43,13 +43,13 @@ template under `cast`. Pronouns are drawn per world for document prose only.
 | `gate` | `none`, `locked{key_at}`, `needs_repair{component}`, `needs_power{power}`, `needs_drying`, `combination{parts_at}`, `expert{skill, level}`, `climb{component}` |
 | `reveals` | `fact_id: strength` (0.05–0.4) |
 | `fragment` | what the clue physically shows; guidance for the prose generator |
-| `decay` | `none` (default), or a natural decay rate, which is allowed only on non-core paths (see §3.5 of doc 09) |
+| `decay` | `none` (default), or a natural decay rate, which is allowed only on non-core paths (see §3.4 of doc 09) |
 
 ## Destruction
 
 If a clue entity is destroyed, it is gone from the world forever. The
 survivor keeps only their **memory** of what they perceived from it. See doc
-09 §3.5.
+09 §3.4.
 
 ## Templates
 
