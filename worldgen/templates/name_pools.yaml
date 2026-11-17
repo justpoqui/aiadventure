@@ -1,0 +1,13 @@
+# Drawn per world from the seed. First names are deliberately unisex-leaning.
+first_names: [Alex, Jordan, Sam, Casey, Robin, Morgan, Jesse, Riley, Avery, Quinn,
+              Dana, Rowan, Emerson, Harper, Blair, Elliot, Reese, Sawyer, Drew, Hollis,
+              Marlow, Tatum, Jamie, Shea, Kendall]
+elder_first_names: [Dale, Ruth, Walt, June, Harlan, Opal, Vern, Mae, Clyde, Edith,
+                    Leland, Irene, Roy, Doris, Amos, Wanda]
+last_names: [Marsh, Callow, Brennan, Ostrander, Pike, Whitlock, Garrow, Haines, Lundy,
+             Mercer, Tollman, Vance, Ashby, Corrigan, Fenwick, Hale, Kessler, Orme]
+pronoun_sets:
+  - {they: she, them: her, their: her}
+  - {they: he, them: him, their: his}
+  - {they: they, them: them, their: their}
+town_names: [Alder Gap, Coldwater, Pell's Crossing, Harrow Falls, Wickett, Lowmoor]

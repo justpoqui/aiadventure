@@ -87,7 +87,18 @@ acts. Without it there would be a chicken-and-egg problem.
 | 1 Nudge | 0.15 | Light rain; clear the sky; a small animal crosses the path; a fallen branch (firewood) | Natural |
 | 2 Providence | 0.35 | Spawn a plausible item in an *unobserved, uninspected* spot; shift a storm's path; ease a fever | Lucky |
 | 3 Sign | 0.6 | Lightning fells a tree; wind blows open a stuck door; a **vision dream** of a place not yet seen | Uncanny |
-| 4 Miracle | 0.85 | Heal an injury overnight; a clear sign in the sky | Overt |
+| 4 Miracle | **devotion** (see below) | Heal an injury overnight; a clear sign in the sky | Overt |
+
+**Tier 4 requires extreme devotion** (decided in review round 2). It needs
+*all* of the following:
+- `F_norm ≥ 0.95`, sustained for **30 consecutive in-game days**;
+- at least one `core`-flagged metaphysical belief (faith has become part of
+  the survivor's identity);
+- a regular prayer routine (a `routines` row that includes `pray`, with
+  strength ≥ 0.7).
+
+Each miracle costs the entire pool, and only one is allowed per in-game
+season. Most playthroughs should never unlock it.
 
 **World rules still apply.** Every act is validated by Godot:
 - It must be physically plausible for the region and season (no car parts
@@ -197,7 +208,37 @@ reaches the tape in the loft.
 `worldgen/` writes only to `world.sqlite`. CI forbids `mind/` from importing it
 (import-linter rule), because lore is truth.
 
-### 3.4 Developer-only measurement
+### 3.4 Destroyed clues are gone forever
+
+Decided in review round 2.
+
+- **World:** a destroyed clue entity (burned, crushed, rotted, thrown in the
+  stream) gets `destroyed_tick` set and is never restored. Acts of God cannot
+  restore it either.
+- **Mind:** the survivor keeps only what they **perceived and remembered**.
+  Memories of reading the clue stay in place, with an `only_copy` flag once
+  the source is gone. Beliefs built from it keep their evidence links to those
+  memories.
+- **Forgetting still applies.** As the memory fades, the detail of the clue's
+  content is lost too, leaving only the gist ("there was a letter; it
+  mattered"). A survivor who *writes it down in their journal* preserves it.
+  That is an emergent, human strategy and is not scripted.
+- If the clue was destroyed **before it was ever read**, the survivor may
+  remember only that it existed ("a diary, before the fire").
+- **Safety rule:** natural decay (rain, rot, time) may never destroy the last
+  surviving clue path of a core fact. Only the survivor's own actions can do
+  that. Templates may not put `decay` on core-fact clues, and every core fact
+  has at least two independent clue paths, so a single accident never makes
+  the past unknowable. A string of the survivor's own choices can.
+
+### 3.5 Backstory templates
+
+Four templates are drafted in `worldgen/templates/backstories/` (the
+mechanic's child, the surveyor, the carpenter's sibling, the mill hand). Each
+has 4–5 core facts with 3–6 clue paths apiece, about 22–25% red herrings, and
+latent skills and body marks that match the backstory.
+
+### 3.6 Developer-only measurement
 `identity_reconstruction_score` = the share of core facts the survivor believes
 correctly at a confidence of at least 0.7, minus confidently-held wrong core
 beliefs. It is shown only in the Truth/Belief Diff view.

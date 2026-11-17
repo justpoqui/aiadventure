@@ -1,0 +1,163 @@
+id: the_carpenters_sibling
+title: "The Carpenter's Sibling"
+theme: Searching for someone who stayed behind. Your own handiwork as evidence.
+summary: >
+  The survivor is a carpenter from the city. Years ago they rebuilt the
+  farmhouse porch for their younger sibling, who lived there. The two then
+  stopped speaking after a parent's funeral. A flood washed out the road and
+  the old bridge, the county declared the town unsafe and closed it, and the
+  sibling refused to leave. When the sibling's calls stopped, the survivor
+  came on foot. The sibling had already gone downriver with their dog, leaving
+  a note the survivor never found.
+
+cast:
+  survivor: {age: [30, 48]}
+  sibling:  {pool: first_names, shares_last_name: true}
+  spouse:   {pool: first_names}                     # red herring: sibling's spouse in wedding photo
+
+latent_skills: {construction: 0.65, woodcutting: 0.4}
+body_marks:
+  - {mark: "a nick of missing flesh on the left thumb tip, the classic chisel injury", supports: [c_profession]}
+  - {mark: "healing gash above the right ear", supports: [m_the_night]}
+starting_items:
+  - {item: backpack, at: campsite}
+  - {item: folding_rule, at: campsite/backpack}
+
+facts:
+  c_name:        {tier: core,  statement: "The survivor's name is {survivor.first} {survivor.last}."}
+  c_profession:  {tier: core,  statement: "The survivor is a carpenter."}
+  c_sibling:     {tier: core,  statement: "The survivor's younger sibling, {sibling.first}, lived in the farmhouse."}
+  c_why_here:    {tier: core,  statement: "The survivor came to find {sibling.first}, who refused to leave when the town was closed."}
+  c_town_fate:   {tier: core,  statement: "A flood washed out the road and the old bridge; the county declared the town unsafe and closed it."}
+  m_porch:       {tier: major, statement: "The survivor rebuilt the farmhouse porch for {sibling.first} {years_ago:8}."}
+  m_estranged:   {tier: major, statement: "The siblings stopped speaking after their parent's funeral."}
+  m_sibling_fate: {tier: major, statement: "{sibling.first} left downriver with their dog shortly before the survivor arrived."}
+  m_the_night:   {tier: major, statement: "The survivor crossed the rebuilt bridge in a storm, slipped on its wet deck, and struck their head."}
+  n_campsite:    {tier: minor, statement: "The campsite was where the siblings camped as children."}
+
+clues:
+  - id: porch_joinery
+    form: mark
+    at: farmhouse/porch
+    gate: {expert: {skill: construction, level: 0.4}}
+    reveals: {m_porch: 0.35, c_profession: 0.25}
+    fragment: "Hand-cut joints, done exactly the way the survivor's hands want to cut them. '{survivor.first_initial}.{survivor.last_initial}. {years_ago:8}' is pencilled under a step."
+  - id: sibling_diary
+    form: ledger
+    at: farmhouse/cellar
+    gate: {needs_repair: {component: cellar_hatch}}
+    reveals: {c_sibling: 0.35, c_name: 0.25, c_why_here: 0.25, m_estranged: 0.3}
+    fragment: "Partly legible. '…won't leave. Not again. {survivor.first} would say I'm being stubborn. {survivor.first} would be right.'"
+  - id: toolbox
+    form: object
+    at: garage/corner
+    gate: none
+    reveals: {c_profession: 0.35, c_name: 0.2}
+    fragment: "A wooden carpenter's toolbox, beautifully made. The lid is branded '{survivor.last}'."
+  - id: returned_letter
+    form: letter
+    at: town_hall/mail_room
+    gate: {locked: {key_at: town_hall/clerk_desk}}
+    reveals: {c_name: 0.3, c_why_here: 0.35, c_sibling: 0.25}
+    fragment: "From '{survivor.first} {survivor.last}' to '{sibling.first} {survivor.last}, the farmhouse'. Stamped: ROAD CLOSED, UNDELIVERABLE."
+  - id: closure_order
+    form: notice
+    at: town_hall/front_board
+    gate: none
+    reveals: {c_town_fate: 0.35}
+    fragment: "COUNTY ORDER: Town access closed due to flood damage. No services. Residents must relocate."
+  - id: flood_marks
+    form: mark
+    at: general_store/walls
+    gate: none
+    reveals: {c_town_fate: 0.3}
+    fragment: "A brown tide line at waist height on every wall."
+  - id: bridge_plaque
+    form: notice
+    at: bridge
+    gate: none
+    reveals: {c_town_fate: 0.25, m_the_night: 0.15}
+    fragment: "'Temporary crossing — county works'. Bolted on new wood over old, washed-out piers."
+  - id: dog_poster
+    form: notice
+    at: general_store/bulletin
+    gate: none
+    reveals: {c_sibling: 0.2}
+    fragment: "'LOST DOG — answers to Biscuit. Call {sibling.first}, the farmhouse.'"
+  - id: downriver_note
+    form: letter
+    at: farmhouse/porch_beam
+    gate: {needs_repair: {component: porch_roof}}
+    decay: 0.02
+    reveals: {m_sibling_fate: 0.4}
+    fragment: "Tucked in a gap in the porch roof the survivor built: 'Gone downriver with Biscuit. If you came — I knew you would.'"
+  - id: childhood_carving
+    form: carving
+    at: campsite/old_pine
+    gate: none
+    reveals: {n_campsite: 0.4, c_name: 0.15}
+    fragment: "Two sets of initials carved into a pine, one higher than the other."
+
+  - id: business_card
+    form: object
+    at: campsite/backpack
+    gate: needs_drying
+    reveals: {c_name: 0.3, c_profession: 0.3}
+    fragment: "A swollen business card: '{survivor.first} … — Joinery & Repair'. The surname is half washed out."
+  - id: answering_machine
+    form: tape
+    at: farmhouse/hallway
+    gate: {needs_power: {power: batteries, source_hint: general_store}}
+    reveals: {c_sibling: 0.3, c_why_here: 0.3, c_name: 0.15}
+    fragment: "'You've reached {sibling.first}…' Then message after message in the survivor's own voice: 'It's {survivor.first}. Please call me back.'"
+  - id: mailbox
+    form: mark
+    at: farmhouse/gate
+    gate: none
+    reveals: {c_sibling: 0.15}
+    fragment: "A dented mailbox: '{sibling.first} {survivor.last}'."
+  - id: hand_drawn_map
+    form: letter
+    at: campsite/backpack
+    gate: needs_drying
+    reveals: {c_why_here: 0.3}
+    fragment: "A route sketched from the highway to a farmhouse, underlined twice: 'find {sibling.first}'."
+  - id: road_closed_barrier
+    form: notice
+    at: trail/far_end
+    gate: none
+    reveals: {c_town_fate: 0.3}
+    fragment: "A county barricade across the old road: 'ROAD CLOSED — FLOOD DAMAGE — NO THROUGH ACCESS'."
+
+red_herrings:
+  - id: wedding_photo
+    form: photo
+    at: farmhouse/bedroom
+    gate: none
+    points_to: "the survivor is {spouse.first}, married into the farmhouse"
+    fragment: "A wedding photo on the porch. Neither face looks quite like the survivor's reflection, though one is close."
+  - id: county_badge
+    form: object
+    at: town_hall/office
+    gate: none
+    points_to: "the survivor worked for the county"
+    fragment: "A county works ID badge, photo faded to nothing."
+
+  - id: bridge_invoice
+    form: ledger
+    at: town_hall/office
+    gate: none
+    points_to: "the survivor built the temporary bridge for the county"
+    fragment: "A contractor's invoice for 'temporary crossing, carpentry and decking', with the contractor's name torn off."
+  - id: boots_at_door
+    form: object
+    at: farmhouse/back_door
+    gate: none
+    points_to: "the survivor lived in the farmhouse"
+    fragment: "Work boots by the back door, exactly the survivor's size."
+
+recollections:
+  - {fact: c_profession, trigger: {condition: "first successful repair with a chisel or saw"}, fragment: "Sawdust in a sunbeam. The sound of a plane, long and even."}
+  - {fact: m_porch,      trigger: {place: farmhouse, condition: "stand on the porch at dusk"}, fragment: "Someone younger sitting on the top step, swinging their legs, saying 'it's perfect'."}
+  - {fact: n_campsite,   trigger: {place: campsite, condition: "falling asleep by the fire"}, fragment: "Two sleeping bags. A small voice asking if bears are real."}
+  - {fact: m_estranged,  trigger: {entity: sibling_diary}, fragment: "Black clothes. A door closing quietly, which was worse than slamming."}

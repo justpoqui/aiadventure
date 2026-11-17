@@ -1,0 +1,152 @@
+id: the_surveyor
+title: "The Surveyor"
+theme: An outsider who came to measure the town for its drowning, and began to doubt it.
+summary: >
+  The survivor is a land surveyor for the regional water authority. The valley
+  was to be flooded for a reservoir, and residents were bought out. The
+  survivor was doing the final multi-day survey, came to sympathise with the
+  last holdouts, and was quietly drafting a recommendation against the
+  project. A storm caught them camping in the forest. In truth the project
+  stalled when its funding collapsed. The survivor never learned that.
+
+cast:
+  survivor: {age: [28, 50]}
+  holdout:  {pool: elder_first_names}             # last family at the farmhouse
+  engineer: {pool: first_names}                   # red herring: chief engineer named on plans
+  colleague: {pool: first_names}                  # red herring: second surveyor
+  holdout_child: {pool: first_names}              # red herring: the holdouts' child who studied surveying
+
+latent_skills: {exploration: 0.6, planning: 0.5}
+body_marks:
+  - {mark: "sun-darkened back of the neck; calluses from a tripod strap on one shoulder", supports: [c_profession]}
+  - {mark: "healing gash above the right ear", supports: [m_the_night]}
+starting_items:
+  - {item: collapsed_tent, at: campsite}
+  - {item: field_notebook, at: campsite/tent, note: "soaked"}
+  - {item: brass_plumb_bob, at: campsite, note: "the survivor won't know what it is for at first"}
+
+facts:
+  c_name:        {tier: core,  statement: "The survivor's name is {survivor.first} {survivor.last}."}
+  c_profession:  {tier: core,  statement: "The survivor is a land surveyor working for the regional water authority."}
+  c_why_here:    {tier: core,  statement: "The survivor came to do the final survey before the valley was flooded for a reservoir."}
+  c_town_fate:   {tier: core,  statement: "The town emptied after the water authority bought out the residents for the reservoir project."}
+  m_doubts:      {tier: major, statement: "The survivor came to believe the reservoir was a mistake and was drafting a report against it."}
+  m_holdouts:    {tier: major, statement: "The {holdout.last} family at the farmhouse refused the buyout, and the survivor befriended them."}
+  m_stalled:     {tier: major, statement: "The reservoir project was suspended when its funding collapsed. The valley will not be flooded."}
+  m_the_night:   {tier: major, statement: "A storm flattened the survivor's camp. They were struck by a falling branch while securing the tent."}
+  n_coffee:      {tier: minor, statement: "The survivor always drank coffee at the general store's counter before going into the field."}
+
+clues:
+  - id: field_notebook
+    form: ledger
+    at: campsite/tent
+    gate: needs_drying
+    reveals: {c_name: 0.25, c_profession: 0.3, m_doubts: 0.3}
+    fragment: "Columns of bearings and distances. The inside cover reads '{survivor.first_initial}. {survivor.last}'. Margin: 'this is wrong'."
+  - id: survey_stakes
+    form: mark
+    at: forest/east_ridge
+    gate: none
+    reveals: {c_profession: 0.2, c_why_here: 0.2}
+    fragment: "Wooden stakes with faded orange tape: 'MAX POOL ELEV 412', initialled '{survivor.first_initial}{survivor.last_initial}'."
+  - id: theodolite_case
+    form: object
+    at: garage/back_shelf
+    gate: {combination: {parts_at: [campsite/tent, general_store/counter]}}
+    reveals: {c_name: 0.35, c_profession: 0.35}
+    fragment: "A hard case with a precision instrument and an ID tag: '{survivor.first} {survivor.last} — Water Authority'."
+  - id: store_receipt
+    form: ledger
+    at: general_store/counter
+    gate: none
+    reveals: {c_name: 0.25, c_profession: 0.2, n_coffee: 0.3}
+    fragment: "A receipt pad: 'coffee, batteries — {survivor.last} (charge to W.A.)'. Last 3 digits of a code scribbled beside it."
+  - id: buyout_ledger
+    form: ledger
+    at: town_hall/records_room
+    gate: {locked: {key_at: garage/key_box}}
+    reveals: {c_town_fate: 0.4, m_holdouts: 0.25}
+    fragment: "Every parcel stamped ACQUIRED except one: '{holdout.last} — REFUSED'."
+  - id: reservoir_map
+    form: photo
+    at: town_hall/council_room
+    gate: none
+    reveals: {c_town_fate: 0.3, c_why_here: 0.25}
+    fragment: "A planning map with the whole town shaded blue. 'Survey: {survivor.last}, final phase'."
+  - id: protest_letter
+    form: notice
+    at: town_hall/front_door
+    gate: none
+    reveals: {c_town_fate: 0.25, c_why_here: 0.3}
+    fragment: "'TO THE SURVEYORS: You are measuring our graves.'"
+  - id: holdout_letter
+    form: letter
+    at: farmhouse/kitchen_drawer
+    gate: none
+    reveals: {m_holdouts: 0.4, c_name: 0.2, c_town_fate: 0.15}
+    fragment: "'{survivor.first} from the Authority came for supper again — the only one who listens.'"
+  - id: funding_telegram
+    form: notice
+    at: town_hall/mail_room
+    gate: {needs_repair: {component: mail_room_door}}
+    reveals: {m_stalled: 0.4, c_why_here: 0.2}
+    fragment: "'PROJECT SUSPENDED PENDING FUNDING. RECALL FIELD STAFF.' Never collected."
+  - id: draft_report
+    form: letter
+    at: water_tower/platform
+    gate: {climb: {component: ladder}}
+    reveals: {m_doubts: 0.4, c_name: 0.15}
+    fragment: "Pages in a tin box, weighted with a stone: 'I cannot in good conscience recommend…' signed '{survivor.first}'."
+  - id: broken_camp
+    form: mark
+    at: campsite
+    gate: none
+    decay: 0.05
+    reveals: {m_the_night: 0.35}
+    fragment: "A heavy branch lies across the torn tent. There is dried blood on the bark."
+
+  - id: crew_schedule
+    form: notice
+    at: general_store/bulletin
+    gate: none
+    reveals: {c_why_here: 0.25, c_profession: 0.1}
+    fragment: "'Water Authority — FINAL SURVEY PHASE. Field staff on site until completion. Please do not remove stakes.'"
+  - id: relocation_stubs
+    form: ledger
+    at: town_hall/office
+    gate: none
+    reveals: {c_town_fate: 0.2}
+    fragment: "A box of payment stubs: 'Relocation compensation — parcel 14', 'parcel 15'…"
+
+red_herrings:
+  - id: engineer_credit
+    form: notice
+    at: town_hall/council_room
+    gate: none
+    points_to: "the survivor is the engineer {engineer.first}"
+    fragment: "'Chief engineer: {engineer.first} {engineer.last}' printed on the map border."
+  - id: colleague_hardhat
+    form: object
+    at: garage/back_shelf
+    gate: none
+    points_to: "the survivor's name is {colleague.first}"
+    fragment: "A dented hard hat, '{colleague.first}' written on the brim in marker."
+
+  - id: holdout_child_diploma
+    form: object
+    at: farmhouse/upstairs_room
+    gate: none
+    points_to: "the survivor is the {holdout.last} family's child"
+    fragment: "A framed diploma in land surveying for '{holdout_child.first} {holdout.last}' in a child's old room."
+  - id: old_valley_survey
+    form: ledger
+    at: town_hall/records_room
+    gate: {locked: {key_at: garage/key_box}}
+    points_to: "the survivor surveyed this valley decades ago"
+    fragment: "A thirty-year-old survey of the same valley, with the same handwriting style as the notebook."
+
+recollections:
+  - {fact: c_profession, trigger: {place: forest, condition: "look along a long straight line of trees"}, fragment: "One eye closed, a crosshair, a voice calling a number back to you."}
+  - {fact: m_holdouts,   trigger: {place: farmhouse, condition: "sit at the kitchen table"}, fragment: "Pie too hot to eat. An old woman laughing at you for blowing on it."}
+  - {fact: m_doubts,     trigger: {entity: reservoir_map}, fragment: "A tightness in the chest; your own handwriting crossing something out."}
+  - {fact: n_coffee,     trigger: {place: general_store, condition: "stand at the counter in the morning"}, fragment: "Bitter coffee and the bell over a door."}

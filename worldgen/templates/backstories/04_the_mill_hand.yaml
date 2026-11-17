@@ -1,0 +1,156 @@
+id: the_mill_hand
+title: "The Mill Hand"
+theme: Guilt, a slow-dying town, and a box of your own life kept by a friend.
+summary: >
+  The survivor was a logger for the town sawmill. A felling accident badly
+  injured a coworker, and the survivor blamed themselves and left. The mill
+  closed, the highway bypassed the town, and people drifted away over years.
+  The failing water tower was the final straw. The general store owner, an
+  old friend, wrote that the town was finished and that the survivor's
+  lockbox was still in the back room, "before the scrappers come". The
+  survivor came for it. The key has been on their own keyring the whole time.
+
+cast:
+  survivor:  {age: [35, 55]}
+  storekeep: {pool: elder_first_names}
+  coworker:  {pool: first_names}                     # injured in the accident; red herring family
+
+latent_skills: {woodcutting: 0.65, maintenance: 0.35}
+body_marks:
+  - {mark: "a long ridged scar along the right forearm", supports: [m_accident]}
+  - {mark: "healing gash above the right ear", supports: [m_the_night]}
+starting_items:
+  - {item: backpack, at: campsite}
+  - {item: keyring, at: campsite, note: "one small brass key fits the lockbox; nothing marks it"}
+
+facts:
+  c_name:        {tier: core,  statement: "The survivor's name is {survivor.first} {survivor.last}."}
+  c_profession:  {tier: core,  statement: "The survivor was a logger at the town sawmill."}
+  c_why_here:    {tier: core,  statement: "The survivor came back for their lockbox after {storekeep.first} wrote that the town was finished."}
+  c_town_fate:   {tier: core,  statement: "The town died slowly after the mill closed and the highway bypassed it; the failed water tower drove out the last residents."}
+  m_accident:    {tier: major, statement: "A tree the survivor felled struck {coworker.first} {coworker.last}, crippling them. The survivor blamed themselves and left."}
+  m_forgiven:    {tier: major, statement: "{coworker.first} never blamed the survivor and said so in a letter the survivor never opened."}
+  m_friendship:  {tier: major, statement: "{storekeep.first} and the survivor were close friends for twenty years."}
+  m_the_night:   {tier: major, statement: "The survivor was caught by a storm on the trail and hit their head in a fall."}
+  n_notch:       {tier: minor, statement: "The survivor cuts an unusually deep, clean felling notch, a habit taught at the mill."}
+
+clues:
+  - id: storekeep_letter
+    form: letter
+    at: campsite/backpack
+    gate: needs_drying
+    reveals: {c_why_here: 0.35, c_name: 0.25, m_friendship: 0.25}
+    fragment: "'{survivor.first} — town's finished. Your box is still in my back room. Come before the scrappers do. — {storekeep.first}'"
+  - id: lockbox
+    form: object
+    at: general_store/back_room
+    gate: {locked: {key_at: campsite/keyring}}
+    reveals: {c_name: 0.4, m_forgiven: 0.4, m_accident: 0.2}
+    fragment: "Inside: a water-damaged ID card with name legible, a photo of a mill crew, and an unopened envelope addressed in {coworker.first}'s hand."
+  - id: payroll_ledger
+    form: ledger
+    at: town_hall/records_room
+    gate: {combination: {parts_at: [town_hall/clerk_desk, garage/calendar]}}
+    reveals: {c_name: 0.3, c_profession: 0.35}
+    fragment: "MILL PAYROLL. '{survivor.last}, {survivor.first} — feller'. Wages stop abruptly one spring."
+  - id: stump_notches
+    form: mark
+    at: forest/old_cut
+    gate: {expert: {skill: woodcutting, level: 0.4}}
+    reveals: {c_profession: 0.25, n_notch: 0.4}
+    fragment: "Old stumps with felling notches cut exactly the way the survivor's hands cut them."
+  - id: crew_photo
+    form: photo
+    at: garage/wall
+    gate: none
+    reveals: {c_profession: 0.3, m_friendship: 0.15, c_name: 0.1}
+    fragment: "A logging crew in front of a truck. One face is scratched out; under it the label is torn to '{survivor.first_initial}…'. Labels name everyone else."
+  - id: accident_clipping
+    form: notice
+    at: garage/wall
+    gate: none
+    reveals: {m_accident: 0.35, c_profession: 0.15}
+    fragment: "Newspaper: 'MILL WORKER INJURED IN FELLING ACCIDENT'. The faller is 'not named at family request'."
+  - id: mill_closure_notice
+    form: notice
+    at: town_hall/front_board
+    gate: none
+    reveals: {c_town_fate: 0.3}
+    fragment: "'Sawmill operations cease effective…' Underneath, a newer sheet: 'Highway bypass opens'."
+  - id: tower_decommission
+    form: notice
+    at: water_tower/base
+    gate: none
+    reveals: {c_town_fate: 0.3}
+    fragment: "'DECOMMISSIONED — no funds for repair. Remaining residents advised to relocate.'"
+  - id: last_residents
+    form: ledger
+    at: general_store/counter
+    gate: none
+    reveals: {c_town_fate: 0.25, m_friendship: 0.2}
+    fragment: "Credit book. The names thin out page by page. The last page is just '{storekeep.first}' talking to themselves."
+
+  - id: ticket_stub
+    form: object
+    at: campsite/jacket_pocket
+    gate: none
+    reveals: {c_why_here: 0.25}
+    fragment: "A bus ticket stub to the highway bypass junction, dated eight days ago."
+  - id: box_note
+    form: letter
+    at: general_store/back_room
+    gate: none
+    reveals: {c_why_here: 0.3, c_name: 0.15}
+    fragment: "A note taped to a small lockbox: 'For {survivor.first} — when you come. Don't let the scrappers have it.'"
+  - id: storekeep_calendar
+    form: ledger
+    at: general_store/counter
+    gate: none
+    reveals: {c_why_here: 0.2}
+    fragment: "A wall calendar. One square circled: 'wrote to {survivor.first_initial}. Box still here.'"
+  - id: bypass_sign
+    form: notice
+    at: trail/far_end
+    gate: none
+    reveals: {c_town_fate: 0.2}
+    fragment: "A fallen road sign: 'TOWN SERVICES DISCONTINUED — USE HIGHWAY BYPASS'."
+  - id: farm_for_sale
+    form: notice
+    at: farmhouse/gate
+    gate: none
+    reveals: {c_town_fate: 0.15}
+    fragment: "A sun-bleached FOR SALE sign with a newer sticker: 'PRICE REDUCED'. Then another. Then another."
+
+red_herrings:
+  - id: coworker_home
+    form: photo
+    at: farmhouse/hallway
+    gate: none
+    points_to: "the survivor is {coworker.first} and the farmhouse is their home"
+    fragment: "Family photos of someone in a mill jacket; later ones show them with a cane."
+  - id: scratched_face
+    form: photo
+    at: garage/wall
+    gate: none
+    points_to: "the scratched-out face is someone the town hated"
+    fragment: "Why would anyone scratch out a face?"
+
+  - id: till_key
+    form: object
+    at: general_store/till
+    gate: none
+    points_to: "this brass key opens the lockbox"
+    fragment: "A small brass key in the till. It opens nothing the survivor finds."
+  - id: coworker_union_card
+    form: object
+    at: garage/wall
+    gate: none
+    points_to: "the survivor is {coworker.first}"
+    fragment: "A loggers' union card for '{coworker.first} {coworker.last}', pinned beside the clipping."
+
+recollections:
+  - {fact: m_accident,   trigger: {condition: "a tree the survivor fells lands near a structure"}, fragment: "A crack like a gunshot. Someone not getting out of the way."}
+  - {fact: c_profession, trigger: {condition: "first time felling a large tree"}, fragment: "Two-stroke engine smell. A foreman yelling 'timber' from far off."}
+  - {fact: m_friendship, trigger: {place: general_store, condition: "sit on the porch bench"}, fragment: "A checkers board. Someone cheating badly and laughing about it."}
+  - {fact: c_why_here,   trigger: {place: general_store, condition: "enter the back room"}, fragment: "Reading a letter on a rattling bus, folding and unfolding it."}
+  - {fact: m_forgiven,   trigger: {entity: lockbox, condition: "after reading the envelope"}, fragment: "A hospital corridor you never walked down."}

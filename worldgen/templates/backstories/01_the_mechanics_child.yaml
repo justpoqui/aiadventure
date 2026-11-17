@@ -1,0 +1,168 @@
+id: the_mechanics_child
+title: "The Mechanic's Child"
+theme: Coming home too late. Estrangement, a family trade, a poisoned well.
+summary: >
+  The survivor grew up above the family garage and learned the trade from a
+  parent. They left after a bitter argument and stayed away for years. When
+  the town was evacuated over contaminated water, the parent's letters stopped.
+  The survivor came back to find them, walked the last stretch in a storm,
+  fell on the trail, and woke at the campsite with no memory.
+
+cast:
+  survivor: {age: [32, 45]}
+  parent:   {pool: elder_first_names, role_word: [father, mother], shares_last_name: true}
+  storekeep: {pool: elder_first_names}                # general store owner, the parent's friend
+  apprentice: {pool: first_names}                     # red herring: worked at the garage later
+
+latent_skills: {repair: 0.6, maintenance: 0.45}
+body_marks:
+  - {mark: "thin white scar across the back of the left hand", supports: [c_profession]}
+  - {mark: "healing gash above the right ear", supports: [m_the_night]}
+starting_items:
+  - {item: backpack, at: campsite}
+  - {item: keyring, at: campsite, note: "three keys; one is the garage locker key"}
+
+facts:
+  c_name:        {tier: core,  statement: "The survivor's name is {survivor.first} {survivor.last}."}
+  c_grew_up:     {tier: core,  statement: "The survivor grew up in this town, in the rooms above the garage."}
+  c_profession:  {tier: core,  statement: "The survivor is a mechanic, taught by their {parent.role_word}, {parent.first}."}
+  c_why_here:    {tier: core,  statement: "The survivor came back because {parent.first} stopped answering letters during the evacuation."}
+  c_town_fate:   {tier: core,  statement: "The town was evacuated after the water became unsafe: the tower's main pipe cracked and runoff from the old fuel depot poisoned the well."}
+  m_falling_out: {tier: major, statement: "{years_ago:12} the survivor left after an argument with {parent.first} about selling the garage."}
+  m_parent_fate: {tier: major, statement: "{parent.first} refused to evacuate at first, then left north on foot with {storekeep.first}."}
+  m_the_night:   {tier: major, statement: "The survivor reached the trail in a storm, slipped near the bridge, and hit their head."}
+  n_tower_climb: {tier: minor, statement: "As a child the survivor climbed the water tower and carved their initials into a leg."}
+  n_song:        {tier: minor, statement: "{parent.first} always played the same old song on the garage radio."}
+
+clues:
+  - id: letter_in_pack
+    form: letter
+    at: campsite/backpack
+    gate: needs_drying
+    reveals: {c_name: 0.3, c_why_here: 0.35}
+    fragment: "Water-stained. 'Dear {survivor.first}…' Most lines run; legible: 'haven't heard from {parent.first} since the notice went up'."
+  - id: locker_jacket
+    form: object
+    at: garage/locker
+    gate: {locked: {key_at: campsite/keyring}}
+    reveals: {c_name: 0.3, c_profession: 0.3}
+    fragment: "Grease-stained work jacket, name patch '{survivor.first}'. It fits."
+  - id: loft_photo
+    form: photo
+    at: garage/loft
+    gate: {needs_repair: {component: loft_ladder}}
+    reveals: {c_grew_up: 0.35, c_profession: 0.25}
+    fragment: "A child holding a wrench beside an adult, in front of this garage. Back: '{survivor.first}, age 9'."
+  - id: birth_registry
+    form: ledger
+    at: town_hall/records_room
+    gate: {locked: {key_at: town_hall/clerk_desk}}
+    reveals: {c_name: 0.3, c_grew_up: 0.35}
+    fragment: "A births ledger. One entry: '{survivor.first} {survivor.last}', parent '{parent.first} {survivor.last}', residence: 'over the garage'."
+  - id: evac_notice
+    form: notice
+    at: town_hall/front_board
+    gate: none
+    reveals: {c_town_fate: 0.3}
+    fragment: "MANDATORY EVACUATION. Municipal water unsafe for drinking, cooking, bathing."
+  - id: water_report
+    form: ledger
+    at: town_hall/office
+    gate: none
+    reveals: {c_town_fate: 0.35}
+    fragment: "A lab report: hydrocarbons in well 2. Handwritten note: 'depot runoff — told them years ago'."
+  - id: cracked_pipe
+    form: mark
+    at: water_tower/main_pipe
+    gate: {expert: {skill: repair, level: 0.35}}
+    reveals: {c_town_fate: 0.25}
+    fragment: "The main pipe is split along a seam, with old patch attempts around it."
+  - id: storekeep_note
+    form: letter
+    at: general_store/back_room
+    gate: {needs_repair: {component: back_room_door}}
+    reveals: {c_why_here: 0.3, m_parent_fate: 0.4}
+    fragment: "'Going north with {storekeep.first}. If {survivor.first} ever comes back — tell them I kept the shop.'"
+  - id: garage_tape
+    form: tape
+    at: garage/loft
+    gate: {needs_power: {power: batteries, source_hint: general_store}}
+    reveals: {c_why_here: 0.3, m_falling_out: 0.4, c_name: 0.2, c_grew_up: 0.2}
+    fragment: "A recorded message, never sent: {parent.first}'s voice saying {survivor.first}'s name, apologising about the sale."
+  - id: carved_initials
+    form: carving
+    at: water_tower/leg_3
+    gate: none
+    reveals: {n_tower_climb: 0.4, c_grew_up: 0.15, c_name: 0.15}
+    fragment: "Initials gouged into the steel at child height: '{survivor.first_initial}.{survivor.last_initial}.'"
+  - id: trail_blood
+    form: mark
+    at: trail/near_bridge
+    gate: none
+    decay: 0.15          # rain washes it away within about a week
+    reveals: {m_the_night: 0.3}
+    fragment: "A dark stain on a rock and a torn strip of fabric on a branch."
+  - id: garage_radio
+    form: object
+    at: garage/workbench
+    gate: {needs_power: {power: batteries, source_hint: general_store}}
+    reveals: {n_song: 0.4}
+    fragment: "The radio has a cassette stuck inside. A song plays that feels painfully familiar."
+
+  - id: service_log
+    form: ledger
+    at: garage/office
+    gate: none
+    reveals: {c_profession: 0.3}
+    fragment: "A service log. For years, every entry is initialled '{parent.first_initial}'. For a few summers, a second hand: '{survivor.first_initial}'. The handwriting feels like yours."
+  - id: returned_letters
+    form: letter
+    at: town_hall/mail_room
+    gate: {needs_repair: {component: mail_room_door}}
+    reveals: {c_why_here: 0.3, c_name: 0.1}
+    fragment: "A bundle addressed to '{parent.first} {survivor.last}, the garage', all stamped RESIDENT EVACUATED — RETURN TO SENDER."
+  - id: dont_drink_sign
+    form: notice
+    at: general_store/front_window
+    gate: none
+    reveals: {c_town_fate: 0.2}
+    fragment: "Hand-lettered: 'DO NOT DRINK THE TAP WATER. NOT EVEN BOILED.'"
+  - id: water_crates
+    form: object
+    at: farmhouse/kitchen
+    gate: none
+    reveals: {c_town_fate: 0.15}
+    fragment: "Empty crates of bottled water with a county flyer about the well."
+
+red_herrings:
+  - id: apprentice_coverall
+    form: object
+    at: garage/hook
+    gate: none
+    points_to: "the survivor's name is {apprentice.first}"
+    fragment: "A coverall with the name '{apprentice.first}' stitched on, roughly the survivor's size."
+  - id: neighbor_photo
+    form: photo
+    at: farmhouse/mantel
+    gate: none
+    points_to: "the survivor grew up in the farmhouse"
+    fragment: "A family photo with a child of about the right age."
+
+  - id: apprentice_postcard
+    form: letter
+    at: general_store/counter
+    gate: none
+    points_to: "the survivor is {apprentice.first}, who ran the garage"
+    fragment: "A postcard: '{apprentice.first} — thanks for keeping the garage running when nobody else would.'"
+  - id: garage_sale_minutes
+    form: ledger
+    at: town_hall/council_room
+    gate: none
+    points_to: "the garage was sold years ago and the family moved away"
+    fragment: "Council minutes: 'Motion to purchase the {survivor.last} garage — approved.' (The deal never closed.)"
+
+recollections:
+  - {fact: c_profession, trigger: {place: garage, condition: "inspect any engine"}, fragment: "A larger hand over yours on a wrench. 'Lefty-loosey.'"}
+  - {fact: c_grew_up,   trigger: {place: water_tower, condition: "look up at night"}, fragment: "Climbing in the dark; someone shouting your name from below, furious and frightened."}
+  - {fact: m_falling_out, trigger: {entity: garage_tape, condition: "after listening"}, fragment: "A slammed door. Rain on a bus window."}
+  - {fact: n_song,      trigger: {entity: garage_radio}, fragment: "A kitchen that smells of coffee and oil. Someone humming off-key."}

@@ -93,11 +93,10 @@ Trust drops after a detected lie.
 | Death | None. Knockout, then wake as if from a bad dream (ADR-015, `09 §2`) |
 | Lore | Discoverable but very hard; the survivor must believe it is all real (ADR-016/017, `09 §3`) |
 
-## Open questions (round 2)
-1. **Faith ceiling:** should a Tier 4 miracle be reachable at all in a normal
-   playthrough, or reserved for extreme devotion?
-2. **Backstory templates:** do you want to author the backstory skeletons
-   yourself, or should I draft 3–5 for you to edit?
-3. **Lore exhaustion:** if a key clue is destroyed (a diary burns in a fire the
-   survivor started), is that part of the past lost forever? I recommend yes,
-   with core facts always having at least two redundant clue paths.
+## Resolved in review round 2
+
+| Question | Decision |
+|----------|----------|
+| Faith ceiling | Tier 4 miracles need extreme devotion (`09 §1.4`) |
+| Backstories | Drafted by the architect: 4 templates in `worldgen/templates/backstories/` |
+| Destroyed clues | Gone forever; the survivor keeps only memories of them (`09 §3.4`) |

@@ -352,6 +352,7 @@ CREATE TABLE memories (
   last_accessed_tick INTEGER,
   status        TEXT NOT NULL DEFAULT 'active',  -- active|consolidated|faded|archived
   reality_status TEXT NOT NULL DEFAULT 'real' CHECK (reality_status IN ('real','dream','uncertain')),
+  only_copy     INTEGER NOT NULL DEFAULT 0,  -- the source entity has been destroyed; this memory is all that remains
   parent_memory_id TEXT REFERENCES memories(memory_id),   -- summary hierarchy
   summary_level TEXT,                     -- day|week|season|year (kind=summary)
   embedding_model TEXT,
