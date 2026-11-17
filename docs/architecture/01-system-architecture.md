@@ -68,7 +68,7 @@ flowchart LR
     MIND <--> MDB
   end
 
-  OLLAMA[[Ollama<br/>qwen3:14b<br/>qwen3:32b<br/>embedding model]]
+  OLLAMA[[Ollama<br/>qwen3:8b GPU<br/>qwen3:14b optional, overnight<br/>embedding model on CPU]]
 
   BRIDGE <-- "Percepts ↑ / Actions ↓<br/>versioned JSON envelopes" --> WS
   LLM <--> OLLAMA
@@ -131,6 +131,12 @@ simulation of many in-game days.
 | M→G | `action_cancel` | Abort the current action |
 | M→G | `mind_telemetry` | Debug only: current thought, goal stack, emotion. **Never consumed by world logic.** |
 | G→M | `save_request` / M→G `save_ready` | Coordinated save (see `06-data-architecture.md §5`) |
+| M→G | `belief_power` | The single scalar feeding DivinitySystem (ADR-014); sent once per in-game hour |
+
+Acts of God never travel to the mind as messages. They change the world, and
+the mind perceives the consequences like anything else. Dreams arrive as
+`modality: dream` percepts and recollections as `modality: recollection`
+(see `09-divinity-knockout-lore.md`).
 | both | `ping`/`pong`, `error` | Health |
 
 ### 4.3 Percept shape (no truth leakage)
@@ -233,10 +239,9 @@ most important testability decision.
   budget, a model route, and a timeout):
   `interpret_percepts`, `inner_thought`, `propose_goals`, `decompose_project`,
   `explain_failure`, `daily_reflection`, `journal_entry`, `consolidate_memories`.
-- **Router:** fast purposes go to `qwen3:14b` with thinking disabled. Reflective
-  purposes go to `qwen3:14b` with thinking enabled, or to `qwen3:32b` when
-  available. The provider is an interface, so Llama and DeepSeek drop in as
-  config.
+- **Router:** see §6 for the hardware-specific routes. The provider is an
+  interface, so Llama, DeepSeek, or larger Qwen models drop in as config when
+  hardware allows.
 - **Structured output:** Ollama `format: <json-schema>`, then pydantic
   validation, then the **groundedness validator** (every referenced handle must
   exist in the agent's known entities; predicates must be registered), then a
@@ -273,3 +278,42 @@ priority = base(purpose) × agent_attention_weight × salience × staleness_boos
   cognition.
 - The Chroma index is updated by an **outbox worker** after the SQLite commit,
   so it is eventually consistent and safe to lose.
+
+## 6. Model plan for the target hardware (RTX 5060 Ti, 8 GB VRAM)
+
+### 6.1 VRAM budget (estimates; Phase 0 benchmarks replace them)
+
+| Component | VRAM |
+|-----------|------|
+| Godot 2D renderer | ~0.3–0.5 GB |
+| `qwen3:8b` Q4_K_M weights | ~5.2 GB |
+| KV cache, 8k context, `q8_0` (Ollama flash attention on) | ~0.6 GB |
+| CUDA/runtime overhead + headroom | ~0.8 GB |
+| Embedding model | **0** (runs on CPU via `num_gpu: 0`) |
+| **Total** | **~7 GB of 8** |
+
+Ollama settings: `OLLAMA_FLASH_ATTENTION=1`, `OLLAMA_KV_CACHE_TYPE=q8_0`,
+`OLLAMA_MAX_LOADED_MODELS=1`, `num_ctx=8192`, and a long `keep_alive` so the
+model is never unloaded mid-day.
+
+### 6.2 Routes
+
+| Purpose | Model | Mode |
+|---------|-------|------|
+| `interpret_percepts`, `inner_thought`, `propose_goals`, `explain_failure` | `qwen3:8b` | thinking **off**, JSON schema |
+| `decompose_project` | `qwen3:8b` | thinking on, short budget |
+| `daily_reflection`, `journal_entry`, `consolidate_memories` | `qwen3:8b` thinking on (**default**) or `qwen3:14b` with CPU offload (**"deep sleep" option**) | Runs while the survivor sleeps. The sim time-dilates the night if needed, so slow output is acceptable. |
+| Embeddings | `qwen3-embedding:0.6b` (or `nomic-embed-text`) | CPU |
+| World generation (lore prose, once) | `qwen3:14b` with offload | Offline, no time pressure |
+| Phase 4 background agents | `qwen3:4b` | Cheaper L2 for low-LOD minds |
+
+The night shift batches all of a day's L3 work into one model swap (8B → 14B →
+8B) instead of switching back and forth.
+
+### 6.3 Throughput budget
+Planning assumption, to be validated in Phase 0: about 40–60 tokens/s
+generation on 8B. A typical L2 call (~1.5k tokens in, ~250 out) takes about
+5–7 s, so about **8 L2 calls per real minute**. At 1× speed (1 in-game hour =
+1 real minute) that is roughly 8 deliberate thoughts per in-game hour for one
+survivor, which is plenty. Phase 4 populations depend on cognitive LOD (§5.4)
+and slower time scales.

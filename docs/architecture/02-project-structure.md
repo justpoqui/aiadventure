@@ -32,6 +32,9 @@ aiadventure/
 │   │   ├── mind_bridge.gd         ← WebSocket client, envelope codec
 │   │   └── save_manager.gd
 │   ├── sim/
+│   │   ├── spatial/               ← SpatialQuery + Navigation interfaces; 2D impls now, 3D later
+│   │   ├── divinity/              ← DivinitySystem: power pool, act catalogue, plausibility validation
+│   │   ├── lore/                  ← clue gates, recollection triggers (reads lore truth)
 │   │   ├── perception/            ← vision, hearing, interoception, fidelity rules
 │   │   ├── actions/               ← one resolver per primitive action
 │   │   ├── body/                  ← physiology model
@@ -48,7 +51,10 @@ aiadventure/
 │   │   ├── regions/               ← forest.tscn, campsite.tscn, trail.tscn, town.tscn
 │   │   └── world.tscn
 │   ├── data/definitions/          ← .tres Resources: entity types, materials, observables
+│   ├── views/
+│   │   └── view2d/                ← sprites, tilemaps, animation (view3d/ added later)
 │   ├── ui/
+│   │   ├── divine_panel/          ← acts of god, power pool, prayers heard
 │   │   ├── observer_hud/
 │   │   ├── mind_inspector/        ← beliefs, goals, thoughts, emotions (from telemetry)
 │   │   ├── truth_belief_diff/     ← debug: belief vs truth, colour-coded
@@ -104,6 +110,10 @@ aiadventure/
 │       ├── scenario/              ← fake world + scripted LLM, assert emergent outcomes
 │       └── fixtures/
 │
+├── worldgen/                      ← WORLD-SIDE Python: backstory/lore generation, clue placement
+│   ├── templates/                 ← authored backstory skeletons
+│   └── src/worldgen/              ← writes world.sqlite only; mind/ may NOT import this (CI-enforced)
+│
 └── tools/
     ├── run_dev.sh                 ← start ollama check, mind service, godot
     ├── save_inspector/            ← CLI: dump/diff save slots
@@ -147,24 +157,48 @@ Main (Node)                                   scenes/main.tscn
 │   │   └── Agents (Node2D)
 │   │       └── AgentBody "a_0001"           entities/agent/AgentBody.tscn
 │   ├── PerceptionSystem (Node)              iterates agents, emits percepts
-│   └── ActionSystem (Node)                  owns per-agent ActionRunner
+│   ├── ActionSystem (Node)                  owns per-agent ActionRunner
+│   ├── DivinitySystem (Node)                power pool from belief_power; validates and applies acts
+│   └── LoreSystem (Node)                    clue gates, recollection triggers
 ├── Camera2D (observer camera)
 └── UI (CanvasLayer)
     ├── ObserverHUD
     ├── TimeControls
+    ├── DivinePanel
     ├── MindInspector
     ├── TruthBeliefDiff (debug, toggle)
     └── JournalViewer
 ```
 
-### Reusable scenes
+### 2.1 3D-readiness rules (ADR-010)
+
+1. **The simulation is the authority; the view is cosmetic.** Every entity is a
+   `SimEntity` (plain `Node`) holding `sim_position: Vector3` in **metres**
+   (`y` = elevation, which is 0 in 2D). The 2D view projects `(x, z)` to pixels
+   with a single `PIXELS_PER_METRE` constant.
+2. **No simulation logic in `Node2D`/`CharacterBody2D` scripts.** Movement,
+   line of sight, and pathing go through `sim/spatial/`:
+   - `SpatialQuery.line_of_sight(a, b)`, `.entities_in_radius(p, r)`
+   - `Navigation.path(from, to)`, `.traversal_cost(segment)`
+
+   The 2D implementations wrap `PhysicsDirectSpaceState2D` and
+   `NavigationServer2D`. 3D implementations replace them later without touching
+   perception, actions, or the mind.
+3. **Databases, protocol, and percepts already use 3D** (`x, y, z`,
+   `distance_m`, `bearing_deg`, `elevation_deg`).
+4. Assets are referenced by `type_id` through a view registry, so a 3D model
+   can be registered for the same type later.
+
+Migration to 3D later means writing `views/view3d/` and 3D spatial and
+navigation implementations. The simulation, saves, and minds are untouched.
+
+### 2.2 Reusable scenes
 
 ```
-AgentBody (CharacterBody2D)
-├── Sprite / AnimatedSprite2D
-├── CollisionShape2D
-├── NavigationAgent2D
-├── Physiology (Node)              hunger, thirst, fatigue, temperature, health, injuries
+AgentBody (SimEntity : Node)               ← authority; no 2D types in its script
+├── Physiology (Node)              hunger, thirst, fatigue, temperature, health, injuries, consciousness
+├── Locomotion (Node)              uses sim/spatial Navigation; 2D adapter drives the view's body
+├── View2D (CharacterBody2D)       Sprite, CollisionShape2D, NavigationAgent2D — swappable for View3D
 ├── Inventory (Node)               weight/volume capacity
 ├── VisionSensor (Area2D + RayCast2D pool)
 ├── HearingSensor (Area2D)

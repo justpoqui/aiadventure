@@ -1,6 +1,8 @@
 # 00 — Overview & Architecture Review
 
-> Status: **Architecture review draft v0.1** — no implementation until this is signed off.
+> Status: **Architecture review draft v0.2**: review round 1 decisions are
+> folded in (2D/3D-ready, 8 GB GPU, acts of god, no death, hidden past). No
+> implementation until this is signed off.
 
 ## 1. What we are building
 
@@ -160,6 +162,16 @@ before it is full, and a busy agent could pull 300 memories.
 (e.g. interpretation ≈ 2.5k tokens, reflection ≈ 8k), filled in priority order:
 needs/emotion → current intention → percepts → top-k beliefs → top-k memories.
 
+### W14. Qwen3 14B does not fit on an 8 GB GPU (RTX 5060 Ti 8 GB)
+Qwen3 14B Q4_K_M is about 9.3 GB of weights before the KV cache and before
+Godot's own VRAM use. On 8 GB it partially offloads to the CPU and drops to
+single-digit tokens per second, which is too slow for L2.
+
+**Decision (ADR-013):** the primary model is **Qwen3 8B Q4_K_M** (~5.2 GB).
+14B is optional for overnight L3 reflection with CPU offload. 32B is ruled out
+on this hardware. The embedding model runs on the CPU. See
+`01-system-architecture.md §6`.
+
 ## 4. Key decisions (ADR summary)
 
 | ADR | Decision | Alternatives rejected |
@@ -173,9 +185,14 @@ needs/emotion → current intention → percepts → top-k beliefs → top-k mem
 | 007 | Dual belief representation (propositional + narrative) | Text-only; symbolic-only |
 | 008 | Hierarchical goals; GOAP only at the Objective level | Flat GOAP; pure LLM planning |
 | 009 | Godot is the clock master; sim time ≠ real time; time dilation when minds lag | Real-time-locked sim |
-| 010 | 2D top-down presentation for Phases 1–3 (sim logic dimension-agnostic) | 3D (content cost too high for an observation sim) |
+| 010 | **2D top-down now, 3D-ready**: simulation in metres with `Vector3` positions; presentation is a swappable View layer; spatial queries and navigation behind interfaces | 3D now (content cost); 2D-only data model (blocks 3D later) |
 | 011 | Opaque entity handles in the mind; self-assigned labels | Truth-named IDs |
-| 012 | Player is an **observer** (camera, time controls, inspectors); optional "act of god" tools later | Player avatar |
+| 012 | Player is an observer plus an **unseen higher power** whose acts are limited by the survivor's belief power | Player avatar; unlimited god tools |
+| 013 | Qwen3 8B primary on 8 GB VRAM; 14B optional for overnight reflection; embeddings on CPU | 14B primary (doesn't fit) |
+| 014 | `belief_power` scalar is the **only** mind→world-rule channel (feeds DivinitySystem) | Divinity reading the mind DB |
+| 015 | **No death**: knockout → wake at last resting place; world is not rewound; mind reframes the incident as a nightmare | Permadeath; world rewind |
+| 016 | Survivor's past is **generated truth**, hidden in gated, ambiguous, diegetic clues and recollections; worldgen is world-side only | No past; authored single story; LLM-improvised past |
+| 017 | **Reality guard**: meta-awareness filter on all LLM output; the survivor must never learn it is simulated | Prompt discipline only |
 
 ## 5. Document map
 
@@ -189,3 +206,4 @@ needs/emotion → current intention → percepts → top-k beliefs → top-k mem
 | `06-data-architecture.md` | SQLite schemas (world and mind), ChromaDB design, **save system** |
 | `07-scalability.md` | Multi-agent, social, and town-scale support |
 | `08-roadmap.md` | Phased development roadmap with exit criteria |
+| `09-divinity-knockout-lore.md` | Acts of God and belief power, knockouts, the hidden past, the reality guard |

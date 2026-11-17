@@ -54,7 +54,7 @@ CREATE TABLE entities (
   type_id          TEXT NOT NULL,         -- references data/definitions
   region_id        TEXT REFERENCES regions(region_id),
   parent_id        TEXT REFERENCES entities(entity_id),  -- container / building interior
-  x REAL, y REAL, rot REAL,
+  x REAL, y REAL, z REAL NOT NULL DEFAULT 0, rot REAL,   -- metres; y = elevation (3D-ready)
   state_json       TEXT NOT NULL DEFAULT '{}' CHECK (json_valid(state_json)),
   created_tick     INTEGER NOT NULL,
   destroyed_tick   INTEGER
@@ -111,7 +111,11 @@ CREATE TABLE agent_bodies (               -- true physiology
   entity_id     TEXT NOT NULL REFERENCES entities(entity_id),
   health REAL, hunger REAL, thirst REAL, fatigue REAL, body_temp REAL,
   conditions_json TEXT NOT NULL DEFAULT '[]',   -- injuries, illness
-  carry_capacity  REAL NOT NULL
+  carry_capacity  REAL NOT NULL,
+  consciousness   TEXT NOT NULL DEFAULT 'awake',  -- awake|asleep|unconscious
+  last_rest_x REAL, last_rest_y REAL, last_rest_z REAL,  -- knockout wake point
+  knockout_count  INTEGER NOT NULL DEFAULT 0,
+  last_knockout_tick INTEGER
 );
 
 CREATE TABLE agent_true_skills (          -- determines outcomes
@@ -133,6 +137,59 @@ CREATE TABLE world_events (               -- truth change log (append-only)
   payload_json TEXT NOT NULL
 );
 CREATE INDEX idx_world_events_tick ON world_events(tick);
+
+CREATE TABLE inspections (                -- truth: where/when an agent looked closely (used by divinity plausibility)
+  agent_id TEXT NOT NULL, entity_id TEXT NOT NULL, tick INTEGER NOT NULL,
+  PRIMARY KEY (agent_id, entity_id, tick)
+);
+
+-- ── Lore (generated once by worldgen/; NEVER readable by the mind) ─────
+CREATE TABLE lore_facts (
+  fact_id    TEXT PRIMARY KEY,
+  subject    TEXT NOT NULL,               -- 'survivor', 'town', 'resident:<id>'
+  statement  TEXT NOT NULL,               -- "The survivor's name is Ellis Marsh"
+  tier       TEXT NOT NULL CHECK (tier IN ('core','major','minor')),
+  is_red_herring INTEGER NOT NULL DEFAULT 0
+);
+CREATE TABLE lore_clues (
+  clue_entity_id TEXT NOT NULL REFERENCES entities(entity_id),
+  fact_id        TEXT NOT NULL REFERENCES lore_facts(fact_id),
+  fragment_json  TEXT NOT NULL,           -- what perception can reveal, per fidelity/legibility
+  evidence_strength REAL NOT NULL,        -- deliberately weak: 3-5 needed per core fact
+  ambiguity      REAL NOT NULL,
+  PRIMARY KEY (clue_entity_id, fact_id)
+);
+CREATE TABLE lore_gates (
+  gate_id     TEXT PRIMARY KEY,
+  clue_entity_id TEXT NOT NULL REFERENCES entities(entity_id),
+  kind        TEXT NOT NULL,              -- locked|needs_repair|needs_power|needs_drying|combination
+  requirement_json TEXT NOT NULL,         -- key entity, component>=x, generator fueled, …
+  opened_tick INTEGER
+);
+CREATE TABLE lore_recollections (
+  recollection_id TEXT PRIMARY KEY,
+  agent_id    TEXT NOT NULL,
+  fact_id     TEXT NOT NULL REFERENCES lore_facts(fact_id),
+  trigger_json TEXT NOT NULL,             -- entity/type/place/smell + conditions (familiarity, sleep, emotion)
+  fragment    TEXT NOT NULL,              -- sensory, never declarative
+  max_fires   INTEGER NOT NULL DEFAULT 1,
+  fired_count INTEGER NOT NULL DEFAULT 0,
+  last_fired_tick INTEGER
+);
+
+-- ── Divinity ──────────────────────────────────────────────────────────
+CREATE TABLE divine_state (
+  id INTEGER PRIMARY KEY CHECK (id = 1),
+  belief_power REAL NOT NULL DEFAULT 0,   -- last value received from the mind (ADR-014)
+  pool REAL NOT NULL, pool_cap REAL NOT NULL, updated_tick INTEGER NOT NULL
+);
+CREATE TABLE divine_acts (
+  act_id     TEXT PRIMARY KEY,
+  tick       INTEGER NOT NULL,
+  act_type   TEXT NOT NULL, tier INTEGER NOT NULL, cost REAL NOT NULL,
+  target_json TEXT, result TEXT NOT NULL, -- applied|rejected_implausible|rejected_power|rejected_lore
+  world_event_id TEXT
+);
 ```
 
 ## 3. `mind.sqlite` schema (subjective reality)
@@ -156,7 +213,7 @@ CREATE TABLE agent_state (                -- hot mind state, overwritten
   agent_id         TEXT PRIMARY KEY REFERENCES agents(agent_id),
   tick             INTEGER NOT NULL,
   mood_valence REAL, mood_arousal REAL, mood_dominance REAL,
-  believed_x REAL, believed_y REAL, believed_place TEXT,
+  believed_x REAL, believed_y REAL, believed_z REAL, believed_place TEXT,
   active_objective_id TEXT,
   working_memory_json TEXT NOT NULL DEFAULT '[]',
   last_reflection_tick INTEGER
@@ -201,14 +258,14 @@ CREATE TABLE known_entities (
   kind_guess   TEXT,
   first_seen_tick INTEGER NOT NULL,
   last_seen_tick  INTEGER NOT NULL,
-  last_known_x REAL, last_known_y REAL,
+  last_known_x REAL, last_known_y REAL, last_known_z REAL,
   appearance_json TEXT NOT NULL DEFAULT '{}',
   PRIMARY KEY (agent_id, handle)
 );
 
 CREATE TABLE places (                     -- subjective map ("the clearing by the stream")
   place_id TEXT PRIMARY KEY, agent_id TEXT NOT NULL,
-  label TEXT NOT NULL, x REAL, y REAL, radius REAL,
+  label TEXT NOT NULL, x REAL, y REAL, z REAL, radius REAL,
   created_tick INTEGER NOT NULL
 );
 
@@ -228,7 +285,8 @@ CREATE TABLE beliefs (
   object_json  TEXT,
   description  TEXT NOT NULL,
   confidence   REAL NOT NULL CHECK (confidence BETWEEN 0 AND 1),
-  source_type  TEXT NOT NULL,             -- observation|experience|memory|inference|reasoning|pattern|reflection|testimony|seed
+  source_type  TEXT NOT NULL,             -- observation|experience|memory|inference|reasoning|pattern|reflection|testimony|seed|dream|recollection
+  domain       TEXT NOT NULL DEFAULT 'physical' CHECK (domain IN ('physical','self','social','metaphysical')),
   source_ref   TEXT,                      -- percept id, llm_call id, agent id
   emotional_weight REAL NOT NULL DEFAULT 0,
   valence      REAL NOT NULL DEFAULT 0,
@@ -244,6 +302,7 @@ CREATE TABLE beliefs (
 );
 CREATE INDEX idx_beliefs_spo    ON beliefs(agent_id, subject, predicate, status);
 CREATE INDEX idx_beliefs_status ON beliefs(agent_id, status, confidence);
+CREATE INDEX idx_beliefs_domain ON beliefs(agent_id, domain, status);
 
 CREATE TABLE belief_revisions (           -- append-only history
   id TEXT PRIMARY KEY, belief_id TEXT NOT NULL REFERENCES beliefs(belief_id),
@@ -283,7 +342,7 @@ CREATE TABLE memories (
   kind          TEXT NOT NULL,            -- episodic|semantic|reflection|journal|summary|procedural
   tick          INTEGER NOT NULL,
   day           INTEGER NOT NULL,
-  x REAL, y REAL, place_id TEXT,
+  x REAL, y REAL, z REAL, place_id TEXT,
   summary       TEXT NOT NULL,            -- embedded text
   detail        TEXT,                     -- dropped on fade
   importance    REAL NOT NULL,
@@ -292,6 +351,7 @@ CREATE TABLE memories (
   access_count  INTEGER NOT NULL DEFAULT 0,
   last_accessed_tick INTEGER,
   status        TEXT NOT NULL DEFAULT 'active',  -- active|consolidated|faded|archived
+  reality_status TEXT NOT NULL DEFAULT 'real' CHECK (reality_status IN ('real','dream','uncertain')),
   parent_memory_id TEXT REFERENCES memories(memory_id),   -- summary hierarchy
   summary_level TEXT,                     -- day|week|season|year (kind=summary)
   embedding_model TEXT,

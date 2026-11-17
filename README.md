@@ -11,8 +11,8 @@ Start with [`docs/architecture/00-overview-and-review.md`](docs/architecture/00-
 
 | Layer | Technology |
 |-------|------------|
-| World, rendering, perception, action resolution | Godot 4 (GDScript), `world.sqlite` |
+| World, rendering, perception, action resolution | Godot 4 (GDScript), 2D now with 3D-ready simulation, `world.sqlite` |
 | Mind (cognition for every agent) | Python 3.12 Mind Service, `mind.sqlite` |
 | Long-term memory index | ChromaDB (derived, rebuildable) |
-| Language model | Ollama — Qwen3 14B (32B / Llama / DeepSeek pluggable) |
+| Language model | Ollama: Qwen3 8B on an 8 GB GPU (14B optional for overnight reflection; Llama/DeepSeek pluggable) |
 | Planning | Hierarchical intentions + GOAP |

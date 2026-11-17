@@ -194,6 +194,11 @@ narrative belief.
 | `reflection` | 0.4 | 0.7 | "The farmhouse could become a home" |
 | `testimony` (Phase 4) | trust(speaker) × 0.7 | 0.85 | |
 | `seed` (starting memory) | 0.6 | — | "There is an abandoned town nearby" |
+| `dream` (dreams, reframed nightmares) | 0.15 | 0.3 | "I dreamt the bridge broke under me" |
+| `recollection` (flashes of the forgotten past) | 0.3 | 0.7 | "The smell of motor oil feels like home" |
+
+Beliefs also carry a `domain` (`physical`, `self`, `social`, `metaphysical`).
+`metaphysical` beliefs feed belief power (`09-divinity-knockout-lore.md §1.2`).
 
 The LLM is prompted to *make assumptions frequently*. The caps ensure those
 assumptions remain assumptions until the world confirms them.
@@ -292,6 +297,13 @@ emotion, and location. Retrieval strengthens the retrieved memories
 5. Lower the strength of episodes that were consolidated. Their gist survives
    in the semantic memory.
 
+### 6.4b Reality status
+Every memory has `reality_status ∈ {real, dream, uncertain}`. Dreams are
+encoded as `dream`. After a knockout, the nightmare reframing rule
+(`09 §2.2`) flips the incident window to `dream`. Later contradicting evidence
+can move it to `uncertain` and then `real`. Retrieval down-weights `dream`
+memories for planning, but not for emotion.
+
 ### 6.5 Forgetting
 Strength decays as a power law: `S(t) = S0 · (1 + t/τ)^-k`, with τ scaled by
 importance and emotion. A faded memory keeps its summary and drops its detail.
@@ -345,3 +357,5 @@ skills: low random baselines; one or two "latent" higher skills unknown to the a
 
 Latent skills are world truth: the body is unexpectedly good at something. The
 survivor discovers them through performance, which feeds identity beliefs.
+Latent skills are **derived from the generated backstory**
+(`09 §3.1`), so they are real clues to the survivor's past.
