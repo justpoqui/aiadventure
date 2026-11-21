@@ -1,0 +1,5 @@
+
+# Blender intermediate renders
+renders/**/_parts/
+__pycache__/
+*.pyc
