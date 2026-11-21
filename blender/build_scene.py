@@ -275,19 +275,21 @@ class Nodes:
 # `seed` changes the look; tiles blend a variant seed in the interior and seed 0 at edges.
 
 def forest_floor(N, pos, seed=0.0):
-    """Leaf litter over dark soil with moss patches and twigs."""
-    leaves_d, leaves_c = N.pvoronoi(pos, 9.0, seed=seed)
-    tone = N.math('ADD', N.math('MULTIPLY', leaves_c_to_value(N, leaves_c), 0.6),
-                  N.math('MULTIPLY', N.pnoise(pos, 6.0, 4.0, 0.6, seed), 0.4))
-    litter = N.ramp(tone, [(0.0, (0.10, 0.065, 0.035)), (0.35, (0.21, 0.13, 0.06)),
-                           (0.6, (0.33, 0.21, 0.09)), (0.85, (0.42, 0.30, 0.12)), (1.0, (0.27, 0.22, 0.10))])
-    gaps = N.smooth(0.02, 0.09, leaves_d)              # dark soil between leaves
-    litter = N.mix_rgb(gaps, (0.07, 0.05, 0.03), litter)
-    moss_mask = N.smooth(0.55, 0.68, N.pnoise(pos, 1.6, 3.0, 0.55, seed + 11.0))
-    moss = N.ramp(N.pnoise(pos, 14.0, 2.0, 0.5, seed + 3.0),
-                  [(0.3, (0.11, 0.17, 0.05)), (0.7, (0.22, 0.30, 0.08))])
+    """Leaf litter over dark soil, with moss patches. Dark and earthy, like real woodland."""
+    leaves_d, leaves_c = N.pvoronoi(pos, 6.0, seed=seed)
+    leaf_id = leaves_c_to_value(N, leaves_c)
+    tone = N.math('ADD', N.math('MULTIPLY', leaf_id, 0.75),
+                  N.math('MULTIPLY', N.pnoise(pos, 5.0, 3.0, 0.6, seed), 0.25))
+    litter = N.ramp(tone, [(0.0, (0.035, 0.022, 0.012)), (0.3, (0.075, 0.045, 0.02)),
+                           (0.55, (0.13, 0.075, 0.03)), (0.75, (0.19, 0.11, 0.035)),
+                           (0.9, (0.22, 0.15, 0.05)), (1.0, (0.12, 0.10, 0.04))])
+    gaps = N.smooth(0.03, 0.12, leaves_d)               # dark soil showing between leaves
+    litter = N.mix_rgb(gaps, (0.02, 0.014, 0.008), litter)
+    moss_mask = N.smooth(0.5, 0.62, N.pnoise(pos, 1.3, 3.0, 0.55, seed + 11.0))
+    moss = N.ramp(N.pnoise(pos, 12.0, 2.0, 0.5, seed + 3.0),
+                  [(0.3, (0.035, 0.07, 0.015)), (0.7, (0.08, 0.13, 0.03))])
     col = N.mix_rgb(moss_mask, litter, moss)
-    height = N.math('ADD', N.math('MULTIPLY', gaps, 0.5), N.math('MULTIPLY', moss_mask, 0.3))
+    height = N.math('ADD', N.math('MULTIPLY', gaps, 0.6), N.math('MULTIPLY', moss_mask, 0.3))
     return col, height
 
 
@@ -301,18 +303,18 @@ def clearing_grass(N, pos, seed=0.0):
     blades = N.pnoise(pos, 34.0, 2.0, 0.6, seed + 5.0)
     clumps = N.pnoise(pos, 3.5, 3.0, 0.55, seed + 6.0)
     tone = N.math('ADD', N.math('MULTIPLY', blades, 0.55), N.math('MULTIPLY', clumps, 0.45))
-    col = N.ramp(tone, [(0.25, (0.10, 0.18, 0.05)), (0.5, (0.20, 0.31, 0.08)),
-                        (0.72, (0.33, 0.42, 0.12)), (0.9, (0.46, 0.46, 0.18))])
+    col = N.ramp(tone, [(0.25, (0.04, 0.08, 0.015)), (0.5, (0.08, 0.15, 0.03)),
+                        (0.72, (0.15, 0.22, 0.05)), (0.9, (0.23, 0.25, 0.08))])
     return col, N.math('MULTIPLY', blades, 0.8)
 
 
 def dirt_path(N, pos, seed=0.0):
     base = N.pnoise(pos, 5.0, 4.0, 0.6, seed + 21.0)
-    col = N.ramp(base, [(0.3, (0.20, 0.135, 0.075)), (0.55, (0.29, 0.20, 0.11)), (0.8, (0.36, 0.27, 0.16))])
+    col = N.ramp(base, [(0.3, (0.10, 0.065, 0.035)), (0.55, (0.15, 0.10, 0.055)), (0.8, (0.20, 0.145, 0.085))])
     peb_d, peb_c = N.pvoronoi(pos, 26.0, seed=seed + 22.0)
     pebble = N.math('MULTIPLY', N.smooth(0.22, 0.12, peb_d),
                     N.smooth(0.6, 0.75, leaves_c_to_value(N, peb_c)))
-    col = N.mix_rgb(pebble, col, (0.42, 0.38, 0.32))
+    col = N.mix_rgb(pebble, col, (0.24, 0.22, 0.19))
     ruts = N.pnoise(pos, 2.0, 2.0, 0.5, seed + 23.0)
     col = N.mul_rgb(col, N.math('ADD', N.math('MULTIPLY', ruts, 0.25), 0.85))
     return col, N.math('ADD', N.math('MULTIPLY', pebble, 0.6), N.math('MULTIPLY', base, 0.3))
@@ -320,30 +322,30 @@ def dirt_path(N, pos, seed=0.0):
 
 def mud_bank(N, pos, seed=0.0):
     n = N.pnoise(pos, 8.0, 4.0, 0.6, seed + 31.0)
-    col = N.ramp(n, [(0.3, (0.09, 0.065, 0.04)), (0.6, (0.16, 0.11, 0.065)), (0.85, (0.23, 0.17, 0.10))])
+    col = N.ramp(n, [(0.3, (0.035, 0.025, 0.016)), (0.6, (0.07, 0.048, 0.03)), (0.85, (0.11, 0.08, 0.05))])
     st_d, st_c = N.pvoronoi(pos, 18.0, seed=seed + 32.0)
     stone = N.math('MULTIPLY', N.smooth(0.25, 0.15, st_d), N.smooth(0.55, 0.7, leaves_c_to_value(N, st_c)))
-    col = N.mix_rgb(stone, col, (0.33, 0.32, 0.29))
+    col = N.mix_rgb(stone, col, (0.095, 0.09, 0.08))
     return col, N.math('ADD', N.math('MULTIPLY', stone, 0.7), N.math('MULTIPLY', n, 0.3))
 
 
 def water(N, pos, depth, seed=0.0):
-    """depth: socket 0 (shallow, sandy bottom visible) .. 1 (deep, dark)."""
+    """depth: socket 0 (shallow: clear water over a brown bottom) .. 1 (deep, dark green-blue)."""
     ripple = N.pnoise(pos, 7.0, 3.0, 0.55, seed + 41.0)
-    shallow = N.ramp(ripple, [(0.3, (0.17, 0.20, 0.14)), (0.7, (0.23, 0.27, 0.19))])
-    deep = N.ramp(ripple, [(0.3, (0.035, 0.07, 0.08)), (0.7, (0.06, 0.11, 0.12))])
+    shallow = N.ramp(ripple, [(0.3, (0.055, 0.06, 0.035)), (0.7, (0.09, 0.10, 0.06))])
+    deep = N.ramp(ripple, [(0.3, (0.012, 0.03, 0.035)), (0.7, (0.025, 0.055, 0.06))])
     col = N.mix_rgb(depth, shallow, deep)
-    glint = N.smooth(0.70, 0.78, N.pnoise(pos, 16.0, 2.0, 0.5, seed + 42.0))
-    col = N.mix_rgb(N.math('MULTIPLY', glint, 0.35), col, (0.55, 0.62, 0.62))
+    glint = N.smooth(0.74, 0.8, N.pnoise(pos, 16.0, 2.0, 0.5, seed + 42.0))
+    col = N.mix_rgb(N.math('MULTIPLY', glint, 0.18), col, (0.30, 0.36, 0.36))
     return col, N.math('MULTIPLY', ripple, 0.15)
 
 
 def mossy_stone(N, pos, normal_z, seed=0.0):
     """For rocks/logs: stone with moss on up-facing surfaces (normal_z socket)."""
     n = N.pnoise(pos, 4.0, 5.0, 0.6, seed + 51.0)
-    stone = N.ramp(n, [(0.3, (0.17, 0.17, 0.16)), (0.6, (0.29, 0.28, 0.26)), (0.85, (0.40, 0.39, 0.36))])
-    moss_amt = N.smooth(0.55, 0.85, N.math('ADD', normal_z, N.math('MULTIPLY', N.pnoise(pos, 3.0, 3.0, 0.5, seed + 52.0), 0.4)))
-    moss = N.ramp(N.pnoise(pos, 12.0, 2.0, 0.5, seed + 53.0), [(0.3, (0.12, 0.19, 0.05)), (0.7, (0.24, 0.33, 0.09))])
+    stone = N.ramp(n, [(0.3, (0.07, 0.07, 0.065)), (0.6, (0.13, 0.125, 0.115)), (0.85, (0.2, 0.195, 0.18))])
+    moss_amt = N.smooth(0.75, 0.95, N.math('ADD', normal_z, N.math('MULTIPLY', N.pnoise(pos, 3.0, 3.0, 0.5, seed + 52.0), 0.5)))
+    moss = N.ramp(N.pnoise(pos, 12.0, 2.0, 0.5, seed + 53.0), [(0.3, (0.016, 0.024, 0.008)), (0.7, (0.036, 0.05, 0.016))])
     return N.mix_rgb(moss_amt, stone, moss), n
 
 

@@ -1,5 +1,10 @@
 # Step 07b — World map and the 2D look
 
+> **Replaced.** The shader-painted terrain in this step was replaced by the pre-rendered
+> Blender forest and Godot TileMapLayer in [`docs/world/forest_world.md`](../world/forest_world.md).
+> Do that instead. This page stays for reference: its fixes (waiting for the navigation map to
+> answer a query, separate textures per sampler) still apply.
+
 **Goal:** replace the test rectangle with the real starting world (forest,
 campsite clearing, trail, river with a bridge, pond, rock outcrops, town
 ground) drawn in a lush top-down style. You can then redesign the world by

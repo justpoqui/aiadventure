@@ -1,0 +1,260 @@
+{
+ "note": "INTERNAL names for tools and debugging. Wren never receives these; it perceives appearances and names places itself.",
+ "places": [
+  {
+   "id": "forest",
+   "kind": "region",
+   "center_tile": [
+    70,
+    60
+   ],
+   "center_m": [
+    140.0,
+    120.0
+   ],
+   "radius_tiles": [
+    70,
+    60
+   ],
+   "contains": "dense mixed woodland of oak, pine and birch"
+  },
+  {
+   "id": "campsite",
+   "kind": "clearing",
+   "center_tile": [
+    34,
+    70
+   ],
+   "center_m": [
+    68.0,
+    140.0
+   ],
+   "radius_tiles": [
+    9,
+    9
+   ],
+   "contains": "fire pit, collapsed tent, bedroll, backpack, log seat"
+  },
+  {
+   "id": "north_meadow",
+   "kind": "clearing",
+   "center_tile": [
+    62,
+    26
+   ],
+   "center_m": [
+    124.0,
+    52.0
+   ],
+   "radius_tiles": [
+    11,
+    11
+   ],
+   "contains": "open grass where deer graze at dawn and dusk"
+  },
+  {
+   "id": "south_glade",
+   "kind": "clearing",
+   "center_tile": [
+    52,
+    98
+   ],
+   "center_m": [
+    104.0,
+    196.0
+   ],
+   "radius_tiles": [
+    6,
+    6
+   ],
+   "contains": "small sunny glade with berry bushes"
+  },
+  {
+   "id": "stream",
+   "kind": "water",
+   "center_tile": [
+    96,
+    40
+   ],
+   "center_m": [
+    192.0,
+    80.0
+   ],
+   "radius_tiles": [
+    4,
+    42
+   ],
+   "contains": "shallow winding stream with fish; feeds the pond"
+  },
+  {
+   "id": "pond",
+   "kind": "water",
+   "center_tile": [
+    92,
+    92
+   ],
+   "center_m": [
+    184.0,
+    184.0
+   ],
+   "radius_tiles": [
+    10,
+    10
+   ],
+   "contains": "deep pond with lily pads, frogs on the shore, fish"
+  },
+  {
+   "id": "town_hall",
+   "kind": "building",
+   "center_tile": [
+    128,
+    50
+   ],
+   "center_m": [
+    256.0,
+    100.0
+   ],
+   "radius_tiles": [
+    3,
+    3
+   ],
+   "contains": "town hall"
+  },
+  {
+   "id": "general_store",
+   "kind": "building",
+   "center_tile": [
+    114,
+    62
+   ],
+   "center_m": [
+    228.0,
+    124.0
+   ],
+   "radius_tiles": [
+    3,
+    3
+   ],
+   "contains": "general store"
+  },
+  {
+   "id": "garage",
+   "kind": "building",
+   "center_tile": [
+    142,
+    62
+   ],
+   "center_m": [
+    284.0,
+    124.0
+   ],
+   "radius_tiles": [
+    3,
+    3
+   ],
+   "contains": "garage"
+  },
+  {
+   "id": "farmhouse",
+   "kind": "building",
+   "center_tile": [
+    125,
+    80
+   ],
+   "center_m": [
+    250.0,
+    160.0
+   ],
+   "radius_tiles": [
+    3,
+    3
+   ],
+   "contains": "farmhouse"
+  },
+  {
+   "id": "water_tower",
+   "kind": "building",
+   "center_tile": [
+    139,
+    47
+   ],
+   "center_m": [
+    278.0,
+    94.0
+   ],
+   "radius_tiles": [
+    3,
+    3
+   ],
+   "contains": "water tower"
+  },
+  {
+   "id": "town",
+   "kind": "settlement",
+   "center_tile": [
+    128,
+    62
+   ],
+   "center_m": [
+    256.0,
+    124.0
+   ],
+   "radius_tiles": [
+    21,
+    21
+   ],
+   "contains": "abandoned town: town hall, general store, garage, farmhouse, water tower"
+  },
+  {
+   "id": "trail",
+   "kind": "path",
+   "center_tile": [
+    66,
+    64
+   ],
+   "center_m": [
+    132.0,
+    128.0
+   ],
+   "radius_tiles": [
+    34,
+    4
+   ],
+   "contains": "worn trail from the campsite to the stream and on to the town"
+  },
+  {
+   "id": "bridge",
+   "kind": "structure",
+   "center_tile": [
+    96.0,
+    62.5
+   ],
+   "center_m": [
+    192.0,
+    125.0
+   ],
+   "radius_tiles": [
+    4.0,
+    1.5
+   ],
+   "contains": "old plank footbridge over the stream (weak: integrity 0.25)"
+  },
+  {
+   "id": "animal_paths",
+   "kind": "path",
+   "center_tile": [
+    60,
+    60
+   ],
+   "center_m": [
+    120.0,
+    120.0
+   ],
+   "radius_tiles": [
+    40,
+    40
+   ],
+   "contains": "narrow tracks worn by deer between water and clearings"
+  }
+ ]
+}

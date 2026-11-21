@@ -1,0 +1,1126 @@
+{
+ "animals": [
+  {
+   "id": "deer_000",
+   "species": "deer",
+   "tile": [
+    57.75,
+    30.86
+   ],
+   "pos_m": [
+    115.49,
+    61.73
+   ],
+   "home_tile": [
+    62,
+    26
+   ],
+   "group": "herd_0"
+  },
+  {
+   "id": "deer_001",
+   "species": "deer",
+   "tile": [
+    64.65,
+    23.67
+   ],
+   "pos_m": [
+    129.29,
+    47.35
+   ],
+   "home_tile": [
+    62,
+    26
+   ],
+   "group": "herd_0"
+  },
+  {
+   "id": "deer_002",
+   "species": "deer",
+   "tile": [
+    48.39,
+    96.41
+   ],
+   "pos_m": [
+    96.79,
+    192.82
+   ],
+   "home_tile": [
+    52,
+    98
+   ],
+   "group": "herd_1"
+  },
+  {
+   "id": "deer_003",
+   "species": "deer",
+   "tile": [
+    49.59,
+    96.49
+   ],
+   "pos_m": [
+    99.19,
+    192.98
+   ],
+   "home_tile": [
+    52,
+    98
+   ],
+   "group": "herd_1"
+  },
+  {
+   "id": "deer_004",
+   "species": "deer",
+   "tile": [
+    52.2,
+    94.55
+   ],
+   "pos_m": [
+    104.39,
+    189.11
+   ],
+   "home_tile": [
+    52,
+    98
+   ],
+   "group": "herd_1"
+  },
+  {
+   "id": "deer_005",
+   "species": "deer",
+   "tile": [
+    51.54,
+    95.0
+   ],
+   "pos_m": [
+    103.08,
+    190.01
+   ],
+   "home_tile": [
+    52,
+    98
+   ],
+   "group": "herd_1"
+  },
+  {
+   "id": "rabbit_006",
+   "species": "rabbit",
+   "tile": [
+    35.13,
+    74.82
+   ],
+   "pos_m": [
+    70.26,
+    149.65
+   ],
+   "home_tile": [
+    34,
+    70
+   ],
+   "group": null
+  },
+  {
+   "id": "rabbit_007",
+   "species": "rabbit",
+   "tile": [
+    34.97,
+    71.6
+   ],
+   "pos_m": [
+    69.93,
+    143.21
+   ],
+   "home_tile": [
+    34,
+    70
+   ],
+   "group": null
+  },
+  {
+   "id": "rabbit_008",
+   "species": "rabbit",
+   "tile": [
+    63.55,
+    25.05
+   ],
+   "pos_m": [
+    127.11,
+    50.09
+   ],
+   "home_tile": [
+    62,
+    26
+   ],
+   "group": null
+  },
+  {
+   "id": "rabbit_009",
+   "species": "rabbit",
+   "tile": [
+    63.87,
+    30.7
+   ],
+   "pos_m": [
+    127.73,
+    61.4
+   ],
+   "home_tile": [
+    62,
+    26
+   ],
+   "group": null
+  },
+  {
+   "id": "rabbit_010",
+   "species": "rabbit",
+   "tile": [
+    48.44,
+    95.85
+   ],
+   "pos_m": [
+    96.87,
+    191.7
+   ],
+   "home_tile": [
+    52,
+    98
+   ],
+   "group": null
+  },
+  {
+   "id": "rabbit_011",
+   "species": "rabbit",
+   "tile": [
+    50.11,
+    103.16
+   ],
+   "pos_m": [
+    100.22,
+    206.32
+   ],
+   "home_tile": [
+    52,
+    98
+   ],
+   "group": null
+  },
+  {
+   "id": "rabbit_012",
+   "species": "rabbit",
+   "tile": [
+    122.47,
+    65.32
+   ],
+   "pos_m": [
+    244.93,
+    130.63
+   ],
+   "home_tile": [
+    128,
+    62
+   ],
+   "group": null
+  },
+  {
+   "id": "rabbit_013",
+   "species": "rabbit",
+   "tile": [
+    124.0,
+    64.53
+   ],
+   "pos_m": [
+    247.99,
+    129.05
+   ],
+   "home_tile": [
+    128,
+    62
+   ],
+   "group": null
+  },
+  {
+   "id": "rabbit_014",
+   "species": "rabbit",
+   "tile": [
+    79.39,
+    45.68
+   ],
+   "pos_m": [
+    158.78,
+    91.37
+   ],
+   "home_tile": [
+    75,
+    45
+   ],
+   "group": null
+  },
+  {
+   "id": "squirrel_015",
+   "species": "squirrel",
+   "tile": [
+    147.08,
+    104.29
+   ],
+   "pos_m": [
+    294.17,
+    208.59
+   ],
+   "home_tile": [
+    147.6,
+    101.3
+   ],
+   "group": null
+  },
+  {
+   "id": "squirrel_016",
+   "species": "squirrel",
+   "tile": [
+    87.54,
+    58.82
+   ],
+   "pos_m": [
+    175.08,
+    117.63
+   ],
+   "home_tile": [
+    87.7,
+    60.5
+   ],
+   "group": null
+  },
+  {
+   "id": "squirrel_017",
+   "species": "squirrel",
+   "tile": [
+    38.33,
+    56.33
+   ],
+   "pos_m": [
+    76.66,
+    112.65
+   ],
+   "home_tile": [
+    40.8,
+    56.6
+   ],
+   "group": null
+  },
+  {
+   "id": "squirrel_018",
+   "species": "squirrel",
+   "tile": [
+    16.12,
+    94.23
+   ],
+   "pos_m": [
+    32.23,
+    188.46
+   ],
+   "home_tile": [
+    18.9,
+    91.7
+   ],
+   "group": null
+  },
+  {
+   "id": "squirrel_019",
+   "species": "squirrel",
+   "tile": [
+    47.24,
+    49.12
+   ],
+   "pos_m": [
+    94.49,
+    98.24
+   ],
+   "home_tile": [
+    44.6,
+    48.6
+   ],
+   "group": null
+  },
+  {
+   "id": "squirrel_020",
+   "species": "squirrel",
+   "tile": [
+    84.93,
+    44.31
+   ],
+   "pos_m": [
+    169.85,
+    88.62
+   ],
+   "home_tile": [
+    84.7,
+    44.3
+   ],
+   "group": null
+  },
+  {
+   "id": "squirrel_021",
+   "species": "squirrel",
+   "tile": [
+    52.28,
+    46.03
+   ],
+   "pos_m": [
+    104.56,
+    92.05
+   ],
+   "home_tile": [
+    54.7,
+    46.2
+   ],
+   "group": null
+  },
+  {
+   "id": "squirrel_022",
+   "species": "squirrel",
+   "tile": [
+    137.21,
+    25.5
+   ],
+   "pos_m": [
+    274.41,
+    50.99
+   ],
+   "home_tile": [
+    135.4,
+    23.0
+   ],
+   "group": null
+  },
+  {
+   "id": "squirrel_023",
+   "species": "squirrel",
+   "tile": [
+    37.13,
+    25.35
+   ],
+   "pos_m": [
+    74.27,
+    50.69
+   ],
+   "home_tile": [
+    37.8,
+    25.8
+   ],
+   "group": null
+  },
+  {
+   "id": "squirrel_024",
+   "species": "squirrel",
+   "tile": [
+    82.16,
+    65.95
+   ],
+   "pos_m": [
+    164.32,
+    131.9
+   ],
+   "home_tile": [
+    84.3,
+    68.3
+   ],
+   "group": null
+  },
+  {
+   "id": "bird_025",
+   "species": "bird",
+   "tile": [
+    30.72,
+    12.92
+   ],
+   "pos_m": [
+    61.44,
+    25.85
+   ],
+   "home_tile": [
+    33.5,
+    11.2
+   ],
+   "group": "flock_3"
+  },
+  {
+   "id": "bird_026",
+   "species": "bird",
+   "tile": [
+    13.63,
+    110.49
+   ],
+   "pos_m": [
+    27.26,
+    220.99
+   ],
+   "home_tile": [
+    13.3,
+    110.0
+   ],
+   "group": "flock_2"
+  },
+  {
+   "id": "bird_027",
+   "species": "bird",
+   "tile": [
+    50.57,
+    78.89
+   ],
+   "pos_m": [
+    101.14,
+    157.77
+   ],
+   "home_tile": [
+    53.2,
+    76.1
+   ],
+   "group": "flock_2"
+  },
+  {
+   "id": "bird_028",
+   "species": "bird",
+   "tile": [
+    107.75,
+    60.39
+   ],
+   "pos_m": [
+    215.5,
+    120.78
+   ],
+   "home_tile": [
+    109.8,
+    57.6
+   ],
+   "group": "flock_2"
+  },
+  {
+   "id": "bird_029",
+   "species": "bird",
+   "tile": [
+    80.92,
+    94.49
+   ],
+   "pos_m": [
+    161.84,
+    188.98
+   ],
+   "home_tile": [
+    83.4,
+    92.4
+   ],
+   "group": "flock_3"
+  },
+  {
+   "id": "bird_030",
+   "species": "bird",
+   "tile": [
+    61.62,
+    45.33
+   ],
+   "pos_m": [
+    123.23,
+    90.67
+   ],
+   "home_tile": [
+    61.4,
+    42.6
+   ],
+   "group": "flock_3"
+  },
+  {
+   "id": "bird_031",
+   "species": "bird",
+   "tile": [
+    134.16,
+    109.23
+   ],
+   "pos_m": [
+    268.32,
+    218.47
+   ],
+   "home_tile": [
+    134.3,
+    108.3
+   ],
+   "group": "flock_0"
+  },
+  {
+   "id": "bird_032",
+   "species": "bird",
+   "tile": [
+    102.36,
+    99.97
+   ],
+   "pos_m": [
+    204.72,
+    199.94
+   ],
+   "home_tile": [
+    100.6,
+    97.5
+   ],
+   "group": "flock_0"
+  },
+  {
+   "id": "bird_033",
+   "species": "bird",
+   "tile": [
+    103.86,
+    32.31
+   ],
+   "pos_m": [
+    207.72,
+    64.61
+   ],
+   "home_tile": [
+    105.7,
+    32.4
+   ],
+   "group": "flock_3"
+  },
+  {
+   "id": "bird_034",
+   "species": "bird",
+   "tile": [
+    132.51,
+    105.1
+   ],
+   "pos_m": [
+    265.03,
+    210.19
+   ],
+   "home_tile": [
+    130.5,
+    105.3
+   ],
+   "group": "flock_4"
+  },
+  {
+   "id": "bird_035",
+   "species": "bird",
+   "tile": [
+    24.13,
+    20.42
+   ],
+   "pos_m": [
+    48.26,
+    40.83
+   ],
+   "home_tile": [
+    22.7,
+    17.4
+   ],
+   "group": "flock_2"
+  },
+  {
+   "id": "bird_036",
+   "species": "bird",
+   "tile": [
+    55.83,
+    72.51
+   ],
+   "pos_m": [
+    111.66,
+    145.02
+   ],
+   "home_tile": [
+    56.1,
+    75.4
+   ],
+   "group": "flock_2"
+  },
+  {
+   "id": "bird_037",
+   "species": "bird",
+   "tile": [
+    80.39,
+    39.06
+   ],
+   "pos_m": [
+    160.77,
+    78.11
+   ],
+   "home_tile": [
+    79.0,
+    37.3
+   ],
+   "group": "flock_2"
+  },
+  {
+   "id": "bird_038",
+   "species": "bird",
+   "tile": [
+    123.47,
+    102.7
+   ],
+   "pos_m": [
+    246.94,
+    205.41
+   ],
+   "home_tile": [
+    120.7,
+    103.2
+   ],
+   "group": "flock_1"
+  },
+  {
+   "id": "frog_039",
+   "species": "frog",
+   "tile": [
+    84.71,
+    88.83
+   ],
+   "pos_m": [
+    169.42,
+    177.67
+   ],
+   "home_tile": [
+    92,
+    92
+   ],
+   "group": null
+  },
+  {
+   "id": "frog_040",
+   "species": "frog",
+   "tile": [
+    89.07,
+    102.81
+   ],
+   "pos_m": [
+    178.15,
+    205.61
+   ],
+   "home_tile": [
+    92,
+    92
+   ],
+   "group": null
+  },
+  {
+   "id": "frog_041",
+   "species": "frog",
+   "tile": [
+    85.35,
+    99.86
+   ],
+   "pos_m": [
+    170.71,
+    199.72
+   ],
+   "home_tile": [
+    92,
+    92
+   ],
+   "group": null
+  },
+  {
+   "id": "frog_042",
+   "species": "frog",
+   "tile": [
+    94.65,
+    102.22
+   ],
+   "pos_m": [
+    189.31,
+    204.44
+   ],
+   "home_tile": [
+    92,
+    92
+   ],
+   "group": null
+  },
+  {
+   "id": "frog_043",
+   "species": "frog",
+   "tile": [
+    86.8,
+    99.44
+   ],
+   "pos_m": [
+    173.6,
+    198.87
+   ],
+   "home_tile": [
+    92,
+    92
+   ],
+   "group": null
+  },
+  {
+   "id": "frog_044",
+   "species": "frog",
+   "tile": [
+    93.43,
+    82.92
+   ],
+   "pos_m": [
+    186.87,
+    165.84
+   ],
+   "home_tile": [
+    92,
+    92
+   ],
+   "group": null
+  },
+  {
+   "id": "frog_045",
+   "species": "frog",
+   "tile": [
+    98.32,
+    98.2
+   ],
+   "pos_m": [
+    196.64,
+    196.39
+   ],
+   "home_tile": [
+    92,
+    92
+   ],
+   "group": null
+  },
+  {
+   "id": "fish_046",
+   "species": "fish",
+   "tile": [
+    95.81,
+    95.97
+   ],
+   "pos_m": [
+    191.63,
+    191.94
+   ],
+   "home_tile": [
+    92,
+    92
+   ],
+   "group": null
+  },
+  {
+   "id": "fish_047",
+   "species": "fish",
+   "tile": [
+    89.7,
+    95.62
+   ],
+   "pos_m": [
+    179.4,
+    191.25
+   ],
+   "home_tile": [
+    92,
+    92
+   ],
+   "group": null
+  },
+  {
+   "id": "fish_048",
+   "species": "fish",
+   "tile": [
+    89.74,
+    86.84
+   ],
+   "pos_m": [
+    179.47,
+    173.68
+   ],
+   "home_tile": [
+    92,
+    92
+   ],
+   "group": null
+  },
+  {
+   "id": "fish_049",
+   "species": "fish",
+   "tile": [
+    91.62,
+    93.1
+   ],
+   "pos_m": [
+    183.23,
+    186.2
+   ],
+   "home_tile": [
+    92,
+    92
+   ],
+   "group": null
+  },
+  {
+   "id": "fish_050",
+   "species": "fish",
+   "tile": [
+    91.98,
+    92.65
+   ],
+   "pos_m": [
+    183.97,
+    185.29
+   ],
+   "home_tile": [
+    92,
+    92
+   ],
+   "group": null
+  },
+  {
+   "id": "fish_051",
+   "species": "fish",
+   "tile": [
+    93.14,
+    95.69
+   ],
+   "pos_m": [
+    186.28,
+    191.38
+   ],
+   "home_tile": [
+    92,
+    92
+   ],
+   "group": null
+  },
+  {
+   "id": "fish_052",
+   "species": "fish",
+   "tile": [
+    94.95,
+    89.5
+   ],
+   "pos_m": [
+    189.9,
+    179.01
+   ],
+   "home_tile": [
+    92,
+    92
+   ],
+   "group": null
+  },
+  {
+   "id": "fish_053",
+   "species": "fish",
+   "tile": [
+    87.83,
+    91.87
+   ],
+   "pos_m": [
+    175.67,
+    183.74
+   ],
+   "home_tile": [
+    92,
+    92
+   ],
+   "group": null
+  },
+  {
+   "id": "fish_054",
+   "species": "fish",
+   "tile": [
+    100.89,
+    7.27
+   ],
+   "pos_m": [
+    201.78,
+    14.54
+   ],
+   "home_tile": [
+    99.9,
+    5.5
+   ],
+   "group": null
+  },
+  {
+   "id": "fish_055",
+   "species": "fish",
+   "tile": [
+    99.87,
+    12.59
+   ],
+   "pos_m": [
+    199.73,
+    25.18
+   ],
+   "home_tile": [
+    100.1,
+    14.0
+   ],
+   "group": null
+  },
+  {
+   "id": "fish_056",
+   "species": "fish",
+   "tile": [
+    100.3,
+    24.49
+   ],
+   "pos_m": [
+    200.59,
+    48.98
+   ],
+   "home_tile": [
+    100.4,
+    22.3
+   ],
+   "group": null
+  },
+  {
+   "id": "fish_057",
+   "species": "fish",
+   "tile": [
+    97.4,
+    29.16
+   ],
+   "pos_m": [
+    194.8,
+    58.31
+   ],
+   "home_tile": [
+    95.5,
+    29.5
+   ],
+   "group": null
+  },
+  {
+   "id": "fish_058",
+   "species": "fish",
+   "tile": [
+    96.62,
+    35.96
+   ],
+   "pos_m": [
+    193.24,
+    71.92
+   ],
+   "home_tile": [
+    94,
+    38
+   ],
+   "group": null
+  },
+  {
+   "id": "fish_059",
+   "species": "fish",
+   "tile": [
+    92.58,
+    42.5
+   ],
+   "pos_m": [
+    185.15,
+    85.0
+   ],
+   "home_tile": [
+    95.4,
+    44.8
+   ],
+   "group": null
+  },
+  {
+   "id": "fish_060",
+   "species": "fish",
+   "tile": [
+    95.43,
+    49.71
+   ],
+   "pos_m": [
+    190.86,
+    99.43
+   ],
+   "home_tile": [
+    96.5,
+    51.8
+   ],
+   "group": null
+  },
+  {
+   "id": "fish_061",
+   "species": "fish",
+   "tile": [
+    99.43,
+    60.2
+   ],
+   "pos_m": [
+    198.87,
+    120.41
+   ],
+   "home_tile": [
+    99.1,
+    58.7
+   ],
+   "group": null
+  },
+  {
+   "id": "fish_062",
+   "species": "fish",
+   "tile": [
+    95.57,
+    65.45
+   ],
+   "pos_m": [
+    191.14,
+    130.89
+   ],
+   "home_tile": [
+    94.2,
+    63.7
+   ],
+   "group": null
+  },
+  {
+   "id": "fish_063",
+   "species": "fish",
+   "tile": [
+    91.47,
+    72.67
+   ],
+   "pos_m": [
+    182.95,
+    145.33
+   ],
+   "home_tile": [
+    93,
+    70
+   ],
+   "group": null
+  },
+  {
+   "id": "fish_064",
+   "species": "fish",
+   "tile": [
+    91.25,
+    73.03
+   ],
+   "pos_m": [
+    182.51,
+    146.07
+   ],
+   "home_tile": [
+    89.7,
+    74.4
+   ],
+   "group": null
+  },
+  {
+   "id": "fish_065",
+   "species": "fish",
+   "tile": [
+    92.81,
+    79.75
+   ],
+   "pos_m": [
+    185.62,
+    159.49
+   ],
+   "home_tile": [
+    92.0,
+    79.7
+   ],
+   "group": null
+  }
+ ]
+}

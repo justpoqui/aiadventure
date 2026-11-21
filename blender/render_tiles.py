@@ -35,7 +35,8 @@ TILE_PX = bs.TILE_PX                 # 64 — change it in build_scene.py
 TILES_PER_ROW = 16
 MARGIN = 0.125                       # plane/field extends past the tile so AA filtering sees real terrain
 FIELD_RES = 128                      # resolution of the S field image over [-MARGIN, 1+MARGIN]
-BASE_VARIANTS = 4                    # variants of each full (all-same-terrain) tile
+BASE_VARIANTS = 4                    # variants of each full water/path/grass tile
+FLOOR_VARIANTS = 6                   # forest floor covers most of the map: more variants, less repetition
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 OUT = os.path.join(ROOT, "renders", "tiles")
 PARTS = os.path.join(OUT, "_parts")
@@ -82,37 +83,51 @@ def blob_configs():
     return out
 
 
-def edge_profile(t, phases):
-    """Band width along an edge. 1-periodic in t, so d(0) == d(1) and seams line up."""
-    return (0.18 + 0.032 * np.sin(2 * math.pi * (2 * t + phases[0]))
-            + 0.018 * np.sin(2 * math.pi * (3 * t + phases[1]))
-            + 0.008 * np.sin(2 * math.pi * (7 * t + phases[2])))
+D0 = 0.25                            # band width at tile corners (fixed: makes every variant fit)
+EDGE_VARIANTS = 2                    # random shoreline curves per edge tile
 
 
-def smin(a, b, k=0.06):
+def edge_profile(t, a):
+    """Band width along one tile edge. Pinned to D0 with zero slope at both corners
+    (t = 0 and t = 1), so any variant meets any neighbour; free to meander in between."""
+    bump = np.sin(math.pi * t)
+    return np.clip(D0 + bump * (a[0] * np.sin(math.pi * t) + a[1] * np.sin(2 * math.pi * t)
+                                + a[2] * np.sin(3 * math.pi * t)), 0.06, 0.46)
+
+
+def edge_params(rng):
+    """Random curve for each of the four edges of one tile variant."""
+    return {e: (rng.uniform(-0.17, 0.17), rng.uniform(-0.08, 0.08), rng.uniform(-0.04, 0.04))
+            for e in "NESW"}
+
+
+def smin(a, b, k=0.22):
     h = np.clip(0.5 + 0.5 * (b - a) / k, 0.0, 1.0)
     return b * (1 - h) + a * h - k * h * (1 - h)
 
 
-def smax(a, b, k=0.06):
+def smax(a, b, k=0.22):
     return -smin(-a, -b, k)
 
 
-def s_field(b, res=FIELD_RES, phases_h=(0.13, 0.57, 0.31), phases_v=(0.71, 0.29, 0.83)):
-    """Signed distance into the tile's own terrain (positive = inside). Rows go south -> north."""
+def s_field(b, edges=None, res=FIELD_RES):
+    """Signed distance into the tile's own terrain (positive = inside). Rows go south -> north.
+    edges: per-edge curve parameters from edge_params(); None = straight bands at D0."""
+    edges = edges or {e: (0.0, 0.0, 0.0) for e in "NESW"}
     coords = np.linspace(-MARGIN, 1 + MARGIN, res)
     u, v = np.meshgrid(coords, coords)            # v increases with row index (north)
-    dh, dv = edge_profile(u, phases_h), edge_profile(v, phases_v)
+    d = {"N": edge_profile(u, edges["N"]), "S": edge_profile(u, edges["S"]),
+         "E": edge_profile(v, edges["E"]), "W": edge_profile(v, edges["W"])}
     comps = []
-    if not b["N"]: comps.append((1 - v) - dh)
-    if not b["S"]: comps.append(v - dh)
-    if not b["E"]: comps.append((1 - u) - dv)
-    if not b["W"]: comps.append(u - dv)
+    if not b["N"]: comps.append((1 - v) - d["N"])
+    if not b["S"]: comps.append(v - d["S"])
+    if not b["E"]: comps.append((1 - u) - d["E"])
+    if not b["W"]: comps.append(u - d["W"])
     for c, sx, sy in (("NE", "E", "N"), ("NW", "W", "N"), ("SE", "E", "S"), ("SW", "W", "S")):
         if b[sx] and b[sy] and not b[c]:
             dx = (1 - u) if sx == "E" else u
             dy = (1 - v) if sy == "N" else v
-            comps.append(smax(dx - dv, dy - dh))
+            comps.append(smax(dx - d[sx], dy - d[sy]))
     s = np.full(u.shape, 1.0)
     for c in comps:
         s = smin(s, c)
@@ -156,7 +171,14 @@ def interior_window(N, pos):
     x, y = sep.outputs['X'], sep.outputs['Y']
     m = N.math('MINIMUM', N.math('MINIMUM', x, N.math('SUBTRACT', 1.0, x)),
                N.math('MINIMUM', y, N.math('SUBTRACT', 1.0, y)))
-    return N.smooth(0.04, 0.3, m)
+    return N.smooth(0.0, 0.14, m)
+
+
+def variant_switch(N, pos, window):
+    """Crisp, ragged switch from the canonical pattern (edges) to the variant (interior).
+    A hard-ish switch keeps leaves and pebbles whole; a soft crossfade would smear them."""
+    wobble = N.math('MULTIPLY', N.math('SUBTRACT', N.pnoise(pos, 9.0, 2.0, 0.5, seed=88.0), 0.5), 0.7)
+    return N.smooth(0.47, 0.53, N.math('ADD', window, wobble))
 
 
 def surface(N, fn, pos, variant, window, *extra):
@@ -165,7 +187,9 @@ def surface(N, fn, pos, variant, window, *extra):
     if variant == 0:
         return c0, h0
     cv, hv = fn(N, pos, *extra, seed=float(variant) * 13.0) if extra else fn(N, pos, seed=float(variant) * 13.0)
-    return N.mix_rgb(window, c0, cv), h0
+    sw = variant_switch(N, pos, window)
+    return N.mix_rgb(sw, c0, cv), N.math('ADD', N.math('MULTIPLY', h0, N.math('SUBTRACT', 1.0, sw)),
+                                       N.math('MULTIPLY', hv, sw))
 
 
 def tile_material(pair, img, variant):
@@ -179,7 +203,7 @@ def tile_material(pair, img, variant):
     N.link(uvn.outputs['UV'], tex.inputs['Vector'])
     s_raw = tex.outputs['Color']
     s_val = N.math('ADD', s_raw, 0.0)                      # colour -> float
-    jitter = N.math('MULTIPLY', N.math('SUBTRACT', N.pnoise(pos, 6.0, 3.0, 0.55, seed=77.0), 0.5), 0.06)
+    jitter = N.math('MULTIPLY', N.math('SUBTRACT', N.pnoise(pos, 5.0, 3.0, 0.55, seed=77.0), 0.5), 0.1)
     s = N.math('ADD', s_val, jitter)
 
     floor_c, floor_h = surface(N, bs.forest_floor, pos, variant, window)
@@ -197,7 +221,7 @@ def tile_material(pair, img, variant):
         level = N.math('MULTIPLY', N.smooth(0.0, BANK_W + 0.12, s), -1.0)
         detail = N.math('ADD', N.math('MULTIPLY', floor_h, N.math('SUBTRACT', 1.0, bank)),
                         N.math('MULTIPLY', mud_h, bank))
-        rough = N.math('SUBTRACT', 0.88, N.math('MULTIPLY', wmask, 0.8))
+        rough = N.math('SUBTRACT', 0.88, N.math('MULTIPLY', wmask, 0.55))   # wet but not mirror-like: no hot glints
     elif pair == 2:
         path_c, path_h = surface(N, bs.dirt_path, pos, variant, window)
         edge = N.math('MULTIPLY', N.math('SUBTRACT', N.pnoise(pos, 14.0, 2.0, 0.5, seed=78.0), 0.5), 0.09)
@@ -228,7 +252,7 @@ def water_surface(N, pos, variant, window, depth):
     if variant == 0:
         return c0, h0
     cv, _ = bs.water(N, pos, depth, seed=float(variant) * 13.0)
-    return N.mix_rgb(window, c0, cv), h0
+    return N.mix_rgb(window, c0, cv), h0          # water has no small shapes: a soft blend is right
 
 
 def render_tile(obj, pair, s, variant, path):
@@ -259,6 +283,7 @@ def main():
     bs.camera(0.5, 0.5, 1.0, px_per_unit=TILE_PX)
     obj = tile_plane()
     configs = blob_configs()
+    quick = os.environ.get("TILES_QUICK")           # e.g. "12": only the first N blob configs per pair
     cells = []                                         # (part_path, meta)
 
     def add(pair, b, center, variant, s, kind, probability=1.0):
@@ -275,13 +300,19 @@ def main():
 
     # Base forest floor: all neighbours floor. S = -1 everywhere -> pure floor.
     floor_s = np.full((FIELD_RES, FIELD_RES), -1.0)
-    for v in range(BASE_VARIANTS):
-        add(1, None, 0, v, floor_s, "base", probability=1.0 if v == 0 else 0.6)
+    for v in range(FLOOR_VARIANTS):
+        add(1, None, 0, v, floor_s, "base", probability=1.0)
+    import random
     for pair in PAIRS:
-        for b in configs:
-            s = s_field(b)
-            full = all(b.values())
-            add(pair, b, pair, 0, s, "full" if full else "blob")
+        for i, b in enumerate(configs[:int(quick)] if quick else configs):
+            if all(b.values()):
+                add(pair, b, pair, 0, s_field(b), "full")
+                continue
+            for ev in range(EDGE_VARIANTS):
+                rng = random.Random(pair * 100003 + i * 101 + ev)
+                # Each edge-tile variant: its own shoreline curve and its own floor interior.
+                add(pair, b, pair, 1 + (i + ev) % (FLOOR_VARIANTS - 1), s_field(b, edge_params(rng)),
+                    "blob", probability=1.0)
         full_b = {k: 1 for k in BITS}
         for v in range(1, BASE_VARIANTS):                # extra variants of the full tile
             add(pair, full_b, pair, v, s_field(full_b), "full", probability=0.6)

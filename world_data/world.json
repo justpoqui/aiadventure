@@ -1,0 +1,50 @@
+{
+ "size_tiles": [
+  160,
+  120
+ ],
+ "metres_per_tile": 2.0,
+ "size_m": [
+  320.0,
+  240.0
+ ],
+ "seed": 20261121,
+ "origin": "tile (0,0) is the north-west corner; +x east, +y south",
+ "legend": {
+  ".": "forest_floor",
+  "~": "water",
+  "=": "path",
+  ",": "grass",
+  "B": "bridge (water tile underneath, walkable deck)"
+ },
+ "files": [
+  "terrain.txt",
+  "objects.json",
+  "places.json",
+  "wildlife.json"
+ ],
+ "object_counts": {
+  "campsite_fire_pit": 1,
+  "campsite_tent": 1,
+  "campsite_bedroll": 1,
+  "campsite_backpack": 1,
+  "campsite_log_seat": 1,
+  "bridge_ew": 1,
+  "town_hall": 1,
+  "general_store": 1,
+  "garage": 1,
+  "farmhouse": 1,
+  "water_tower": 1,
+  "fallen_log": 45,
+  "mossy_rock": 25,
+  "oak": 378,
+  "pine": 520,
+  "birch": 352,
+  "snag": 92,
+  "berry_bush": 39,
+  "fern": 260,
+  "mushrooms": 70,
+  "lily_pads": 5
+ },
+ "animal_count": 66
+}

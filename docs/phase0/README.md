@@ -22,7 +22,7 @@ behaviour yet. When it is done you will have:
 | 05 | [Mind database + migrations](05-mind-database.md) | 03 | 1 h |
 | 06 | [Mind service + stand-in mind](06-mind-service.md) | 04, 05 | 2 h |
 | 07 | [Godot skeleton (clock, 3D-ready entities, navigation)](07-godot-skeleton.md) | 01 | 3–4 h |
-| 07b | [World map + the 2D look (terrain, trees, day/night, camera)](07b-world-map.md) | 07 | 2 h |
+| 07b | ~~World map + the 2D look~~: replaced by the [forest world](../world/forest_world.md) (Blender tiles, TileMapLayer, wildlife) | 07 | 2 h |
 | 08 | [World database + live persistence](08-world-database.md) | 07 | 2 h |
 | 09 | [MindBridge + handshake](09-bridge-handshake.md) | 06, 08 | 1–2 h |
 | 10 | [Action loop + launcher](10-action-loop.md) | 09 | 1 h |

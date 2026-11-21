@@ -1,0 +1,1534 @@
+{
+ "px_per_tile": 64,
+ "world_metres_per_tile": 2.0,
+ "anchor_note": "anchor_px = pixel (from top-left) of the ground point under the object; place it on the object's world position",
+ "layers": {
+  "ground": "under agents",
+  "water_surface": "on water, under everything",
+  "canopy": "above agents (fade when under)",
+  "building": "y-sorted with agents"
+ },
+ "sprites": [
+  {
+   "id": "berry_bush_1",
+   "type": "berry_bush",
+   "variant": 1,
+   "file": "sprites/berry_bush_1.png",
+   "layer": "ground",
+   "footprint": {
+    "radius_m": 0.8
+   },
+   "blocks_movement": true,
+   "size_px": [
+    113,
+    85
+   ],
+   "anchor_px": [
+    41.6,
+    32.6
+   ],
+   "height_m": 1.48,
+   "meaning": {
+    "kind": "plant",
+    "species": "berry_bush",
+    "truth": {
+     "edible": null,
+     "note": "seed 1,3: red (edible raspberry-like); seed 2: dark (mildly toxic)"
+    },
+    "affordances": [
+     "forage"
+    ],
+    "appearance": {
+     "look": [
+      "low bush with small berries"
+     ],
+     "inspect": [
+      "red berries",
+      "thorny stems"
+     ]
+    }
+   }
+  },
+  {
+   "id": "berry_bush_2",
+   "type": "berry_bush",
+   "variant": 2,
+   "file": "sprites/berry_bush_2.png",
+   "layer": "ground",
+   "footprint": {
+    "radius_m": 0.8
+   },
+   "blocks_movement": true,
+   "size_px": [
+    97,
+    112
+   ],
+   "anchor_px": [
+    45.8,
+    47.4
+   ],
+   "height_m": 1.37,
+   "meaning": {
+    "kind": "plant",
+    "species": "berry_bush",
+    "truth": {
+     "edible": null,
+     "note": "seed 1,3: red (edible raspberry-like); seed 2: dark (mildly toxic)"
+    },
+    "affordances": [
+     "forage"
+    ],
+    "appearance": {
+     "look": [
+      "low bush with small berries"
+     ],
+     "inspect": [
+      "red berries",
+      "thorny stems"
+     ]
+    }
+   }
+  },
+  {
+   "id": "berry_bush_3",
+   "type": "berry_bush",
+   "variant": 3,
+   "file": "sprites/berry_bush_3.png",
+   "layer": "ground",
+   "footprint": {
+    "radius_m": 0.8
+   },
+   "blocks_movement": true,
+   "size_px": [
+    90,
+    100
+   ],
+   "anchor_px": [
+    34.4,
+    46.1
+   ],
+   "height_m": 1.43,
+   "meaning": {
+    "kind": "plant",
+    "species": "berry_bush",
+    "truth": {
+     "edible": null,
+     "note": "seed 1,3: red (edible raspberry-like); seed 2: dark (mildly toxic)"
+    },
+    "affordances": [
+     "forage"
+    ],
+    "appearance": {
+     "look": [
+      "low bush with small berries"
+     ],
+     "inspect": [
+      "red berries",
+      "thorny stems"
+     ]
+    }
+   }
+  },
+  {
+   "id": "birch_1",
+   "type": "birch",
+   "variant": 1,
+   "file": "sprites/birch_1.png",
+   "layer": "canopy",
+   "footprint": {
+    "trunk_radius_m": 0.2
+   },
+   "blocks_movement": true,
+   "size_px": [
+    274,
+    285
+   ],
+   "anchor_px": [
+    77.1,
+    78.8
+   ],
+   "height_m": 9.15,
+   "meaning": {
+    "kind": "tree",
+    "species": "birch",
+    "truth": {
+     "wood_yield": 3,
+     "bark_is_tinder": true
+    },
+    "affordances": [
+     "chop",
+     "strip_bark"
+    ],
+    "appearance": {
+     "look": [
+      "slender pale-barked tree"
+     ],
+     "inspect": [
+      "papery white bark"
+     ],
+     "glimpse": [
+      "tree"
+     ]
+    }
+   }
+  },
+  {
+   "id": "birch_2",
+   "type": "birch",
+   "variant": 2,
+   "file": "sprites/birch_2.png",
+   "layer": "canopy",
+   "footprint": {
+    "trunk_radius_m": 0.2
+   },
+   "blocks_movement": true,
+   "size_px": [
+    293,
+    299
+   ],
+   "anchor_px": [
+    70.4,
+    85.2
+   ],
+   "height_m": 9.99,
+   "meaning": {
+    "kind": "tree",
+    "species": "birch",
+    "truth": {
+     "wood_yield": 3,
+     "bark_is_tinder": true
+    },
+    "affordances": [
+     "chop",
+     "strip_bark"
+    ],
+    "appearance": {
+     "look": [
+      "slender pale-barked tree"
+     ],
+     "inspect": [
+      "papery white bark"
+     ],
+     "glimpse": [
+      "tree"
+     ]
+    }
+   }
+  },
+  {
+   "id": "bridge_ew",
+   "type": "bridge_ew",
+   "variant": 1,
+   "file": "sprites/bridge_ew.png",
+   "layer": "ground",
+   "footprint": {
+    "rect_m": [
+     8.0,
+     2.2
+    ]
+   },
+   "blocks_movement": false,
+   "size_px": [
+    304,
+    118
+   ],
+   "anchor_px": [
+    140.8,
+    48.0
+   ],
+   "height_m": 1.67,
+   "meaning": {
+    "kind": "structure",
+    "place": "bridge",
+    "truth": {
+     "integrity": 0.25,
+     "walkable": true,
+     "may_collapse": true
+    },
+    "affordances": [
+     "cross",
+     "repair"
+    ],
+    "appearance": {
+     "look": [
+      "old plank footbridge"
+     ],
+     "inspect": [
+      "planks soft and spongy",
+      "two planks missing"
+     ]
+    }
+   }
+  },
+  {
+   "id": "bridge_ns",
+   "type": "bridge_ns",
+   "variant": 1,
+   "file": "sprites/bridge_ns.png",
+   "layer": "ground",
+   "footprint": {
+    "rect_m": [
+     2.2,
+     8.0
+    ]
+   },
+   "blocks_movement": false,
+   "size_px": [
+    118,
+    304
+   ],
+   "anchor_px": [
+    48.0,
+    140.8
+   ],
+   "height_m": 1.67,
+   "meaning": {
+    "kind": "structure",
+    "place": "bridge",
+    "truth": {
+     "integrity": 0.25,
+     "walkable": true,
+     "may_collapse": true
+    },
+    "affordances": [
+     "cross",
+     "repair"
+    ],
+    "appearance": {
+     "look": [
+      "old plank footbridge"
+     ],
+     "inspect": [
+      "planks soft and spongy",
+      "two planks missing"
+     ]
+    }
+   }
+  },
+  {
+   "id": "campsite_backpack",
+   "type": "campsite_backpack",
+   "variant": 1,
+   "file": "sprites/campsite_backpack.png",
+   "layer": "ground",
+   "footprint": {
+    "radius_m": 0.4
+   },
+   "blocks_movement": false,
+   "size_px": [
+    57,
+    53
+   ],
+   "anchor_px": [
+    25.1,
+    23.6
+   ],
+   "height_m": 0.44,
+   "meaning": {
+    "kind": "container",
+    "place": "campsite",
+    "truth": {
+     "contains_lore_clues": true
+    },
+    "affordances": [
+     "search",
+     "pick_up"
+    ],
+    "appearance": {
+     "look": [
+      "worn backpack"
+     ],
+     "inspect": [
+      "soaked inside"
+     ]
+    }
+   }
+  },
+  {
+   "id": "campsite_bedroll",
+   "type": "campsite_bedroll",
+   "variant": 1,
+   "file": "sprites/campsite_bedroll.png",
+   "layer": "ground",
+   "footprint": {
+    "radius_m": 0.6
+   },
+   "blocks_movement": false,
+   "size_px": [
+    77,
+    57
+   ],
+   "anchor_px": [
+    35.0,
+    24.6
+   ],
+   "height_m": 0.53,
+   "meaning": {
+    "kind": "prop",
+    "place": "campsite",
+    "truth": {
+     "damp": true
+    },
+    "affordances": [
+     "sleep",
+     "pick_up"
+    ],
+    "appearance": {
+     "look": [
+      "rolled bedroll"
+     ]
+    }
+   }
+  },
+  {
+   "id": "campsite_fire_pit",
+   "type": "campsite_fire_pit",
+   "variant": 1,
+   "file": "sprites/campsite_fire_pit.png",
+   "layer": "ground",
+   "footprint": {
+    "radius_m": 1.2
+   },
+   "blocks_movement": false,
+   "size_px": [
+    108,
+    104
+   ],
+   "anchor_px": [
+    50.9,
+    49.1
+   ],
+   "height_m": 0.32,
+   "meaning": {
+    "kind": "prop",
+    "place": "campsite",
+    "truth": {
+     "ash_age_hours": 10
+    },
+    "affordances": [
+     "build_fire",
+     "warm_up"
+    ],
+    "appearance": {
+     "look": [
+      "ring of stones around ash"
+     ],
+     "inspect": [
+      "ash still faintly warm"
+     ]
+    }
+   }
+  },
+  {
+   "id": "campsite_log_seat",
+   "type": "campsite_log_seat",
+   "variant": 1,
+   "file": "sprites/campsite_log_seat.png",
+   "layer": "ground",
+   "footprint": {
+    "length_m": 2.8,
+    "width_m": 0.47,
+    "angle_deg": 21.3
+   },
+   "blocks_movement": false,
+   "size_px": [
+    119,
+    81
+   ],
+   "anchor_px": [
+    54.5,
+    37.8
+   ],
+   "height_m": 0.74,
+   "meaning": {
+    "kind": "prop",
+    "place": "campsite",
+    "affordances": [
+     "sit"
+    ],
+    "appearance": {
+     "look": [
+      "short log used as a seat"
+     ]
+    }
+   }
+  },
+  {
+   "id": "campsite_tent",
+   "type": "campsite_tent",
+   "variant": 1,
+   "file": "sprites/campsite_tent.png",
+   "layer": "ground",
+   "footprint": {
+    "rect_m": [
+     3.6,
+     2.2
+    ]
+   },
+   "blocks_movement": true,
+   "size_px": [
+    154,
+    111
+   ],
+   "anchor_px": [
+    71.3,
+    47.5
+   ],
+   "height_m": 1.16,
+   "meaning": {
+    "kind": "prop",
+    "place": "campsite",
+    "truth": {
+     "condition": 0.3,
+     "repairable": true
+    },
+    "affordances": [
+     "search",
+     "repair",
+     "shelter"
+    ],
+    "appearance": {
+     "look": [
+      "half-collapsed green tent"
+     ],
+     "inspect": [
+      "one pole snapped"
+     ]
+    }
+   }
+  },
+  {
+   "id": "fallen_log_1",
+   "type": "fallen_log",
+   "variant": 1,
+   "file": "sprites/fallen_log_1.png",
+   "layer": "ground",
+   "footprint": {
+    "length_m": 4.56,
+    "width_m": 1.07,
+    "angle_deg": 12.1
+   },
+   "blocks_movement": true,
+   "size_px": [
+    186,
+    98
+   ],
+   "anchor_px": [
+    84.9,
+    41.6
+   ],
+   "height_m": 1.19,
+   "meaning": {
+    "kind": "deadwood",
+    "truth": {
+     "wood_yield": 3,
+     "rotten": 0.4,
+     "insects": true
+    },
+    "affordances": [
+     "sit",
+     "gather_firewood",
+     "search_under"
+    ],
+    "appearance": {
+     "look": [
+      "fallen mossy log"
+     ],
+     "inspect": [
+      "soft rotting wood",
+      "beetles"
+     ]
+    }
+   }
+  },
+  {
+   "id": "fallen_log_2",
+   "type": "fallen_log",
+   "variant": 2,
+   "file": "sprites/fallen_log_2.png",
+   "layer": "ground",
+   "footprint": {
+    "length_m": 5.55,
+    "width_m": 1.1,
+    "angle_deg": -20.3
+   },
+   "blocks_movement": true,
+   "size_px": [
+    214,
+    129
+   ],
+   "anchor_px": [
+    98.7,
+    57.0
+   ],
+   "height_m": 1.21,
+   "meaning": {
+    "kind": "deadwood",
+    "truth": {
+     "wood_yield": 3,
+     "rotten": 0.4,
+     "insects": true
+    },
+    "affordances": [
+     "sit",
+     "gather_firewood",
+     "search_under"
+    ],
+    "appearance": {
+     "look": [
+      "fallen mossy log"
+     ],
+     "inspect": [
+      "soft rotting wood",
+      "beetles"
+     ]
+    }
+   }
+  },
+  {
+   "id": "farmhouse",
+   "type": "farmhouse",
+   "variant": 1,
+   "file": "sprites/farmhouse.png",
+   "layer": "building",
+   "footprint": {
+    "rect_m": [
+     10.0,
+     7.2
+    ]
+   },
+   "blocks_movement": true,
+   "size_px": [
+    475,
+    437
+   ],
+   "anchor_px": [
+    182.4,
+    137.6
+   ],
+   "height_m": 8.4,
+   "meaning": {
+    "kind": "building",
+    "place": "farmhouse",
+    "truth": {
+     "stage": "damaged",
+     "roof_condition": 0.3,
+     "walls_condition": 0.7
+    },
+    "affordances": [
+     "enter",
+     "search",
+     "repair",
+     "shelter"
+    ],
+    "appearance": {
+     "look": [
+      "farmhouse with a hole in the roof"
+     ],
+     "inspect": [
+      "rafters exposed",
+      "hearth inside"
+     ]
+    }
+   }
+  },
+  {
+   "id": "fern_1",
+   "type": "fern",
+   "variant": 1,
+   "file": "sprites/fern_1.png",
+   "layer": "ground",
+   "footprint": {
+    "radius_m": 0.5
+   },
+   "blocks_movement": false,
+   "size_px": [
+    128,
+    122
+   ],
+   "anchor_px": [
+    58.9,
+    52.8
+   ],
+   "height_m": 0.8,
+   "meaning": {
+    "kind": "plant",
+    "species": "fern",
+    "truth": {
+     "edible": false
+    },
+    "affordances": [],
+    "appearance": {
+     "look": [
+      "fern fronds"
+     ]
+    }
+   }
+  },
+  {
+   "id": "fern_2",
+   "type": "fern",
+   "variant": 2,
+   "file": "sprites/fern_2.png",
+   "layer": "ground",
+   "footprint": {
+    "radius_m": 0.5
+   },
+   "blocks_movement": false,
+   "size_px": [
+    125,
+    114
+   ],
+   "anchor_px": [
+    61.3,
+    49.6
+   ],
+   "height_m": 0.8,
+   "meaning": {
+    "kind": "plant",
+    "species": "fern",
+    "truth": {
+     "edible": false
+    },
+    "affordances": [],
+    "appearance": {
+     "look": [
+      "fern fronds"
+     ]
+    }
+   }
+  },
+  {
+   "id": "fern_3",
+   "type": "fern",
+   "variant": 3,
+   "file": "sprites/fern_3.png",
+   "layer": "ground",
+   "footprint": {
+    "radius_m": 0.5
+   },
+   "blocks_movement": false,
+   "size_px": [
+    113,
+    118
+   ],
+   "anchor_px": [
+    52.8,
+    55.2
+   ],
+   "height_m": 0.8,
+   "meaning": {
+    "kind": "plant",
+    "species": "fern",
+    "truth": {
+     "edible": false
+    },
+    "affordances": [],
+    "appearance": {
+     "look": [
+      "fern fronds"
+     ]
+    }
+   }
+  },
+  {
+   "id": "garage",
+   "type": "garage",
+   "variant": 1,
+   "file": "sprites/garage.png",
+   "layer": "building",
+   "footprint": {
+    "rect_m": [
+     10.0,
+     8.0
+    ]
+   },
+   "blocks_movement": true,
+   "size_px": [
+    430,
+    407
+   ],
+   "anchor_px": [
+    179.8,
+    149.6
+   ],
+   "height_m": 5.67,
+   "meaning": {
+    "kind": "building",
+    "place": "garage",
+    "truth": {
+     "stage": "damaged",
+     "contains_tools": true
+    },
+    "affordances": [
+     "enter",
+     "search",
+     "repair"
+    ],
+    "appearance": {
+     "look": [
+      "garage with a rusty corrugated roof"
+     ],
+     "inspect": [
+      "smell of old oil"
+     ]
+    }
+   }
+  },
+  {
+   "id": "general_store",
+   "type": "general_store",
+   "variant": 1,
+   "file": "sprites/general_store.png",
+   "layer": "building",
+   "footprint": {
+    "rect_m": [
+     10.0,
+     7.2
+    ]
+   },
+   "blocks_movement": true,
+   "size_px": [
+    425,
+    388
+   ],
+   "anchor_px": [
+    170.2,
+    125.4
+   ],
+   "height_m": 6.4,
+   "meaning": {
+    "kind": "building",
+    "place": "general_store",
+    "truth": {
+     "stage": "damaged",
+     "back_room_door_jammed": true
+    },
+    "affordances": [
+     "enter",
+     "search",
+     "repair"
+    ],
+    "appearance": {
+     "look": [
+      "shop with a torn striped awning"
+     ],
+     "inspect": [
+      "shelves mostly empty"
+     ]
+    }
+   }
+  },
+  {
+   "id": "lily_pads_1",
+   "type": "lily_pads",
+   "variant": 1,
+   "file": "sprites/lily_pads_1.png",
+   "layer": "water_surface",
+   "footprint": {
+    "radius_m": 1.0
+   },
+   "blocks_movement": false,
+   "size_px": [
+    66,
+    60
+   ],
+   "anchor_px": [
+    44.9,
+    21.1
+   ],
+   "height_m": 0.02,
+   "meaning": {
+    "kind": "plant",
+    "species": "water_lily",
+    "truth": {
+     "edible_roots": true
+    },
+    "affordances": [],
+    "appearance": {
+     "look": [
+      "floating round leaves"
+     ],
+     "inspect": [
+      "white flower"
+     ]
+    }
+   }
+  },
+  {
+   "id": "lily_pads_2",
+   "type": "lily_pads",
+   "variant": 2,
+   "file": "sprites/lily_pads_2.png",
+   "layer": "water_surface",
+   "footprint": {
+    "radius_m": 1.0
+   },
+   "blocks_movement": false,
+   "size_px": [
+    65,
+    74
+   ],
+   "anchor_px": [
+    32.5,
+    23.8
+   ],
+   "height_m": 0.23,
+   "meaning": {
+    "kind": "plant",
+    "species": "water_lily",
+    "truth": {
+     "edible_roots": true
+    },
+    "affordances": [],
+    "appearance": {
+     "look": [
+      "floating round leaves"
+     ],
+     "inspect": [
+      "white flower"
+     ]
+    }
+   }
+  },
+  {
+   "id": "mossy_rock_1",
+   "type": "mossy_rock",
+   "variant": 1,
+   "file": "sprites/mossy_rock_1.png",
+   "layer": "ground",
+   "footprint": {
+    "radius_m": 1.2
+   },
+   "blocks_movement": true,
+   "size_px": [
+    96,
+    97
+   ],
+   "anchor_px": [
+    42.4,
+    47.7
+   ],
+   "height_m": 0.81,
+   "meaning": {
+    "kind": "rock",
+    "truth": {
+     "material": "granite"
+    },
+    "affordances": [
+     "sit",
+     "climb",
+     "gather_stones"
+    ],
+    "appearance": {
+     "look": [
+      "moss-covered boulder"
+     ],
+     "inspect": [
+      "cold damp stone"
+     ]
+    }
+   }
+  },
+  {
+   "id": "mossy_rock_2",
+   "type": "mossy_rock",
+   "variant": 2,
+   "file": "sprites/mossy_rock_2.png",
+   "layer": "ground",
+   "footprint": {
+    "radius_m": 1.2
+   },
+   "blocks_movement": true,
+   "size_px": [
+    149,
+    132
+   ],
+   "anchor_px": [
+    64.3,
+    56.8
+   ],
+   "height_m": 1.3,
+   "meaning": {
+    "kind": "rock",
+    "truth": {
+     "material": "granite"
+    },
+    "affordances": [
+     "sit",
+     "climb",
+     "gather_stones"
+    ],
+    "appearance": {
+     "look": [
+      "moss-covered boulder"
+     ],
+     "inspect": [
+      "cold damp stone"
+     ]
+    }
+   }
+  },
+  {
+   "id": "mossy_rock_3",
+   "type": "mossy_rock",
+   "variant": 3,
+   "file": "sprites/mossy_rock_3.png",
+   "layer": "ground",
+   "footprint": {
+    "radius_m": 1.2
+   },
+   "blocks_movement": true,
+   "size_px": [
+    114,
+    87
+   ],
+   "anchor_px": [
+    51.5,
+    39.3
+   ],
+   "height_m": 0.88,
+   "meaning": {
+    "kind": "rock",
+    "truth": {
+     "material": "granite"
+    },
+    "affordances": [
+     "sit",
+     "climb",
+     "gather_stones"
+    ],
+    "appearance": {
+     "look": [
+      "moss-covered boulder"
+     ],
+     "inspect": [
+      "cold damp stone"
+     ]
+    }
+   }
+  },
+  {
+   "id": "mushrooms_1",
+   "type": "mushrooms",
+   "variant": 1,
+   "file": "sprites/mushrooms_1.png",
+   "layer": "ground",
+   "footprint": {
+    "radius_m": 0.3
+   },
+   "blocks_movement": false,
+   "size_px": [
+    48,
+    45
+   ],
+   "anchor_px": [
+    27.0,
+    15.7
+   ],
+   "height_m": 0.3,
+   "meaning": {
+    "kind": "fungus",
+    "species": "mushrooms",
+    "truth": {
+     "edible": null,
+     "note": "seed 2 red-spotted: toxic; seed 1 brown: edible"
+    },
+    "affordances": [
+     "forage"
+    ],
+    "appearance": {
+     "look": [
+      "cluster of mushrooms"
+     ],
+     "inspect": [
+      "caps and gills",
+      "earthy smell"
+     ]
+    }
+   }
+  },
+  {
+   "id": "mushrooms_2",
+   "type": "mushrooms",
+   "variant": 2,
+   "file": "sprites/mushrooms_2.png",
+   "layer": "ground",
+   "footprint": {
+    "radius_m": 0.3
+   },
+   "blocks_movement": false,
+   "size_px": [
+    45,
+    51
+   ],
+   "anchor_px": [
+    21.0,
+    18.2
+   ],
+   "height_m": 0.35,
+   "meaning": {
+    "kind": "fungus",
+    "species": "mushrooms",
+    "truth": {
+     "edible": null,
+     "note": "seed 2 red-spotted: toxic; seed 1 brown: edible"
+    },
+    "affordances": [
+     "forage"
+    ],
+    "appearance": {
+     "look": [
+      "cluster of mushrooms"
+     ],
+     "inspect": [
+      "caps and gills",
+      "earthy smell"
+     ]
+    }
+   }
+  },
+  {
+   "id": "oak_1",
+   "type": "oak",
+   "variant": 1,
+   "file": "sprites/oak_1.png",
+   "layer": "canopy",
+   "footprint": {
+    "trunk_radius_m": 0.35
+   },
+   "blocks_movement": true,
+   "size_px": [
+    347,
+    357
+   ],
+   "anchor_px": [
+    116.0,
+    114.6
+   ],
+   "height_m": 9.42,
+   "meaning": {
+    "kind": "tree",
+    "species": "oak",
+    "truth": {
+     "wood_yield": 6,
+     "shade": true
+    },
+    "affordances": [
+     "chop",
+     "shelter_from_sun"
+    ],
+    "appearance": {
+     "look": [
+      "broad leafy tree"
+     ],
+     "inspect": [
+      "rough bark",
+      "acorns underfoot"
+     ],
+     "glimpse": [
+      "tree"
+     ]
+    }
+   }
+  },
+  {
+   "id": "oak_2",
+   "type": "oak",
+   "variant": 2,
+   "file": "sprites/oak_2.png",
+   "layer": "canopy",
+   "footprint": {
+    "trunk_radius_m": 0.35
+   },
+   "blocks_movement": true,
+   "size_px": [
+    357,
+    371
+   ],
+   "anchor_px": [
+    106.6,
+    116.0
+   ],
+   "height_m": 10.75,
+   "meaning": {
+    "kind": "tree",
+    "species": "oak",
+    "truth": {
+     "wood_yield": 6,
+     "shade": true
+    },
+    "affordances": [
+     "chop",
+     "shelter_from_sun"
+    ],
+    "appearance": {
+     "look": [
+      "broad leafy tree"
+     ],
+     "inspect": [
+      "rough bark",
+      "acorns underfoot"
+     ],
+     "glimpse": [
+      "tree"
+     ]
+    }
+   }
+  },
+  {
+   "id": "oak_3",
+   "type": "oak",
+   "variant": 3,
+   "file": "sprites/oak_3.png",
+   "layer": "canopy",
+   "footprint": {
+    "trunk_radius_m": 0.35
+   },
+   "blocks_movement": true,
+   "size_px": [
+    332,
+    338
+   ],
+   "anchor_px": [
+    97.1,
+    98.4
+   ],
+   "height_m": 9.75,
+   "meaning": {
+    "kind": "tree",
+    "species": "oak",
+    "truth": {
+     "wood_yield": 6,
+     "shade": true
+    },
+    "affordances": [
+     "chop",
+     "shelter_from_sun"
+    ],
+    "appearance": {
+     "look": [
+      "broad leafy tree"
+     ],
+     "inspect": [
+      "rough bark",
+      "acorns underfoot"
+     ],
+     "glimpse": [
+      "tree"
+     ]
+    }
+   }
+  },
+  {
+   "id": "pine_1",
+   "type": "pine",
+   "variant": 1,
+   "file": "sprites/pine_1.png",
+   "layer": "canopy",
+   "footprint": {
+    "trunk_radius_m": 0.3
+   },
+   "blocks_movement": true,
+   "size_px": [
+    377,
+    376
+   ],
+   "anchor_px": [
+    101.7,
+    100.5
+   ],
+   "height_m": 12.67,
+   "meaning": {
+    "kind": "tree",
+    "species": "pine",
+    "truth": {
+     "wood_yield": 5,
+     "resin": true
+    },
+    "affordances": [
+     "chop",
+     "gather_kindling"
+    ],
+    "appearance": {
+     "look": [
+      "tall dark conifer"
+     ],
+     "inspect": [
+      "sticky resin",
+      "pine needles"
+     ],
+     "glimpse": [
+      "tree"
+     ]
+    }
+   }
+  },
+  {
+   "id": "pine_2",
+   "type": "pine",
+   "variant": 2,
+   "file": "sprites/pine_2.png",
+   "layer": "canopy",
+   "footprint": {
+    "trunk_radius_m": 0.3
+   },
+   "blocks_movement": true,
+   "size_px": [
+    402,
+    403
+   ],
+   "anchor_px": [
+    107.1,
+    105.5
+   ],
+   "height_m": 14.31,
+   "meaning": {
+    "kind": "tree",
+    "species": "pine",
+    "truth": {
+     "wood_yield": 5,
+     "resin": true
+    },
+    "affordances": [
+     "chop",
+     "gather_kindling"
+    ],
+    "appearance": {
+     "look": [
+      "tall dark conifer"
+     ],
+     "inspect": [
+      "sticky resin",
+      "pine needles"
+     ],
+     "glimpse": [
+      "tree"
+     ]
+    }
+   }
+  },
+  {
+   "id": "pine_3",
+   "type": "pine",
+   "variant": 3,
+   "file": "sprites/pine_3.png",
+   "layer": "canopy",
+   "footprint": {
+    "trunk_radius_m": 0.3
+   },
+   "blocks_movement": true,
+   "size_px": [
+    390,
+    375
+   ],
+   "anchor_px": [
+    109.5,
+    100.0
+   ],
+   "height_m": 12.88,
+   "meaning": {
+    "kind": "tree",
+    "species": "pine",
+    "truth": {
+     "wood_yield": 5,
+     "resin": true
+    },
+    "affordances": [
+     "chop",
+     "gather_kindling"
+    ],
+    "appearance": {
+     "look": [
+      "tall dark conifer"
+     ],
+     "inspect": [
+      "sticky resin",
+      "pine needles"
+     ],
+     "glimpse": [
+      "tree"
+     ]
+    }
+   }
+  },
+  {
+   "id": "snag_1",
+   "type": "snag",
+   "variant": 1,
+   "file": "sprites/snag_1.png",
+   "layer": "canopy",
+   "footprint": {
+    "trunk_radius_m": 0.35
+   },
+   "blocks_movement": true,
+   "size_px": [
+    141,
+    213
+   ],
+   "anchor_px": [
+    38.5,
+    56.0
+   ],
+   "height_m": 6.21,
+   "meaning": {
+    "kind": "tree",
+    "species": "dead_snag",
+    "truth": {
+     "wood_yield": 4,
+     "dry_wood": true,
+     "may_fall": 0.02
+    },
+    "affordances": [
+     "chop",
+     "gather_firewood"
+    ],
+    "appearance": {
+     "look": [
+      "dead grey tree, bare branches"
+     ],
+     "inspect": [
+      "dry cracked wood"
+     ],
+     "glimpse": [
+      "tree"
+     ]
+    }
+   }
+  },
+  {
+   "id": "snag_2",
+   "type": "snag",
+   "variant": 2,
+   "file": "sprites/snag_2.png",
+   "layer": "canopy",
+   "footprint": {
+    "trunk_radius_m": 0.35
+   },
+   "blocks_movement": true,
+   "size_px": [
+    185,
+    200
+   ],
+   "anchor_px": [
+    34.8,
+    33.8
+   ],
+   "height_m": 8.07,
+   "meaning": {
+    "kind": "tree",
+    "species": "dead_snag",
+    "truth": {
+     "wood_yield": 4,
+     "dry_wood": true,
+     "may_fall": 0.02
+    },
+    "affordances": [
+     "chop",
+     "gather_firewood"
+    ],
+    "appearance": {
+     "look": [
+      "dead grey tree, bare branches"
+     ],
+     "inspect": [
+      "dry cracked wood"
+     ],
+     "glimpse": [
+      "tree"
+     ]
+    }
+   }
+  },
+  {
+   "id": "town_hall",
+   "type": "town_hall",
+   "variant": 1,
+   "file": "sprites/town_hall.png",
+   "layer": "building",
+   "footprint": {
+    "rect_m": [
+     12.0,
+     9.2
+    ]
+   },
+   "blocks_movement": true,
+   "size_px": [
+    823,
+    823
+   ],
+   "anchor_px": [
+    338.0,
+    338.0
+   ],
+   "height_m": 11.2,
+   "meaning": {
+    "kind": "building",
+    "place": "town_hall",
+    "truth": {
+     "stage": "damaged",
+     "records_room_locked": true
+    },
+    "affordances": [
+     "enter",
+     "search",
+     "repair"
+    ],
+    "appearance": {
+     "look": [
+      "large stone building with a bell cupola"
+     ],
+     "inspect": [
+      "records room door locked"
+     ]
+    }
+   }
+  },
+  {
+   "id": "water_tower",
+   "type": "water_tower",
+   "variant": 1,
+   "file": "sprites/water_tower.png",
+   "layer": "building",
+   "footprint": {
+    "rect_m": [
+     3.0,
+     3.0
+    ]
+   },
+   "blocks_movement": true,
+   "size_px": [
+    345,
+    345
+   ],
+   "anchor_px": [
+    76.8,
+    76.8
+   ],
+   "height_m": 14.6,
+   "meaning": {
+    "kind": "structure",
+    "place": "water_tower",
+    "truth": {
+     "tank_water_level": 0.0,
+     "main_pipe_cracked": true,
+     "ladder_top_broken": true
+    },
+    "affordances": [
+     "climb",
+     "inspect",
+     "repair"
+    ],
+    "appearance": {
+     "look": [
+      "tall water tower on four legs"
+     ],
+     "inspect": [
+      "rust streaks",
+      "ladder rungs missing near the top"
+     ]
+    }
+   }
+  }
+ ]
+}

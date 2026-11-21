@@ -1,0 +1,330 @@
+{
+ "detail": 4,
+ "px_per_metre_in_sheet": 128.0,
+ "facing": "north (up); rotate the sprite to the heading",
+ "shadow": "none baked; draw a soft blob shadow offset to the south-east",
+ "species": {
+  "fish": {
+   "sheet": "wildlife/fish.png",
+   "frame_px": 87,
+   "frames": [
+    "swim_1",
+    "swim_2",
+    "swim_3",
+    "swim_4"
+   ],
+   "size_m": 0.3,
+   "display_scale": 1.3,
+   "scale": 0.325,
+   "behaviour": {
+    "habitat": "water",
+    "speed_mps": 0.8,
+    "dart_speed_mps": 3.0,
+    "flee_radius_m": 4.0,
+    "active_hours": [
+     0,
+     24
+    ],
+    "group": [
+     1,
+     3
+    ]
+   },
+   "meaning": {
+    "kind": "animal",
+    "species": "fish",
+    "truth": {
+     "edible": true,
+     "catchable_with": [
+      "spear",
+      "line",
+      "hands_rarely"
+     ]
+    },
+    "appearance": {
+     "glimpse": [
+      "movement in the water"
+     ],
+     "look": [
+      "dark fish under the surface"
+     ]
+    }
+   }
+  },
+  "rabbit": {
+   "sheet": "wildlife/rabbit.png",
+   "frame_px": 102,
+   "frames": [
+    "sit",
+    "hop_1",
+    "hop_2",
+    "graze"
+   ],
+   "size_m": 0.4,
+   "display_scale": 1.4,
+   "scale": 0.35,
+   "behaviour": {
+    "habitat": "land",
+    "prefers": [
+     "grass",
+     "forest_floor"
+    ],
+    "speed_mps": 1.2,
+    "flee_speed_mps": 6.0,
+    "flee_radius_m": 9.0,
+    "active_hours": [
+     [
+      4,
+      10
+     ],
+     [
+      17,
+      22
+     ]
+    ],
+    "group": [
+     1,
+     2
+    ]
+   },
+   "meaning": {
+    "kind": "animal",
+    "species": "rabbit",
+    "truth": {
+     "edible": true,
+     "catchable_with": [
+      "snare"
+     ]
+    },
+    "appearance": {
+     "glimpse": [
+      "small brown animal"
+     ],
+     "look": [
+      "rabbit",
+      "long ears"
+     ]
+    }
+   }
+  },
+  "deer": {
+   "sheet": "wildlife/deer.png",
+   "frame_px": 384,
+   "frames": [
+    "stand",
+    "walk_1",
+    "walk_2",
+    "graze",
+    "alert"
+   ],
+   "size_m": 1.8,
+   "display_scale": 1.0,
+   "scale": 0.25,
+   "behaviour": {
+    "habitat": "land",
+    "prefers": [
+     "grass",
+     "forest_floor"
+    ],
+    "speed_mps": 1.0,
+    "flee_speed_mps": 9.0,
+    "flee_radius_m": 22.0,
+    "active_hours": [
+     [
+      5,
+      9
+     ],
+     [
+      17,
+      21
+     ]
+    ],
+    "drinks_at": "water_edge",
+    "group": [
+     2,
+     4
+    ]
+   },
+   "meaning": {
+    "kind": "animal",
+    "species": "deer",
+    "truth": {
+     "edible": true,
+     "dangerous": false
+    },
+    "appearance": {
+     "glimpse": [
+      "large brown animal"
+     ],
+     "look": [
+      "deer",
+      "white tail flashing"
+     ]
+    }
+   }
+  },
+  "bird": {
+   "sheet": "wildlife/bird.png",
+   "frame_px": 56,
+   "frames": [
+    "perch",
+    "fly_1",
+    "fly_2"
+   ],
+   "size_m": 0.15,
+   "display_scale": 1.8,
+   "scale": 0.45,
+   "behaviour": {
+    "habitat": "air",
+    "perches": [
+     "trees",
+     "ground"
+    ],
+    "speed_mps": 0.6,
+    "fly_speed_mps": 8.0,
+    "flee_radius_m": 6.0,
+    "active_hours": [
+     5,
+     20
+    ],
+    "group": [
+     1,
+     5
+    ],
+    "sings_at": [
+     [
+      5,
+      8
+     ],
+     [
+      18,
+      20
+     ]
+    ]
+   },
+   "meaning": {
+    "kind": "animal",
+    "species": "songbird",
+    "truth": {
+     "edible": false
+    },
+    "appearance": {
+     "glimpse": [
+      "small bird"
+     ],
+     "look": [
+      "brown bird with a rusty breast"
+     ],
+     "hear": [
+      "birdsong"
+     ]
+    }
+   }
+  },
+  "squirrel": {
+   "sheet": "wildlife/squirrel.png",
+   "frame_px": 97,
+   "frames": [
+    "sit",
+    "run_1",
+    "run_2"
+   ],
+   "size_m": 0.4,
+   "display_scale": 1.5,
+   "scale": 0.375,
+   "behaviour": {
+    "habitat": "land",
+    "near": "trees",
+    "speed_mps": 1.5,
+    "flee_speed_mps": 5.0,
+    "flee_to": "tree",
+    "flee_radius_m": 7.0,
+    "active_hours": [
+     6,
+     19
+    ],
+    "group": [
+     1,
+     1
+    ]
+   },
+   "meaning": {
+    "kind": "animal",
+    "species": "squirrel",
+    "truth": {
+     "edible": true,
+     "caches_nuts": true
+    },
+    "appearance": {
+     "glimpse": [
+      "quick red-brown animal"
+     ],
+     "look": [
+      "squirrel",
+      "bushy tail"
+     ]
+    }
+   }
+  },
+  "frog": {
+   "sheet": "wildlife/frog.png",
+   "frame_px": 67,
+   "frames": [
+    "sit",
+    "jump"
+   ],
+   "size_m": 0.08,
+   "display_scale": 2.0,
+   "scale": 0.5,
+   "behaviour": {
+    "habitat": "shore",
+    "speed_mps": 0.3,
+    "jump_m": 0.8,
+    "flee_radius_m": 2.5,
+    "flee_to": "water",
+    "active_hours": [
+     [
+      19,
+      24
+     ],
+     [
+      0,
+      6
+     ]
+    ],
+    "group": [
+     1,
+     3
+    ],
+    "croaks_at": [
+     [
+      20,
+      24
+     ],
+     [
+      0,
+      3
+     ]
+    ]
+   },
+   "meaning": {
+    "kind": "animal",
+    "species": "frog",
+    "truth": {
+     "edible": true
+    },
+    "appearance": {
+     "glimpse": [
+      "something small hops"
+     ],
+     "look": [
+      "green frog"
+     ],
+     "hear": [
+      "croaking"
+     ]
+    }
+   }
+  }
+ }
+}
