@@ -115,6 +115,30 @@ class Pong(Payload):
     pass
 
 
+class BeliefBrief(Payload):
+    text: str
+    confidence: float = Field(ge=0, le=1)
+    hypothesis: bool = False
+
+
+class MindTelemetry(Payload):
+    """What the mind reports about ITSELF, for the observer UI only (character panel).
+    Godot must never feed this into world logic. Everything here is subjective:
+    perceived needs, self-assessed skills, beliefs that may be wrong."""
+    self_name: str | None = None              # None until the survivor learns or chooses one
+    activity: str = ""                        # "walking toward the tall metal structure"
+    thought: str | None = None
+    goal: str | None = None
+    mood: str = "calm"
+    mood_valence: float = Field(default=0.0, ge=-1, le=1)
+    believed_place: str | None = None
+    needs: dict[str, float] = Field(default_factory=dict)     # perceived DEFICIT 0..1 (1 = desperate)
+    traits: dict[str, float] = Field(default_factory=dict)    # 0..1
+    skills: dict[str, float] = Field(default_factory=dict)    # self-assessed 0..1
+    beliefs: list[BeliefBrief] = Field(default_factory=list)  # most salient first
+    last_journal: str | None = None
+
+
 class ErrorMsg(Payload):
     code: str
     message: str
@@ -126,6 +150,7 @@ PAYLOADS: dict[str, type[Payload]] = {
     "shutdown": Shutdown, "ping": Ping,
     "hello_ack": HelloAck, "action_command": ActionCommand,
     "save_ready": SaveReady, "pong": Pong, "error": ErrorMsg,
+    "mind_telemetry": MindTelemetry,
 }
 
 
@@ -157,6 +182,9 @@ Notes on the details:
   protocol change.
 - `ActionCommand.action_type` only allows `move_to` and `wait` in Phase 0. New
   actions are added here when they are built.
+- `MindTelemetry` is the mind's **self-report for the observer UI** (step 14).
+  It is subjective (perceived needs, self-judged skills, beliefs that may be
+  wrong), and Godot must never use it in world logic.
 - Godot's JSON parser turns every number into a float (`12` → `12.0`). Pydantic
   accepts `12.0` for an `int` field, and the tests prove it.
 
@@ -257,13 +285,21 @@ def test_unknown_type_rejected():
     with pytest.raises(ProtocolError) as e:
         parse(envelope("teleport", {}))
     assert e.value.code == "unknown_type"
+
+
+def test_telemetry_rejects_out_of_range_confidence():
+    import pydantic
+
+    from mind.transport.protocol import MindTelemetry
+    with pytest.raises(pydantic.ValidationError):
+        MindTelemetry(beliefs=[{"text": "The tower has water", "confidence": 1.5}])
 ```
 
 ## Check it works
 
 ```bash
 cd mind_service
-pytest -q tests/test_protocol.py               # → 5 passed
+pytest -q tests/test_protocol.py               # → 6 passed
 python -m mind.tools.export_schemas --check    # → schemas up to date
 ```
 

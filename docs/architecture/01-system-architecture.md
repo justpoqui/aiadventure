@@ -129,7 +129,7 @@ simulation of many in-game days.
 | G→M | `action_update` | `started` / `progress` / `completed` / `failed` / `interrupted` + **observed outcome as percepts** |
 | M→G | `action_command` | One primitive action with params and a `plan_step_id` |
 | M→G | `action_cancel` | Abort the current action |
-| M→G | `mind_telemetry` | Debug only: current thought, goal stack, emotion. **Never consumed by world logic.** |
+| M→G | `mind_telemetry` | Observer UI only (character panel, inspector): the mind's self-report, covering activity, thought, goal, mood, perceived needs, traits, self-assessed skills, top beliefs. **Never consumed by world logic.** |
 | G→M | `save_request` / M→G `save_ready` | Coordinated save (see `06-data-architecture.md §5`) |
 | M→G | `belief_power` | The single scalar feeding DivinitySystem (ADR-014); sent once per in-game hour |
 

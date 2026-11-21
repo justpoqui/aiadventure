@@ -28,19 +28,21 @@ behaviour yet. When it is done you will have:
 | 11 | [Save checkpoints + restore](11-save-checkpoints.md) | 10 | 1–2 h |
 | 12 | [LLM gateway](12-llm-gateway.md) | 02, 05 | 2–3 h |
 | 13 | [Continuous integration](13-ci.md) | 06 | 30 min |
-| 14 | [Exit checklist](14-exit-checklist.md) | all | 1 h |
+| 14 | [Character panel](14-character-panel.md) | 09 | 1 h |
+| 15 | [Exit checklist](15-exit-checklist.md) | all | 1 h |
 
 Python (04–06) and Godot (07–08) are independent tracks, so you can switch
 between them. They meet at step 09.
 
 ## How this guide was verified
 
-All code in steps 04–12 was **run before it was written down**:
-- The Python service passed its 16 tests.
+All code in steps 04–14 was **run before it was written down**:
+- The Python service passed its 17 tests.
 - The Godot side ran headless on Godot 4.6 with godot-sqlite v4.6, against the
   real mind service. That covered walking, daily checkpoints, resume, restore,
   protocol mismatch, the service starting late or restarting, saving while the
-  mind is down, and snapshot consistency.
+  mind is down, and snapshot consistency. The character panel (step 14) was
+  rendered and screenshotted with both preview and live data.
 - Six real bugs found during that testing are fixed in the code and called out
   where they happened.
 

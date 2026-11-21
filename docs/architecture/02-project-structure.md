@@ -54,6 +54,7 @@ aiadventure/
 │   ├── views/
 │   │   └── view2d/                ← sprites, tilemaps, animation (view3d/ added later)
 │   ├── ui/
+│   │   ├── character_panel/       ← brief card of the mind's self-report (key C)
 │   │   ├── divine_panel/          ← acts of god, power pool, prayers heard
 │   │   ├── observer_hud/
 │   │   ├── mind_inspector/        ← beliefs, goals, thoughts, emotions (from telemetry)
@@ -165,6 +166,7 @@ Main (Node)                                   scenes/main.tscn
     ├── ObserverHUD
     ├── TimeControls
     ├── DivinePanel
+    ├── CharacterPanel (CanvasLayer)   brief, player-facing; MindInspector is the deep debug view
     ├── MindInspector
     ├── TruthBeliefDiff (debug, toggle)
     └── JournalViewer

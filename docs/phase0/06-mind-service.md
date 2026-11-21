@@ -15,7 +15,7 @@ It is allowed to use coordinates because it is not a real mind.
 """
 from ulid import ULID
 
-from mind.transport.protocol import ActionCommand, ActionUpdate
+from mind.transport.protocol import ActionCommand, ActionUpdate, MindTelemetry
 
 DEFAULT_WAYPOINTS = [{"x": 20.0, "z": 0.0}, {"x": 20.0, "z": 15.0}, {"x": 0.0, "z": 15.0}, {"x": 0.0, "z": 0.0}]
 
@@ -33,6 +33,11 @@ class ScriptedMind:
         if upd.status in ("completed", "failed"):
             return [self._next()]
         return []
+
+    def telemetry(self) -> MindTelemetry:
+        """Honest telemetry: a stand-in mind has no needs, beliefs or skills to report."""
+        n = (self._i - 1) % len(self.waypoints) + 1
+        return MindTelemetry(activity=f"Walking to waypoint {n} of {len(self.waypoints)} (stand-in mind)")
 
     def _next(self) -> ActionCommand:
         wp = self.waypoints[self._i % len(self.waypoints)]
@@ -108,14 +113,18 @@ class Session:
         mind = self.minds.setdefault(msg.agent_id, ScriptedMind(msg.agent_id))
         for cmd in mind.on_spawn():
             await self.send("action_command", cmd, msg.agent_id)
+        await self.send("mind_telemetry", mind.telemetry(), msg.agent_id)
 
     async def on_action_update(self, env, msg):
         mind = self.minds.get(env.agent_id)
         if mind is None:
             log.warning("action_update for unknown agent %s", env.agent_id)
             return
-        for cmd in mind.on_action_update(msg):
+        cmds = mind.on_action_update(msg)
+        for cmd in cmds:
             await self.send("action_command", cmd, env.agent_id)
+        if cmds:
+            await self.send("mind_telemetry", mind.telemetry(), env.agent_id)
 
     async def on_tick(self, env, msg):
         pass
@@ -156,6 +165,7 @@ What each handler does:
 | `action_update` | Passes the result to that agent's mind, which may send the next command |
 | `save_request` | `VACUUM INTO` the snapshot folder, replies with the file's sha256 |
 | `shutdown` | Closes the database cleanly |
+| *(after each new command)* | Sends `mind_telemetry`, the mind's self-report for the character panel (step 14). The stand-in mind honestly reports only its activity. |
 | a bad version | Sends an `error`, then **closes with code 1002** and the explanation as the close reason. Godot relies on the close reason (step 09). |
 
 ## 6.3 Server and entry point
@@ -275,11 +285,14 @@ async def test_handshake_walk_and_save(url, tmp_path):
                           tick=1, agent_id="a_0001"))
         cmd = await recv(ws)
         assert cmd["type"] == "action_command" and cmd["payload"]["action_type"] == "move_to"
+        tele = await recv(ws)
+        assert tele["type"] == "mind_telemetry" and "stand-in" in tele["payload"]["activity"]
 
         await ws.send(env("action_update", {"action_id": cmd["payload"]["action_id"], "status": "completed"},
                           tick=30, agent_id="a_0001"))
         cmd2 = await recv(ws)
         assert cmd2["payload"]["params"]["target"] != cmd["payload"]["params"]["target"]
+        assert (await recv(ws))["type"] == "mind_telemetry"
 
         snap = tmp_path / "snapshots" / "test"
         await ws.send(env("save_request", {"snapshot_dir": str(snap)}, tick=31))
@@ -304,7 +317,7 @@ async def test_protocol_mismatch_closes_cleanly(url):
 ## Check it works
 
 ```bash
-pytest -q                  # → 11 passed at this point
+pytest -q                  # → 12 passed at this point
 python -m mind             # → "mind service listening on ws://127.0.0.1:8765"
 ```
 

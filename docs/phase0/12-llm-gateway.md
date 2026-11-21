@@ -378,7 +378,7 @@ def test_missing_context_is_a_loud_error():
 ## Check it works
 
 ```bash
-pytest -q                            # → 16 passed
+pytest -q                            # → 17 passed
 ollama ps                            # Ollama running (step 02)
 python -m mind.tools.smoke_llm
 ```
