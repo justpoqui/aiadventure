@@ -10,20 +10,23 @@ the body around, and answers save requests.
 ```python
 """STAND-IN MIND — Phase 0 scaffolding only. Deleted in Phase 1.
 
-It walks the body around fixed waypoints so the action loop can be tested.
-It is allowed to use coordinates because it is not a real mind.
+It walks the body around a small rectangle next to where it spawned, so the action
+loop can be tested. It is allowed to use coordinates because it is not a real mind.
 """
 from ulid import ULID
 
 from mind.transport.protocol import ActionCommand, ActionUpdate, MindTelemetry
 
-DEFAULT_WAYPOINTS = [{"x": 20.0, "z": 0.0}, {"x": 20.0, "z": 15.0}, {"x": 0.0, "z": 15.0}, {"x": 0.0, "z": 0.0}]
+# Offsets in metres from the spawn point (fits inside the campsite clearing).
+DEFAULT_WAYPOINTS = [{"x": 12.0, "z": 0.0}, {"x": 12.0, "z": 10.0}, {"x": 0.0, "z": 10.0}, {"x": 0.0, "z": 0.0}]
 
 
 class ScriptedMind:
-    def __init__(self, agent_id: str, waypoints: list[dict] | None = None):
+    def __init__(self, agent_id: str, waypoints: list[dict] | None = None,
+                 origin: tuple[float, float] = (0.0, 0.0)):
         self.agent_id = agent_id
-        self.waypoints = waypoints or DEFAULT_WAYPOINTS
+        ox, oz = origin
+        self.waypoints = [{"x": ox + w["x"], "z": oz + w["z"]} for w in (waypoints or DEFAULT_WAYPOINTS)]
         self._i = 0
 
     def on_spawn(self) -> list[ActionCommand]:
@@ -110,7 +113,9 @@ class Session:
         self._require_db()
         self.db.execute("INSERT OR IGNORE INTO agents (agent_id, created_tick, seed) VALUES (?, ?, ?)",
                         (msg.agent_id, env.tick, self.world_seed))
-        mind = self.minds.setdefault(msg.agent_id, ScriptedMind(msg.agent_id))
+        if msg.agent_id not in self.minds:
+            self.minds[msg.agent_id] = ScriptedMind(msg.agent_id, origin=(msg.position.x, msg.position.z))
+        mind = self.minds[msg.agent_id]
         for cmd in mind.on_spawn():
             await self.send("action_command", cmd, msg.agent_id)
         await self.send("mind_telemetry", mind.telemetry(), msg.agent_id)
@@ -242,6 +247,11 @@ def test_walks_waypoints_in_order():
     assert m.on_action_update(ActionUpdate(action_id=first.action_id, status="started")) == []
     nxt = m.on_action_update(ActionUpdate(action_id=first.action_id, status="completed"))[0]
     assert nxt.params["target"] == {"x": 2, "z": 0}
+
+
+def test_waypoints_are_relative_to_spawn():
+    m = ScriptedMind("a", [{"x": 5, "z": 0}], origin=(70.0, 140.0))
+    assert m.on_spawn()[0].params["target"] == {"x": 75.0, "z": 140.0}
 ```
 
 `mind_service/tests/test_server.py`
@@ -317,7 +327,7 @@ async def test_protocol_mismatch_closes_cleanly(url):
 ## Check it works
 
 ```bash
-pytest -q                  # → 12 passed at this point
+pytest -q                  # → 13 passed at this point
 python -m mind             # → "mind service listening on ws://127.0.0.1:8765"
 ```
 

@@ -10,7 +10,7 @@ at the bottom.
 - [ ] `python -m mind.tools.smoke_llm` returns a valid, first-person thought (step 12)
 
 ## Protocol & connection
-- [ ] `pytest -q` in `mind_service`: all 17 pass
+- [ ] `pytest -q` in `mind_service`: all 18 pass
 - [ ] `export_schemas --check` → up to date
 - [ ] Godot connects whichever program starts first (step 09, checks 2–3)
 - [ ] A protocol mismatch produces one clear error and no retry loop (step 09, check 5)
@@ -19,8 +19,13 @@ at the bottom.
 ## Simulation & 3D-readiness
 - [ ] The stand-in mind walks the body around its rectangle with no input from you (step 10)
 - [ ] Speed controls (Space, =, −) behave, and movement scales with game time
-- [ ] `Vector2` appears in `sim/` only in `sim_units.gd` and `sim_navigation_2d.gd`
+- [ ] `Vector2` appears in `sim/` only in `sim_units.gd`, `sim_navigation_2d.gd` and `nav_builder_2d.gd`
 - [ ] The `DevClickToWalk` tool has been deleted
+
+## World & 2D look
+- [ ] The world loads from `terrain_map.png`, and editing the PNG changes the world on the next run (step 07b)
+- [ ] The survivor never walks on water or rock; crossing the river uses the bridge
+- [ ] Canopies fade when the survivor walks under trees; day/night tints the world
 
 ## Observer UI
 - [ ] **C** toggles the character panel; it shows the stand-in mind's activity live (step 14)

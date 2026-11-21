@@ -2,8 +2,11 @@
 
 ## 1. Objective reality (Godot)
 
-The world is a set of entities. Each entity has components, and each component
-has true state. All state is persisted in `world.sqlite`. The world evolves on
+The ground itself is **terrain truth**: an editable PNG where one pixel is one
+2 m cell and the colour gives the terrain (grass, forest, water, trail, rock,
+gravel, bridge). `SimTerrain` reads it; navigation and views are derived from
+it. On top of the ground, the world is a set of entities. Each entity has
+components, and each component has true state. All state is persisted in `world.sqlite`. The world evolves on
 its own: weather, decay of unmaintained buildings, food spoilage, tree
 regrowth, stream flow by season. Every change is written to `world_events`.
 

@@ -283,13 +283,14 @@ func all() -> Array:
 `godot/autoload/spatial.gd`
 ```gdscript
 extends Node
-## Holds the active spatial implementations (2D now, 3D later).
-## Simulation code calls Spatial.nav / Spatial.query and never touches 2D APIs directly.
+## Holds the active spatial implementations (2D now, 3D later) and the terrain truth.
+## Simulation code calls Spatial.nav / Spatial.query / Spatial.terrain and never touches 2D APIs directly.
 
 signal nav_ready
 
 var nav: SimNavigation
 var query: SimSpatialQuery
+var terrain: SimTerrain
 
 
 func install(new_nav: SimNavigation, new_query: SimSpatialQuery) -> void:
@@ -443,17 +444,33 @@ authority must not be a 2D type. The ActionRunner node is added in step 10.
 
 ## 7.8 The world and main scenes
 
-`godot/world/world.gd`
+This is a **temporary** world script for this step's hand-drawn navigation area. Step 07b replaces it with the terrain-map world.
+
+`godot/world/world.gd   (step 07 version)`
 ```gdscript
 extends Node2D
-## Installs the 2D spatial implementations once the navigation map is usable.
+## STEP 07 VERSION (temporary): uses the hand-drawn NavigationRegion2D.
+## Replaced in step 07b by the terrain-map world.
 
 
 func _ready() -> void:
-	# The navigation map only becomes usable after it syncs on a physics frame.
-	await get_tree().physics_frame
-	await get_tree().physics_frame
-	Spatial.install(SimNavigation2D.new(get_world_2d().get_navigation_map()), SimSpatialQuery.new())
+	var region := $NavigationRegion2D as NavigationRegion2D
+	var poly := region.navigation_polygon
+	# A point we know is navigable: the centre of the mesh's first polygon.
+	var probe := Vector2.ZERO
+	var first := poly.get_polygon(0)
+	for i in first:
+		probe += poly.get_vertices()[i]
+	probe /= first.size()
+	# The navigation server syncs in the background. Never wait a fixed number of frames:
+	# wait until the map really answers a query at the probe point.
+	var map := get_world_2d().get_navigation_map()
+	while true:
+		await get_tree().physics_frame
+		if NavigationServer2D.map_get_iteration_id(map) > 0 \
+				and NavigationServer2D.map_get_closest_point(map, probe).distance_to(probe) < 1.0:
+			break
+	Spatial.install(SimNavigation2D.new(map), SimSpatialQuery.new())
 	print("World: navigation ready")
 ```
 
@@ -559,7 +576,8 @@ func _unhandled_input(event: InputEvent) -> void:
 4. Press **=** a few times. The body walks 4×, then 16× faster, because movement
    uses sim minutes.
 5. **3D-readiness self-check:** search `sim/` for `Vector2`. It may appear only
-   in `sim_units.gd` and `sim_navigation_2d.gd`.
+   in `sim_units.gd` and `sim_navigation_2d.gd` (and, after step 07b,
+   `nav_builder_2d.gd`).
 
 ## Common mistakes
 
@@ -568,7 +586,10 @@ func _unhandled_input(event: InputEvent) -> void:
 - **Setting the View2D position in its `_ready`.** That overwrites the editor
   placement before the entity reads it. The comment in `view_2d.gd` explains
   this.
-- **Using navigation in the first frame.** The map isn't synced yet, which is
-  why `world.gd` waits two physics frames.
+- **Waiting a fixed number of frames for navigation.** The navigation server
+  syncs in the background, and a big map can take a dozen or more frames.
+  `world.gd` waits until the map *answers a query*. (An earlier version of this
+  guide waited two frames. It worked on the small test area and failed on the
+  real map in step 07b.)
 - **Wrong autoload order.** You get `Identifier not found: SimClock` at
   startup.

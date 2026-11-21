@@ -32,7 +32,8 @@ aiadventure/
 │   │   ├── mind_bridge.gd         ← WebSocket client, envelope codec
 │   │   └── save_manager.gd
 │   ├── sim/
-│   │   ├── spatial/               ← SpatialQuery + Navigation interfaces; 2D impls now, 3D later
+│   │   ├── terrain/               ← SimTerrain: ground truth per 2 m cell, read from world/map/terrain_map.png
+│   │   ├── spatial/               ← SpatialQuery + Navigation interfaces; 2D impls (incl. NavBuilder2D) now, 3D later
 │   │   ├── divinity/              ← DivinitySystem: power pool, act catalogue, plausibility validation
 │   │   ├── lore/                  ← clue gates, recollection triggers (reads lore truth)
 │   │   ├── perception/            ← vision, hearing, interoception, fidelity rules
@@ -48,11 +49,12 @@ aiadventure/
 │   │   ├── resource_nodes/        ← trees, rock outcrops, springs, berry bushes
 │   │   └── containers/
 │   ├── world/
+│   │   ├── map/terrain_map.png    ← paint the world: one pixel = one 2 m cell (legend in Phase 0 step 07b)
 │   │   ├── regions/               ← forest.tscn, campsite.tscn, trail.tscn, town.tscn
 │   │   └── world.tscn
 │   ├── data/definitions/          ← .tres Resources: entity types, materials, observables
 │   ├── views/
-│   │   └── view2d/                ← sprites, tilemaps, animation (view3d/ added later)
+│   │   └── view2d/                ← terrain shader, tree canopies, day/night, observer camera, art/ (view3d/ added later)
 │   ├── ui/
 │   │   ├── character_panel/       ← brief card of the mind's self-report (key C)
 │   │   ├── divine_panel/          ← acts of god, power pool, prayers heard

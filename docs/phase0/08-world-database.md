@@ -164,6 +164,7 @@ extends Node
 signal checkpoint_finished(label: String, ok: bool)
 
 const FLUSH_EVERY_TICKS := 60          # write live state once per game hour
+const START_TICK := 360                # a new world begins at 06:00 on day 1: "I survived the night."
 const MIND_SAVE_TIMEOUT_MS := 30000
 
 var slot: String = "default"
@@ -192,7 +193,7 @@ func _ready() -> void:
 		randomize()
 		world_seed = randi() | 1
 		db.set_meta_value("world_seed", str(world_seed))
-	SimClock.tick = int(db.get_meta_value("current_tick", "0"))
+	SimClock.tick = int(db.get_meta_value("current_tick", str(START_TICK)))
 	for row in db.load_entities():
 		_saved_rows[row["entity_id"]] = row
 	print("SaveManager: slot '%s' at tick %d (%s)" % [slot, SimClock.tick, ProjectSettings.globalize_path(slot_dir)])
@@ -394,17 +395,19 @@ build.
 ## Check it works
 
 1. Run the game. The output shows
-   `SaveManager: slot 'default' at tick 0 (<path>)`. Note the path.
+   `SaveManager: slot 'default' at tick 360 (<path>)`. A new world starts at
+   06:00 on day 1 (`START_TICK`): the survivor wakes having survived the
+   night. Note the path.
 2. Click to walk somewhere distinctive. Wait a few seconds. Close the window
    with the **X button**, not the editor's Stop button.
-3. Run again. The output shows `… at tick N` with N > 0, and the body appears
+3. Run again. The output shows `… at tick N` with N > 360, and the body appears
    **where you left it**.
 4. Open `<path>/world.sqlite` in a SQLite browser such as *DB Browser for
    SQLite* (read-only). `world_meta` has `world_seed` and `current_tick`;
    `entities` has `agent_a_0001` with an opaque handle like `e_3fa91c02`.
 5. Try a different slot: run with `-- --slot=test` (Project → Project Settings
    → Editor → Run → Main Run Args, or from the terminal). This starts a fresh
-   world at tick 0.
+   world at tick 360.
 
 ## Common mistakes
 

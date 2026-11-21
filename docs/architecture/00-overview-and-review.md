@@ -185,7 +185,7 @@ on this hardware. The embedding model runs on the CPU. See
 | 007 | Dual belief representation (propositional + narrative) | Text-only; symbolic-only |
 | 008 | Hierarchical goals; GOAP only at the Objective level | Flat GOAP; pure LLM planning |
 | 009 | Godot is the clock master; sim time ≠ real time; time dilation when minds lag | Real-time-locked sim |
-| 010 | **2D top-down now, 3D-ready**: simulation in metres with `Vector3` positions; presentation is a swappable View layer; spatial queries and navigation behind interfaces | 3D now (content cost); 2D-only data model (blocks 3D later) |
+| 010 | **2D top-down now, 3D-ready**: simulation in metres with `Vector3` positions; presentation is a swappable View layer; spatial queries and navigation behind interfaces. *Confirmed in review round 3:* ground painted by a shader from an editable terrain-map PNG (world truth), with lush top-down tree canopies. | 3D now (content cost); 2D-only data model (blocks 3D later); tilemap autotiling (visible grid, more art) |
 | 011 | Opaque entity handles in the mind; self-assigned labels | Truth-named IDs |
 | 012 | Player is an observer plus an **unseen higher power** whose acts are limited by the survivor's belief power | Player avatar; unlimited god tools |
 | 013 | Qwen3 8B primary on 8 GB VRAM; 14B optional for overnight reflection; embeddings on CPU | 14B primary (doesn't fit) |

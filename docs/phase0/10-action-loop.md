@@ -94,8 +94,9 @@ Delete the `DevClickToWalk` node from `main.tscn` and the file
 
 Start the mind service, then run the game.
 
-1. Within a second the body starts walking a rectangle: (20,0) → (20,15) →
-   (0,15) → (0,0) metres, over and over.
+1. Within a second the body starts walking a 12 × 10 m rectangle that starts
+   where it spawned (inside the campsite clearing, after step 07b), over and
+   over. The stand-in mind gets the spawn point from `agent_spawned`.
 2. Press **=** twice (16×). It walks the loop much faster, and the mind keeps
    up.
 3. Stop the mind service while it walks. The body finishes its current leg and

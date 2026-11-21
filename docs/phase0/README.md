@@ -22,6 +22,7 @@ behaviour yet. When it is done you will have:
 | 05 | [Mind database + migrations](05-mind-database.md) | 03 | 1 h |
 | 06 | [Mind service + stand-in mind](06-mind-service.md) | 04, 05 | 2 h |
 | 07 | [Godot skeleton (clock, 3D-ready entities, navigation)](07-godot-skeleton.md) | 01 | 3–4 h |
+| 07b | [World map + the 2D look (terrain, trees, day/night, camera)](07b-world-map.md) | 07 | 2 h |
 | 08 | [World database + live persistence](08-world-database.md) | 07 | 2 h |
 | 09 | [MindBridge + handshake](09-bridge-handshake.md) | 06, 08 | 1–2 h |
 | 10 | [Action loop + launcher](10-action-loop.md) | 09 | 1 h |
@@ -37,12 +38,13 @@ between them. They meet at step 09.
 ## How this guide was verified
 
 All code in steps 04–14 was **run before it was written down**:
-- The Python service passed its 17 tests.
+- The Python service passed its 18 tests.
 - The Godot side ran headless on Godot 4.6 with godot-sqlite v4.6, against the
   real mind service. That covered walking, daily checkpoints, resume, restore,
   protocol mismatch, the service starting late or restarting, saving while the
   mind is down, and snapshot consistency. The character panel (step 14) was
-  rendered and screenshotted with both preview and live data.
+  rendered and screenshotted with both preview and live data. The world map
+  (step 07b) was rendered, and its pathfinding was tested on the real map.
 - Six real bugs found during that testing are fixed in the code and called out
   where they happened.
 
@@ -57,8 +59,8 @@ launcher script, and the in-editor steps (scene building, navigation baking).
 2. **Never let Godot code read the mind database, or Python code read the world
    database.** That separation is the foundation of the whole project.
 3. **Simulation units are metres and game minutes.** Pixels exist only in
-   `views/` and in the two adapter files `sim_units.gd` and
-   `sim_navigation_2d.gd`. If you ever type a pixel value anywhere else in
+   `views/` and in the three 2D adapter files `sim_units.gd`,
+   `sim_navigation_2d.gd` and `nav_builder_2d.gd`. If you ever type a pixel value anywhere else in
    `sim/`, stop.
 4. **Anything named "stand-in" or "scripted" is scaffolding** and will be
    deleted in Phase 1. Don't polish it.
