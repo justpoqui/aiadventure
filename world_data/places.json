@@ -226,16 +226,16 @@
    "id": "bridge",
    "kind": "structure",
    "center_tile": [
-    96.0,
-    62.5
+    96.5,
+    63.5
    ],
    "center_m": [
-    192.0,
-    125.0
+    193.0,
+    127.0
    ],
    "radius_tiles": [
     4.0,
-    1.5
+    1.0
    ],
    "contains": "old plank footbridge over the stream (weak: integrity 0.25)"
   },

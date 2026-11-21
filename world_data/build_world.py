@@ -187,9 +187,11 @@ def build(seed):
     for pts, wdt in ((trail_w, 1.6), (trail_e, 1.6), (road_ns, 2.2), (road_ew, 2.2)):
         g.line(pts, wdt + 2.2, FLOOR, rng)                  # floor margin around every path
         g.line(pts, wdt, PATH, rng)
-    bridge = [(x, y) for y in (y_cross - 1, y_cross) for x in range(s_w - 1, s_e + 2)]
+    # Deck only over the water itself (one cell = 2 m wide, like the plank sprite); the banks
+    # either side stay forest floor so the shoreline tiles stay clean.
+    bridge = [(x, y_cross) for x in range(s_w, s_e + 1)]
     place("trail", "path", 66, 64, 34, 4, "worn trail from the campsite to the stream and on to the town")
-    place("bridge", "structure", (s_w + s_e) / 2, y_cross - 0.5, (s_e - s_w) / 2 + 2, 1.5,
+    place("bridge", "structure", (s_w + s_e) / 2 + 0.5, y_cross + 0.5, (s_e - s_w) / 2 + 2, 1.0,
           "old plank footbridge over the stream (weak: integrity 0.25)")
 
     # Animal paths: thin tracks between water and clearings.
@@ -237,7 +239,7 @@ def populate(rng, g, places, buildings, crossing, pond, stream, sprites):
                             ("campsite_log_seat", 0.5, 1.8, 1.0)):
         add(kind, cx + dx, cy + dy, r, "campsite", sprite=kind)
     s_w, s_e, yc = crossing
-    add("bridge_ew", (s_w + s_e) / 2 + 0.5, yc, 3.0, "bridge", sprite="bridge_ew")
+    add("bridge_ew", (s_w + s_e + 1) / 2, yc + 0.5, 3.0, "bridge", sprite="bridge_ew")
     for bid, (bx, by) in buildings.items():
         add(bid, bx, by, 5.0 if bid != "water_tower" else 2.0, bid, sprite=bid)
 
@@ -270,7 +272,7 @@ def populate(rng, g, places, buildings, crossing, pond, stream, sprites):
     def tree_kind(x, y):
         r = rng.random()
         north = y < 40
-        if r < 0.05:
+        if r < 0.025:
             return "snag", 1.2
         if north:
             return ("pine", 1.4) if r < 0.65 else ("oak", 1.8) if r < 0.85 else ("birch", 1.3)
@@ -282,12 +284,13 @@ def populate(rng, g, places, buildings, crossing, pond, stream, sprites):
         if any(n in (WATER, BRIDGE, PATH) for n in g.neighbours8(x, y)):
             continue
         near_grass = sum(n == GRASS for n in g.neighbours8(x, y))
-        if near_grass >= 3 or rng.random() > 0.55:
+        if near_grass >= 3 or rng.random() > 0.9:
             continue
         kind, r = tree_kind(x, y)
         px, py = x + rng.uniform(0.1, 0.9), y + rng.uniform(0.1, 0.9)
-        if free(px, py, r * 0.85):
-            add(kind, px, py, r * 0.85)
+        # Crowns overlap in a real forest: only the trunks need room (about 40% of the crown).
+        if free(px, py, r * 0.42):
+            add(kind, px, py, r * 0.42)
 
     scatter("berry_bush", 60, 0.6, clearing_edge)
     scatter("fern", 260, 0.3, is_floor)

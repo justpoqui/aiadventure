@@ -1,7 +1,7 @@
 {
  "tile_px": 64,
  "tiles_per_row": 16,
- "rows": 10,
+ "rows": 19,
  "world_metres_per_tile": 2.0,
  "terrain_set": {
   "mode": "MATCH_CORNERS_AND_SIDES",
@@ -114,7 +114,7 @@
    "terrain_name": "forest_floor",
    "kind": "base",
    "variant": 1,
-   "probability": 0.6,
+   "probability": 1.0,
    "peering": {
     "TOP_SIDE": 0,
     "TOP_RIGHT_CORNER": 0,
@@ -135,7 +135,7 @@
    "terrain_name": "forest_floor",
    "kind": "base",
    "variant": 2,
-   "probability": 0.6,
+   "probability": 1.0,
    "peering": {
     "TOP_SIDE": 0,
     "TOP_RIGHT_CORNER": 0,
@@ -156,7 +156,7 @@
    "terrain_name": "forest_floor",
    "kind": "base",
    "variant": 3,
-   "probability": 0.6,
+   "probability": 1.0,
    "peering": {
     "TOP_SIDE": 0,
     "TOP_RIGHT_CORNER": 0,
@@ -173,10 +173,52 @@
     4,
     0
    ],
+   "terrain": 0,
+   "terrain_name": "forest_floor",
+   "kind": "base",
+   "variant": 4,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 0,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 0,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 0,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 0,
+    "TOP_LEFT_CORNER": 0
+   }
+  },
+  {
+   "atlas": [
+    5,
+    0
+   ],
+   "terrain": 0,
+   "terrain_name": "forest_floor",
+   "kind": "base",
+   "variant": 5,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 0,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 0,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 0,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 0,
+    "TOP_LEFT_CORNER": 0
+   }
+  },
+  {
+   "atlas": [
+    6,
+    0
+   ],
    "terrain": 1,
    "terrain_name": "water",
    "kind": "blob",
-   "variant": 0,
+   "variant": 1,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 0,
@@ -201,13 +243,44 @@
   },
   {
    "atlas": [
-    5,
+    7,
     0
    ],
    "terrain": 1,
    "terrain_name": "water",
    "kind": "blob",
-   "variant": 0,
+   "variant": 2,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 0,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 0,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 0,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 0,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 0,
+    "NE": 0,
+    "E": 0,
+    "SE": 0,
+    "S": 0,
+    "SW": 0,
+    "W": 0,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    8,
+    0
+   ],
+   "terrain": 1,
+   "terrain_name": "water",
+   "kind": "blob",
+   "variant": 2,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 0,
@@ -232,13 +305,44 @@
   },
   {
    "atlas": [
-    6,
+    9,
     0
    ],
    "terrain": 1,
    "terrain_name": "water",
    "kind": "blob",
-   "variant": 0,
+   "variant": 3,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 0,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 0,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 0,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 1,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 0,
+    "NE": 0,
+    "E": 0,
+    "SE": 0,
+    "S": 0,
+    "SW": 0,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    10,
+    0
+   ],
+   "terrain": 1,
+   "terrain_name": "water",
+   "kind": "blob",
+   "variant": 3,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 0,
@@ -263,13 +367,44 @@
   },
   {
    "atlas": [
-    7,
+    11,
     0
    ],
    "terrain": 1,
    "terrain_name": "water",
    "kind": "blob",
-   "variant": 0,
+   "variant": 4,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 0,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 0,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 1,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 0,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 0,
+    "NE": 0,
+    "E": 0,
+    "SE": 0,
+    "S": 1,
+    "SW": 0,
+    "W": 0,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    12,
+    0
+   ],
+   "terrain": 1,
+   "terrain_name": "water",
+   "kind": "blob",
+   "variant": 4,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 0,
@@ -294,13 +429,44 @@
   },
   {
    "atlas": [
-    8,
+    13,
     0
    ],
    "terrain": 1,
    "terrain_name": "water",
    "kind": "blob",
-   "variant": 0,
+   "variant": 5,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 0,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 1,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 0,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 0,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 0,
+    "NE": 0,
+    "E": 1,
+    "SE": 0,
+    "S": 0,
+    "SW": 0,
+    "W": 0,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    14,
+    0
+   ],
+   "terrain": 1,
+   "terrain_name": "water",
+   "kind": "blob",
+   "variant": 5,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 1,
@@ -325,13 +491,44 @@
   },
   {
    "atlas": [
-    9,
+    15,
     0
    ],
    "terrain": 1,
    "terrain_name": "water",
    "kind": "blob",
-   "variant": 0,
+   "variant": 1,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 1,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 0,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 0,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 0,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 0,
+    "SE": 0,
+    "S": 0,
+    "SW": 0,
+    "W": 0,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    0,
+    1
+   ],
+   "terrain": 1,
+   "terrain_name": "water",
+   "kind": "blob",
+   "variant": 1,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 0,
@@ -356,13 +553,44 @@
   },
   {
    "atlas": [
-    10,
-    0
+    1,
+    1
    ],
    "terrain": 1,
    "terrain_name": "water",
    "kind": "blob",
-   "variant": 0,
+   "variant": 2,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 0,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 0,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 1,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 1,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 0,
+    "NE": 0,
+    "E": 0,
+    "SE": 0,
+    "S": 1,
+    "SW": 0,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    2,
+    1
+   ],
+   "terrain": 1,
+   "terrain_name": "water",
+   "kind": "blob",
+   "variant": 2,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 0,
@@ -387,13 +615,44 @@
   },
   {
    "atlas": [
-    11,
-    0
+    3,
+    1
    ],
    "terrain": 1,
    "terrain_name": "water",
    "kind": "blob",
-   "variant": 0,
+   "variant": 3,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 0,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 0,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 1,
+    "BOTTOM_LEFT_CORNER": 1,
+    "LEFT_SIDE": 1,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 0,
+    "NE": 0,
+    "E": 0,
+    "SE": 0,
+    "S": 1,
+    "SW": 1,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    4,
+    1
+   ],
+   "terrain": 1,
+   "terrain_name": "water",
+   "kind": "blob",
+   "variant": 3,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 0,
@@ -418,13 +677,44 @@
   },
   {
    "atlas": [
-    12,
-    0
+    5,
+    1
    ],
    "terrain": 1,
    "terrain_name": "water",
    "kind": "blob",
-   "variant": 0,
+   "variant": 4,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 0,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 1,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 0,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 1,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 0,
+    "NE": 0,
+    "E": 1,
+    "SE": 0,
+    "S": 0,
+    "SW": 0,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    6,
+    1
+   ],
+   "terrain": 1,
+   "terrain_name": "water",
+   "kind": "blob",
+   "variant": 4,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 0,
@@ -449,13 +739,44 @@
   },
   {
    "atlas": [
-    13,
-    0
+    7,
+    1
    ],
    "terrain": 1,
    "terrain_name": "water",
    "kind": "blob",
-   "variant": 0,
+   "variant": 5,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 0,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 1,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 1,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 0,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 0,
+    "NE": 0,
+    "E": 1,
+    "SE": 0,
+    "S": 1,
+    "SW": 0,
+    "W": 0,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    8,
+    1
+   ],
+   "terrain": 1,
+   "terrain_name": "water",
+   "kind": "blob",
+   "variant": 5,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 0,
@@ -480,13 +801,44 @@
   },
   {
    "atlas": [
-    14,
-    0
+    9,
+    1
    ],
    "terrain": 1,
    "terrain_name": "water",
    "kind": "blob",
-   "variant": 0,
+   "variant": 1,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 0,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 1,
+    "BOTTOM_RIGHT_CORNER": 1,
+    "BOTTOM_SIDE": 1,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 0,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 0,
+    "NE": 0,
+    "E": 1,
+    "SE": 1,
+    "S": 1,
+    "SW": 0,
+    "W": 0,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    10,
+    1
+   ],
+   "terrain": 1,
+   "terrain_name": "water",
+   "kind": "blob",
+   "variant": 1,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 1,
@@ -511,13 +863,44 @@
   },
   {
    "atlas": [
-    15,
-    0
+    11,
+    1
    ],
    "terrain": 1,
    "terrain_name": "water",
    "kind": "blob",
-   "variant": 0,
+   "variant": 2,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 1,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 0,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 0,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 1,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 0,
+    "SE": 0,
+    "S": 0,
+    "SW": 0,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    12,
+    1
+   ],
+   "terrain": 1,
+   "terrain_name": "water",
+   "kind": "blob",
+   "variant": 2,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 1,
@@ -542,13 +925,44 @@
   },
   {
    "atlas": [
-    0,
+    13,
     1
    ],
    "terrain": 1,
    "terrain_name": "water",
    "kind": "blob",
-   "variant": 0,
+   "variant": 3,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 1,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 0,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 0,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 1,
+    "TOP_LEFT_CORNER": 1
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 0,
+    "SE": 0,
+    "S": 0,
+    "SW": 0,
+    "W": 1,
+    "NW": 1
+   }
+  },
+  {
+   "atlas": [
+    14,
+    1
+   ],
+   "terrain": 1,
+   "terrain_name": "water",
+   "kind": "blob",
+   "variant": 3,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 1,
@@ -573,13 +987,75 @@
   },
   {
    "atlas": [
-    1,
+    15,
     1
    ],
    "terrain": 1,
    "terrain_name": "water",
    "kind": "blob",
-   "variant": 0,
+   "variant": 4,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 1,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 0,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 1,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 0,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 0,
+    "SE": 0,
+    "S": 1,
+    "SW": 0,
+    "W": 0,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    0,
+    2
+   ],
+   "terrain": 1,
+   "terrain_name": "water",
+   "kind": "blob",
+   "variant": 4,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 1,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 1,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 0,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 0,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 1,
+    "SE": 0,
+    "S": 0,
+    "SW": 0,
+    "W": 0,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    1,
+    2
+   ],
+   "terrain": 1,
+   "terrain_name": "water",
+   "kind": "blob",
+   "variant": 5,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 1,
@@ -605,12 +1081,12 @@
   {
    "atlas": [
     2,
-    1
+    2
    ],
    "terrain": 1,
    "terrain_name": "water",
    "kind": "blob",
-   "variant": 0,
+   "variant": 5,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 1,
@@ -636,12 +1112,43 @@
   {
    "atlas": [
     3,
-    1
+    2
    ],
    "terrain": 1,
    "terrain_name": "water",
    "kind": "blob",
-   "variant": 0,
+   "variant": 1,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 1,
+    "TOP_RIGHT_CORNER": 1,
+    "RIGHT_SIDE": 1,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 0,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 0,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 1,
+    "E": 1,
+    "SE": 0,
+    "S": 0,
+    "SW": 0,
+    "W": 0,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    4,
+    2
+   ],
+   "terrain": 1,
+   "terrain_name": "water",
+   "kind": "blob",
+   "variant": 1,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 0,
@@ -666,50 +1173,19 @@
   },
   {
    "atlas": [
-    4,
-    1
+    5,
+    2
    ],
    "terrain": 1,
    "terrain_name": "water",
    "kind": "blob",
-   "variant": 0,
+   "variant": 2,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 0,
     "TOP_RIGHT_CORNER": 0,
     "RIGHT_SIDE": 1,
     "BOTTOM_RIGHT_CORNER": 0,
-    "BOTTOM_SIDE": 1,
-    "BOTTOM_LEFT_CORNER": 1,
-    "LEFT_SIDE": 1,
-    "TOP_LEFT_CORNER": 0
-   },
-   "blob_bits": {
-    "N": 0,
-    "NE": 0,
-    "E": 1,
-    "SE": 0,
-    "S": 1,
-    "SW": 1,
-    "W": 1,
-    "NW": 0
-   }
-  },
-  {
-   "atlas": [
-    5,
-    1
-   ],
-   "terrain": 1,
-   "terrain_name": "water",
-   "kind": "blob",
-   "variant": 0,
-   "probability": 1.0,
-   "peering": {
-    "TOP_SIDE": 0,
-    "TOP_RIGHT_CORNER": 0,
-    "RIGHT_SIDE": 1,
-    "BOTTOM_RIGHT_CORNER": 1,
     "BOTTOM_SIDE": 1,
     "BOTTOM_LEFT_CORNER": 0,
     "LEFT_SIDE": 1,
@@ -719,7 +1195,7 @@
     "N": 0,
     "NE": 0,
     "E": 1,
-    "SE": 1,
+    "SE": 0,
     "S": 1,
     "SW": 0,
     "W": 1,
@@ -729,12 +1205,136 @@
   {
    "atlas": [
     6,
-    1
+    2
    ],
    "terrain": 1,
    "terrain_name": "water",
    "kind": "blob",
-   "variant": 0,
+   "variant": 2,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 0,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 1,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 1,
+    "BOTTOM_LEFT_CORNER": 1,
+    "LEFT_SIDE": 1,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 0,
+    "NE": 0,
+    "E": 1,
+    "SE": 0,
+    "S": 1,
+    "SW": 1,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    7,
+    2
+   ],
+   "terrain": 1,
+   "terrain_name": "water",
+   "kind": "blob",
+   "variant": 3,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 0,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 1,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 1,
+    "BOTTOM_LEFT_CORNER": 1,
+    "LEFT_SIDE": 1,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 0,
+    "NE": 0,
+    "E": 1,
+    "SE": 0,
+    "S": 1,
+    "SW": 1,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    8,
+    2
+   ],
+   "terrain": 1,
+   "terrain_name": "water",
+   "kind": "blob",
+   "variant": 3,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 0,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 1,
+    "BOTTOM_RIGHT_CORNER": 1,
+    "BOTTOM_SIDE": 1,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 1,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 0,
+    "NE": 0,
+    "E": 1,
+    "SE": 1,
+    "S": 1,
+    "SW": 0,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    9,
+    2
+   ],
+   "terrain": 1,
+   "terrain_name": "water",
+   "kind": "blob",
+   "variant": 4,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 0,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 1,
+    "BOTTOM_RIGHT_CORNER": 1,
+    "BOTTOM_SIDE": 1,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 1,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 0,
+    "NE": 0,
+    "E": 1,
+    "SE": 1,
+    "S": 1,
+    "SW": 0,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    10,
+    2
+   ],
+   "terrain": 1,
+   "terrain_name": "water",
+   "kind": "blob",
+   "variant": 4,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 0,
@@ -759,155 +1359,31 @@
   },
   {
    "atlas": [
-    7,
-    1
-   ],
-   "terrain": 1,
-   "terrain_name": "water",
-   "kind": "blob",
-   "variant": 0,
-   "probability": 1.0,
-   "peering": {
-    "TOP_SIDE": 1,
-    "TOP_RIGHT_CORNER": 0,
-    "RIGHT_SIDE": 0,
-    "BOTTOM_RIGHT_CORNER": 0,
-    "BOTTOM_SIDE": 1,
-    "BOTTOM_LEFT_CORNER": 0,
-    "LEFT_SIDE": 1,
-    "TOP_LEFT_CORNER": 0
-   },
-   "blob_bits": {
-    "N": 1,
-    "NE": 0,
-    "E": 0,
-    "SE": 0,
-    "S": 1,
-    "SW": 0,
-    "W": 1,
-    "NW": 0
-   }
-  },
-  {
-   "atlas": [
-    8,
-    1
-   ],
-   "terrain": 1,
-   "terrain_name": "water",
-   "kind": "blob",
-   "variant": 0,
-   "probability": 1.0,
-   "peering": {
-    "TOP_SIDE": 1,
-    "TOP_RIGHT_CORNER": 0,
-    "RIGHT_SIDE": 0,
-    "BOTTOM_RIGHT_CORNER": 0,
-    "BOTTOM_SIDE": 1,
-    "BOTTOM_LEFT_CORNER": 0,
-    "LEFT_SIDE": 1,
-    "TOP_LEFT_CORNER": 1
-   },
-   "blob_bits": {
-    "N": 1,
-    "NE": 0,
-    "E": 0,
-    "SE": 0,
-    "S": 1,
-    "SW": 0,
-    "W": 1,
-    "NW": 1
-   }
-  },
-  {
-   "atlas": [
-    9,
-    1
-   ],
-   "terrain": 1,
-   "terrain_name": "water",
-   "kind": "blob",
-   "variant": 0,
-   "probability": 1.0,
-   "peering": {
-    "TOP_SIDE": 1,
-    "TOP_RIGHT_CORNER": 0,
-    "RIGHT_SIDE": 0,
-    "BOTTOM_RIGHT_CORNER": 0,
-    "BOTTOM_SIDE": 1,
-    "BOTTOM_LEFT_CORNER": 1,
-    "LEFT_SIDE": 1,
-    "TOP_LEFT_CORNER": 0
-   },
-   "blob_bits": {
-    "N": 1,
-    "NE": 0,
-    "E": 0,
-    "SE": 0,
-    "S": 1,
-    "SW": 1,
-    "W": 1,
-    "NW": 0
-   }
-  },
-  {
-   "atlas": [
-    10,
-    1
-   ],
-   "terrain": 1,
-   "terrain_name": "water",
-   "kind": "blob",
-   "variant": 0,
-   "probability": 1.0,
-   "peering": {
-    "TOP_SIDE": 1,
-    "TOP_RIGHT_CORNER": 0,
-    "RIGHT_SIDE": 0,
-    "BOTTOM_RIGHT_CORNER": 0,
-    "BOTTOM_SIDE": 1,
-    "BOTTOM_LEFT_CORNER": 1,
-    "LEFT_SIDE": 1,
-    "TOP_LEFT_CORNER": 1
-   },
-   "blob_bits": {
-    "N": 1,
-    "NE": 0,
-    "E": 0,
-    "SE": 0,
-    "S": 1,
-    "SW": 1,
-    "W": 1,
-    "NW": 1
-   }
-  },
-  {
-   "atlas": [
     11,
-    1
+    2
    ],
    "terrain": 1,
    "terrain_name": "water",
    "kind": "blob",
-   "variant": 0,
+   "variant": 5,
    "probability": 1.0,
    "peering": {
-    "TOP_SIDE": 1,
+    "TOP_SIDE": 0,
     "TOP_RIGHT_CORNER": 0,
     "RIGHT_SIDE": 1,
-    "BOTTOM_RIGHT_CORNER": 0,
-    "BOTTOM_SIDE": 0,
-    "BOTTOM_LEFT_CORNER": 0,
+    "BOTTOM_RIGHT_CORNER": 1,
+    "BOTTOM_SIDE": 1,
+    "BOTTOM_LEFT_CORNER": 1,
     "LEFT_SIDE": 1,
     "TOP_LEFT_CORNER": 0
    },
    "blob_bits": {
-    "N": 1,
+    "N": 0,
     "NE": 0,
     "E": 1,
-    "SE": 0,
-    "S": 0,
-    "SW": 0,
+    "SE": 1,
+    "S": 1,
+    "SW": 1,
     "W": 1,
     "NW": 0
    }
@@ -915,12 +1391,322 @@
   {
    "atlas": [
     12,
-    1
+    2
    ],
    "terrain": 1,
    "terrain_name": "water",
    "kind": "blob",
-   "variant": 0,
+   "variant": 5,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 1,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 0,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 1,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 1,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 0,
+    "SE": 0,
+    "S": 1,
+    "SW": 0,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    13,
+    2
+   ],
+   "terrain": 1,
+   "terrain_name": "water",
+   "kind": "blob",
+   "variant": 1,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 1,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 0,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 1,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 1,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 0,
+    "SE": 0,
+    "S": 1,
+    "SW": 0,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    14,
+    2
+   ],
+   "terrain": 1,
+   "terrain_name": "water",
+   "kind": "blob",
+   "variant": 1,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 1,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 0,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 1,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 1,
+    "TOP_LEFT_CORNER": 1
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 0,
+    "SE": 0,
+    "S": 1,
+    "SW": 0,
+    "W": 1,
+    "NW": 1
+   }
+  },
+  {
+   "atlas": [
+    15,
+    2
+   ],
+   "terrain": 1,
+   "terrain_name": "water",
+   "kind": "blob",
+   "variant": 2,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 1,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 0,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 1,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 1,
+    "TOP_LEFT_CORNER": 1
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 0,
+    "SE": 0,
+    "S": 1,
+    "SW": 0,
+    "W": 1,
+    "NW": 1
+   }
+  },
+  {
+   "atlas": [
+    0,
+    3
+   ],
+   "terrain": 1,
+   "terrain_name": "water",
+   "kind": "blob",
+   "variant": 2,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 1,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 0,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 1,
+    "BOTTOM_LEFT_CORNER": 1,
+    "LEFT_SIDE": 1,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 0,
+    "SE": 0,
+    "S": 1,
+    "SW": 1,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    1,
+    3
+   ],
+   "terrain": 1,
+   "terrain_name": "water",
+   "kind": "blob",
+   "variant": 3,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 1,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 0,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 1,
+    "BOTTOM_LEFT_CORNER": 1,
+    "LEFT_SIDE": 1,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 0,
+    "SE": 0,
+    "S": 1,
+    "SW": 1,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    2,
+    3
+   ],
+   "terrain": 1,
+   "terrain_name": "water",
+   "kind": "blob",
+   "variant": 3,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 1,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 0,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 1,
+    "BOTTOM_LEFT_CORNER": 1,
+    "LEFT_SIDE": 1,
+    "TOP_LEFT_CORNER": 1
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 0,
+    "SE": 0,
+    "S": 1,
+    "SW": 1,
+    "W": 1,
+    "NW": 1
+   }
+  },
+  {
+   "atlas": [
+    3,
+    3
+   ],
+   "terrain": 1,
+   "terrain_name": "water",
+   "kind": "blob",
+   "variant": 4,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 1,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 0,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 1,
+    "BOTTOM_LEFT_CORNER": 1,
+    "LEFT_SIDE": 1,
+    "TOP_LEFT_CORNER": 1
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 0,
+    "SE": 0,
+    "S": 1,
+    "SW": 1,
+    "W": 1,
+    "NW": 1
+   }
+  },
+  {
+   "atlas": [
+    4,
+    3
+   ],
+   "terrain": 1,
+   "terrain_name": "water",
+   "kind": "blob",
+   "variant": 4,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 1,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 1,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 0,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 1,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 1,
+    "SE": 0,
+    "S": 0,
+    "SW": 0,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    5,
+    3
+   ],
+   "terrain": 1,
+   "terrain_name": "water",
+   "kind": "blob",
+   "variant": 5,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 1,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 1,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 0,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 1,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 1,
+    "SE": 0,
+    "S": 0,
+    "SW": 0,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    6,
+    3
+   ],
+   "terrain": 1,
+   "terrain_name": "water",
+   "kind": "blob",
+   "variant": 5,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 1,
@@ -945,13 +1731,44 @@
   },
   {
    "atlas": [
-    13,
-    1
+    7,
+    3
    ],
    "terrain": 1,
    "terrain_name": "water",
    "kind": "blob",
-   "variant": 0,
+   "variant": 1,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 1,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 1,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 0,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 1,
+    "TOP_LEFT_CORNER": 1
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 1,
+    "SE": 0,
+    "S": 0,
+    "SW": 0,
+    "W": 1,
+    "NW": 1
+   }
+  },
+  {
+   "atlas": [
+    8,
+    3
+   ],
+   "terrain": 1,
+   "terrain_name": "water",
+   "kind": "blob",
+   "variant": 1,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 1,
@@ -976,13 +1793,44 @@
   },
   {
    "atlas": [
-    14,
-    1
+    9,
+    3
    ],
    "terrain": 1,
    "terrain_name": "water",
    "kind": "blob",
-   "variant": 0,
+   "variant": 2,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 1,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 1,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 1,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 0,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 1,
+    "SE": 0,
+    "S": 1,
+    "SW": 0,
+    "W": 0,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    10,
+    3
+   ],
+   "terrain": 1,
+   "terrain_name": "water",
+   "kind": "blob",
+   "variant": 2,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 1,
@@ -1007,13 +1855,44 @@
   },
   {
    "atlas": [
-    15,
-    1
+    11,
+    3
    ],
    "terrain": 1,
    "terrain_name": "water",
    "kind": "blob",
-   "variant": 0,
+   "variant": 3,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 1,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 1,
+    "BOTTOM_RIGHT_CORNER": 1,
+    "BOTTOM_SIDE": 1,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 0,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 1,
+    "SE": 1,
+    "S": 1,
+    "SW": 0,
+    "W": 0,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    12,
+    3
+   ],
+   "terrain": 1,
+   "terrain_name": "water",
+   "kind": "blob",
+   "variant": 3,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 1,
@@ -1038,13 +1917,44 @@
   },
   {
    "atlas": [
-    0,
-    2
+    13,
+    3
    ],
    "terrain": 1,
    "terrain_name": "water",
    "kind": "blob",
-   "variant": 0,
+   "variant": 4,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 1,
+    "TOP_RIGHT_CORNER": 1,
+    "RIGHT_SIDE": 1,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 0,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 1,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 1,
+    "E": 1,
+    "SE": 0,
+    "S": 0,
+    "SW": 0,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    14,
+    3
+   ],
+   "terrain": 1,
+   "terrain_name": "water",
+   "kind": "blob",
+   "variant": 4,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 1,
@@ -1069,13 +1979,75 @@
   },
   {
    "atlas": [
-    1,
-    2
+    15,
+    3
    ],
    "terrain": 1,
    "terrain_name": "water",
    "kind": "blob",
-   "variant": 0,
+   "variant": 5,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 1,
+    "TOP_RIGHT_CORNER": 1,
+    "RIGHT_SIDE": 1,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 0,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 1,
+    "TOP_LEFT_CORNER": 1
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 1,
+    "E": 1,
+    "SE": 0,
+    "S": 0,
+    "SW": 0,
+    "W": 1,
+    "NW": 1
+   }
+  },
+  {
+   "atlas": [
+    0,
+    4
+   ],
+   "terrain": 1,
+   "terrain_name": "water",
+   "kind": "blob",
+   "variant": 5,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 1,
+    "TOP_RIGHT_CORNER": 1,
+    "RIGHT_SIDE": 1,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 1,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 0,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 1,
+    "E": 1,
+    "SE": 0,
+    "S": 1,
+    "SW": 0,
+    "W": 0,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    1,
+    4
+   ],
+   "terrain": 1,
+   "terrain_name": "water",
+   "kind": "blob",
+   "variant": 1,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 1,
@@ -1101,12 +2073,12 @@
   {
    "atlas": [
     2,
-    2
+    4
    ],
    "terrain": 1,
    "terrain_name": "water",
    "kind": "blob",
-   "variant": 0,
+   "variant": 1,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 1,
@@ -1132,12 +2104,43 @@
   {
    "atlas": [
     3,
-    2
+    4
    ],
    "terrain": 1,
    "terrain_name": "water",
    "kind": "blob",
-   "variant": 0,
+   "variant": 2,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 1,
+    "TOP_RIGHT_CORNER": 1,
+    "RIGHT_SIDE": 1,
+    "BOTTOM_RIGHT_CORNER": 1,
+    "BOTTOM_SIDE": 1,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 0,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 1,
+    "E": 1,
+    "SE": 1,
+    "S": 1,
+    "SW": 0,
+    "W": 0,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    4,
+    4
+   ],
+   "terrain": 1,
+   "terrain_name": "water",
+   "kind": "blob",
+   "variant": 2,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 1,
@@ -1162,13 +2165,13 @@
   },
   {
    "atlas": [
-    4,
-    2
+    5,
+    4
    ],
    "terrain": 1,
    "terrain_name": "water",
    "kind": "blob",
-   "variant": 0,
+   "variant": 3,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 1,
@@ -1178,37 +2181,6 @@
     "BOTTOM_SIDE": 1,
     "BOTTOM_LEFT_CORNER": 0,
     "LEFT_SIDE": 1,
-    "TOP_LEFT_CORNER": 1
-   },
-   "blob_bits": {
-    "N": 1,
-    "NE": 0,
-    "E": 1,
-    "SE": 0,
-    "S": 1,
-    "SW": 0,
-    "W": 1,
-    "NW": 1
-   }
-  },
-  {
-   "atlas": [
-    5,
-    2
-   ],
-   "terrain": 1,
-   "terrain_name": "water",
-   "kind": "blob",
-   "variant": 0,
-   "probability": 1.0,
-   "peering": {
-    "TOP_SIDE": 1,
-    "TOP_RIGHT_CORNER": 0,
-    "RIGHT_SIDE": 1,
-    "BOTTOM_RIGHT_CORNER": 0,
-    "BOTTOM_SIDE": 1,
-    "BOTTOM_LEFT_CORNER": 1,
-    "LEFT_SIDE": 1,
     "TOP_LEFT_CORNER": 0
    },
    "blob_bits": {
@@ -1217,7 +2189,7 @@
     "E": 1,
     "SE": 0,
     "S": 1,
-    "SW": 1,
+    "SW": 0,
     "W": 1,
     "NW": 0
    }
@@ -1225,12 +2197,12 @@
   {
    "atlas": [
     6,
-    2
+    4
    ],
    "terrain": 1,
    "terrain_name": "water",
    "kind": "blob",
-   "variant": 0,
+   "variant": 3,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 1,
@@ -1238,7 +2210,7 @@
     "RIGHT_SIDE": 1,
     "BOTTOM_RIGHT_CORNER": 0,
     "BOTTOM_SIDE": 1,
-    "BOTTOM_LEFT_CORNER": 1,
+    "BOTTOM_LEFT_CORNER": 0,
     "LEFT_SIDE": 1,
     "TOP_LEFT_CORNER": 1
    },
@@ -1248,7 +2220,7 @@
     "E": 1,
     "SE": 0,
     "S": 1,
-    "SW": 1,
+    "SW": 0,
     "W": 1,
     "NW": 1
    }
@@ -1256,49 +2228,18 @@
   {
    "atlas": [
     7,
-    2
+    4
    ],
    "terrain": 1,
    "terrain_name": "water",
    "kind": "blob",
-   "variant": 0,
+   "variant": 4,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 1,
     "TOP_RIGHT_CORNER": 0,
     "RIGHT_SIDE": 1,
-    "BOTTOM_RIGHT_CORNER": 1,
-    "BOTTOM_SIDE": 1,
-    "BOTTOM_LEFT_CORNER": 0,
-    "LEFT_SIDE": 1,
-    "TOP_LEFT_CORNER": 0
-   },
-   "blob_bits": {
-    "N": 1,
-    "NE": 0,
-    "E": 1,
-    "SE": 1,
-    "S": 1,
-    "SW": 0,
-    "W": 1,
-    "NW": 0
-   }
-  },
-  {
-   "atlas": [
-    8,
-    2
-   ],
-   "terrain": 1,
-   "terrain_name": "water",
-   "kind": "blob",
-   "variant": 0,
-   "probability": 1.0,
-   "peering": {
-    "TOP_SIDE": 1,
-    "TOP_RIGHT_CORNER": 0,
-    "RIGHT_SIDE": 1,
-    "BOTTOM_RIGHT_CORNER": 1,
+    "BOTTOM_RIGHT_CORNER": 0,
     "BOTTOM_SIDE": 1,
     "BOTTOM_LEFT_CORNER": 0,
     "LEFT_SIDE": 1,
@@ -1308,7 +2249,7 @@
     "N": 1,
     "NE": 0,
     "E": 1,
-    "SE": 1,
+    "SE": 0,
     "S": 1,
     "SW": 0,
     "W": 1,
@@ -1317,19 +2258,19 @@
   },
   {
    "atlas": [
-    9,
-    2
+    8,
+    4
    ],
    "terrain": 1,
    "terrain_name": "water",
    "kind": "blob",
-   "variant": 0,
+   "variant": 4,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 1,
     "TOP_RIGHT_CORNER": 0,
     "RIGHT_SIDE": 1,
-    "BOTTOM_RIGHT_CORNER": 1,
+    "BOTTOM_RIGHT_CORNER": 0,
     "BOTTOM_SIDE": 1,
     "BOTTOM_LEFT_CORNER": 1,
     "LEFT_SIDE": 1,
@@ -1339,7 +2280,38 @@
     "N": 1,
     "NE": 0,
     "E": 1,
-    "SE": 1,
+    "SE": 0,
+    "S": 1,
+    "SW": 1,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    9,
+    4
+   ],
+   "terrain": 1,
+   "terrain_name": "water",
+   "kind": "blob",
+   "variant": 5,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 1,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 1,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 1,
+    "BOTTOM_LEFT_CORNER": 1,
+    "LEFT_SIDE": 1,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 1,
+    "SE": 0,
     "S": 1,
     "SW": 1,
     "W": 1,
@@ -1349,12 +2321,260 @@
   {
    "atlas": [
     10,
-    2
+    4
    ],
    "terrain": 1,
    "terrain_name": "water",
    "kind": "blob",
-   "variant": 0,
+   "variant": 5,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 1,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 1,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 1,
+    "BOTTOM_LEFT_CORNER": 1,
+    "LEFT_SIDE": 1,
+    "TOP_LEFT_CORNER": 1
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 1,
+    "SE": 0,
+    "S": 1,
+    "SW": 1,
+    "W": 1,
+    "NW": 1
+   }
+  },
+  {
+   "atlas": [
+    11,
+    4
+   ],
+   "terrain": 1,
+   "terrain_name": "water",
+   "kind": "blob",
+   "variant": 1,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 1,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 1,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 1,
+    "BOTTOM_LEFT_CORNER": 1,
+    "LEFT_SIDE": 1,
+    "TOP_LEFT_CORNER": 1
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 1,
+    "SE": 0,
+    "S": 1,
+    "SW": 1,
+    "W": 1,
+    "NW": 1
+   }
+  },
+  {
+   "atlas": [
+    12,
+    4
+   ],
+   "terrain": 1,
+   "terrain_name": "water",
+   "kind": "blob",
+   "variant": 1,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 1,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 1,
+    "BOTTOM_RIGHT_CORNER": 1,
+    "BOTTOM_SIDE": 1,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 1,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 1,
+    "SE": 1,
+    "S": 1,
+    "SW": 0,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    13,
+    4
+   ],
+   "terrain": 1,
+   "terrain_name": "water",
+   "kind": "blob",
+   "variant": 2,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 1,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 1,
+    "BOTTOM_RIGHT_CORNER": 1,
+    "BOTTOM_SIDE": 1,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 1,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 1,
+    "SE": 1,
+    "S": 1,
+    "SW": 0,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    14,
+    4
+   ],
+   "terrain": 1,
+   "terrain_name": "water",
+   "kind": "blob",
+   "variant": 2,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 1,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 1,
+    "BOTTOM_RIGHT_CORNER": 1,
+    "BOTTOM_SIDE": 1,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 1,
+    "TOP_LEFT_CORNER": 1
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 1,
+    "SE": 1,
+    "S": 1,
+    "SW": 0,
+    "W": 1,
+    "NW": 1
+   }
+  },
+  {
+   "atlas": [
+    15,
+    4
+   ],
+   "terrain": 1,
+   "terrain_name": "water",
+   "kind": "blob",
+   "variant": 3,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 1,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 1,
+    "BOTTOM_RIGHT_CORNER": 1,
+    "BOTTOM_SIDE": 1,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 1,
+    "TOP_LEFT_CORNER": 1
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 1,
+    "SE": 1,
+    "S": 1,
+    "SW": 0,
+    "W": 1,
+    "NW": 1
+   }
+  },
+  {
+   "atlas": [
+    0,
+    5
+   ],
+   "terrain": 1,
+   "terrain_name": "water",
+   "kind": "blob",
+   "variant": 3,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 1,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 1,
+    "BOTTOM_RIGHT_CORNER": 1,
+    "BOTTOM_SIDE": 1,
+    "BOTTOM_LEFT_CORNER": 1,
+    "LEFT_SIDE": 1,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 1,
+    "SE": 1,
+    "S": 1,
+    "SW": 1,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    1,
+    5
+   ],
+   "terrain": 1,
+   "terrain_name": "water",
+   "kind": "blob",
+   "variant": 4,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 1,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 1,
+    "BOTTOM_RIGHT_CORNER": 1,
+    "BOTTOM_SIDE": 1,
+    "BOTTOM_LEFT_CORNER": 1,
+    "LEFT_SIDE": 1,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 1,
+    "SE": 1,
+    "S": 1,
+    "SW": 1,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    2,
+    5
+   ],
+   "terrain": 1,
+   "terrain_name": "water",
+   "kind": "blob",
+   "variant": 4,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 1,
@@ -1379,13 +2599,44 @@
   },
   {
    "atlas": [
-    11,
-    2
+    3,
+    5
    ],
    "terrain": 1,
    "terrain_name": "water",
    "kind": "blob",
-   "variant": 0,
+   "variant": 5,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 1,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 1,
+    "BOTTOM_RIGHT_CORNER": 1,
+    "BOTTOM_SIDE": 1,
+    "BOTTOM_LEFT_CORNER": 1,
+    "LEFT_SIDE": 1,
+    "TOP_LEFT_CORNER": 1
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 1,
+    "SE": 1,
+    "S": 1,
+    "SW": 1,
+    "W": 1,
+    "NW": 1
+   }
+  },
+  {
+   "atlas": [
+    4,
+    5
+   ],
+   "terrain": 1,
+   "terrain_name": "water",
+   "kind": "blob",
+   "variant": 5,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 1,
@@ -1410,13 +2661,44 @@
   },
   {
    "atlas": [
-    12,
-    2
+    5,
+    5
    ],
    "terrain": 1,
    "terrain_name": "water",
    "kind": "blob",
-   "variant": 0,
+   "variant": 1,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 1,
+    "TOP_RIGHT_CORNER": 1,
+    "RIGHT_SIDE": 1,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 1,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 1,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 1,
+    "E": 1,
+    "SE": 0,
+    "S": 1,
+    "SW": 0,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    6,
+    5
+   ],
+   "terrain": 1,
+   "terrain_name": "water",
+   "kind": "blob",
+   "variant": 1,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 1,
@@ -1441,13 +2723,44 @@
   },
   {
    "atlas": [
-    13,
-    2
+    7,
+    5
    ],
    "terrain": 1,
    "terrain_name": "water",
    "kind": "blob",
-   "variant": 0,
+   "variant": 2,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 1,
+    "TOP_RIGHT_CORNER": 1,
+    "RIGHT_SIDE": 1,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 1,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 1,
+    "TOP_LEFT_CORNER": 1
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 1,
+    "E": 1,
+    "SE": 0,
+    "S": 1,
+    "SW": 0,
+    "W": 1,
+    "NW": 1
+   }
+  },
+  {
+   "atlas": [
+    8,
+    5
+   ],
+   "terrain": 1,
+   "terrain_name": "water",
+   "kind": "blob",
+   "variant": 2,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 1,
@@ -1466,6 +2779,161 @@
     "SE": 0,
     "S": 1,
     "SW": 1,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    9,
+    5
+   ],
+   "terrain": 1,
+   "terrain_name": "water",
+   "kind": "blob",
+   "variant": 3,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 1,
+    "TOP_RIGHT_CORNER": 1,
+    "RIGHT_SIDE": 1,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 1,
+    "BOTTOM_LEFT_CORNER": 1,
+    "LEFT_SIDE": 1,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 1,
+    "E": 1,
+    "SE": 0,
+    "S": 1,
+    "SW": 1,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    10,
+    5
+   ],
+   "terrain": 1,
+   "terrain_name": "water",
+   "kind": "blob",
+   "variant": 3,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 1,
+    "TOP_RIGHT_CORNER": 1,
+    "RIGHT_SIDE": 1,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 1,
+    "BOTTOM_LEFT_CORNER": 1,
+    "LEFT_SIDE": 1,
+    "TOP_LEFT_CORNER": 1
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 1,
+    "E": 1,
+    "SE": 0,
+    "S": 1,
+    "SW": 1,
+    "W": 1,
+    "NW": 1
+   }
+  },
+  {
+   "atlas": [
+    11,
+    5
+   ],
+   "terrain": 1,
+   "terrain_name": "water",
+   "kind": "blob",
+   "variant": 4,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 1,
+    "TOP_RIGHT_CORNER": 1,
+    "RIGHT_SIDE": 1,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 1,
+    "BOTTOM_LEFT_CORNER": 1,
+    "LEFT_SIDE": 1,
+    "TOP_LEFT_CORNER": 1
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 1,
+    "E": 1,
+    "SE": 0,
+    "S": 1,
+    "SW": 1,
+    "W": 1,
+    "NW": 1
+   }
+  },
+  {
+   "atlas": [
+    12,
+    5
+   ],
+   "terrain": 1,
+   "terrain_name": "water",
+   "kind": "blob",
+   "variant": 4,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 1,
+    "TOP_RIGHT_CORNER": 1,
+    "RIGHT_SIDE": 1,
+    "BOTTOM_RIGHT_CORNER": 1,
+    "BOTTOM_SIDE": 1,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 1,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 1,
+    "E": 1,
+    "SE": 1,
+    "S": 1,
+    "SW": 0,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    13,
+    5
+   ],
+   "terrain": 1,
+   "terrain_name": "water",
+   "kind": "blob",
+   "variant": 5,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 1,
+    "TOP_RIGHT_CORNER": 1,
+    "RIGHT_SIDE": 1,
+    "BOTTOM_RIGHT_CORNER": 1,
+    "BOTTOM_SIDE": 1,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 1,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 1,
+    "E": 1,
+    "SE": 1,
+    "S": 1,
+    "SW": 0,
     "W": 1,
     "NW": 0
    }
@@ -1473,43 +2941,12 @@
   {
    "atlas": [
     14,
-    2
+    5
    ],
    "terrain": 1,
    "terrain_name": "water",
    "kind": "blob",
-   "variant": 0,
-   "probability": 1.0,
-   "peering": {
-    "TOP_SIDE": 1,
-    "TOP_RIGHT_CORNER": 1,
-    "RIGHT_SIDE": 1,
-    "BOTTOM_RIGHT_CORNER": 0,
-    "BOTTOM_SIDE": 1,
-    "BOTTOM_LEFT_CORNER": 1,
-    "LEFT_SIDE": 1,
-    "TOP_LEFT_CORNER": 1
-   },
-   "blob_bits": {
-    "N": 1,
-    "NE": 1,
-    "E": 1,
-    "SE": 0,
-    "S": 1,
-    "SW": 1,
-    "W": 1,
-    "NW": 1
-   }
-  },
-  {
-   "atlas": [
-    15,
-    2
-   ],
-   "terrain": 1,
-   "terrain_name": "water",
-   "kind": "blob",
-   "variant": 0,
+   "variant": 5,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 1,
@@ -1518,6 +2955,68 @@
     "BOTTOM_RIGHT_CORNER": 1,
     "BOTTOM_SIDE": 1,
     "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 1,
+    "TOP_LEFT_CORNER": 1
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 1,
+    "E": 1,
+    "SE": 1,
+    "S": 1,
+    "SW": 0,
+    "W": 1,
+    "NW": 1
+   }
+  },
+  {
+   "atlas": [
+    15,
+    5
+   ],
+   "terrain": 1,
+   "terrain_name": "water",
+   "kind": "blob",
+   "variant": 1,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 1,
+    "TOP_RIGHT_CORNER": 1,
+    "RIGHT_SIDE": 1,
+    "BOTTOM_RIGHT_CORNER": 1,
+    "BOTTOM_SIDE": 1,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 1,
+    "TOP_LEFT_CORNER": 1
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 1,
+    "E": 1,
+    "SE": 1,
+    "S": 1,
+    "SW": 0,
+    "W": 1,
+    "NW": 1
+   }
+  },
+  {
+   "atlas": [
+    0,
+    6
+   ],
+   "terrain": 1,
+   "terrain_name": "water",
+   "kind": "blob",
+   "variant": 1,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 1,
+    "TOP_RIGHT_CORNER": 1,
+    "RIGHT_SIDE": 1,
+    "BOTTOM_RIGHT_CORNER": 1,
+    "BOTTOM_SIDE": 1,
+    "BOTTOM_LEFT_CORNER": 1,
     "LEFT_SIDE": 1,
     "TOP_LEFT_CORNER": 0
    },
@@ -1527,51 +3026,20 @@
     "E": 1,
     "SE": 1,
     "S": 1,
-    "SW": 0,
+    "SW": 1,
     "W": 1,
     "NW": 0
    }
   },
   {
    "atlas": [
-    0,
-    3
-   ],
-   "terrain": 1,
-   "terrain_name": "water",
-   "kind": "blob",
-   "variant": 0,
-   "probability": 1.0,
-   "peering": {
-    "TOP_SIDE": 1,
-    "TOP_RIGHT_CORNER": 1,
-    "RIGHT_SIDE": 1,
-    "BOTTOM_RIGHT_CORNER": 1,
-    "BOTTOM_SIDE": 1,
-    "BOTTOM_LEFT_CORNER": 0,
-    "LEFT_SIDE": 1,
-    "TOP_LEFT_CORNER": 1
-   },
-   "blob_bits": {
-    "N": 1,
-    "NE": 1,
-    "E": 1,
-    "SE": 1,
-    "S": 1,
-    "SW": 0,
-    "W": 1,
-    "NW": 1
-   }
-  },
-  {
-   "atlas": [
     1,
-    3
+    6
    ],
    "terrain": 1,
    "terrain_name": "water",
    "kind": "blob",
-   "variant": 0,
+   "variant": 2,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 1,
@@ -1597,7 +3065,7 @@
   {
    "atlas": [
     2,
-    3
+    6
    ],
    "terrain": 1,
    "terrain_name": "water",
@@ -1628,7 +3096,7 @@
   {
    "atlas": [
     3,
-    3
+    6
    ],
    "terrain": 1,
    "terrain_name": "water",
@@ -1659,7 +3127,7 @@
   {
    "atlas": [
     4,
-    3
+    6
    ],
    "terrain": 1,
    "terrain_name": "water",
@@ -1690,7 +3158,7 @@
   {
    "atlas": [
     5,
-    3
+    6
    ],
    "terrain": 1,
    "terrain_name": "water",
@@ -1721,12 +3189,12 @@
   {
    "atlas": [
     6,
-    3
+    6
    ],
    "terrain": 2,
    "terrain_name": "path",
    "kind": "blob",
-   "variant": 0,
+   "variant": 1,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 0,
@@ -1752,12 +3220,43 @@
   {
    "atlas": [
     7,
-    3
+    6
    ],
    "terrain": 2,
    "terrain_name": "path",
    "kind": "blob",
-   "variant": 0,
+   "variant": 2,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 0,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 0,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 0,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 0,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 0,
+    "NE": 0,
+    "E": 0,
+    "SE": 0,
+    "S": 0,
+    "SW": 0,
+    "W": 0,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    8,
+    6
+   ],
+   "terrain": 2,
+   "terrain_name": "path",
+   "kind": "blob",
+   "variant": 2,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 0,
@@ -1782,13 +3281,44 @@
   },
   {
    "atlas": [
-    8,
-    3
+    9,
+    6
    ],
    "terrain": 2,
    "terrain_name": "path",
    "kind": "blob",
-   "variant": 0,
+   "variant": 3,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 0,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 0,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 0,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 2,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 0,
+    "NE": 0,
+    "E": 0,
+    "SE": 0,
+    "S": 0,
+    "SW": 0,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    10,
+    6
+   ],
+   "terrain": 2,
+   "terrain_name": "path",
+   "kind": "blob",
+   "variant": 3,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 0,
@@ -1813,13 +3343,44 @@
   },
   {
    "atlas": [
-    9,
-    3
+    11,
+    6
    ],
    "terrain": 2,
    "terrain_name": "path",
    "kind": "blob",
-   "variant": 0,
+   "variant": 4,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 0,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 0,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 2,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 0,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 0,
+    "NE": 0,
+    "E": 0,
+    "SE": 0,
+    "S": 1,
+    "SW": 0,
+    "W": 0,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    12,
+    6
+   ],
+   "terrain": 2,
+   "terrain_name": "path",
+   "kind": "blob",
+   "variant": 4,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 0,
@@ -1844,13 +3405,44 @@
   },
   {
    "atlas": [
-    10,
-    3
+    13,
+    6
    ],
    "terrain": 2,
    "terrain_name": "path",
    "kind": "blob",
-   "variant": 0,
+   "variant": 5,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 0,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 2,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 0,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 0,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 0,
+    "NE": 0,
+    "E": 1,
+    "SE": 0,
+    "S": 0,
+    "SW": 0,
+    "W": 0,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    14,
+    6
+   ],
+   "terrain": 2,
+   "terrain_name": "path",
+   "kind": "blob",
+   "variant": 5,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 2,
@@ -1875,13 +3467,44 @@
   },
   {
    "atlas": [
-    11,
-    3
+    15,
+    6
    ],
    "terrain": 2,
    "terrain_name": "path",
    "kind": "blob",
-   "variant": 0,
+   "variant": 1,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 2,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 0,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 0,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 0,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 0,
+    "SE": 0,
+    "S": 0,
+    "SW": 0,
+    "W": 0,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    0,
+    7
+   ],
+   "terrain": 2,
+   "terrain_name": "path",
+   "kind": "blob",
+   "variant": 1,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 0,
@@ -1906,13 +3529,44 @@
   },
   {
    "atlas": [
-    12,
-    3
+    1,
+    7
    ],
    "terrain": 2,
    "terrain_name": "path",
    "kind": "blob",
-   "variant": 0,
+   "variant": 2,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 0,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 0,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 2,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 2,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 0,
+    "NE": 0,
+    "E": 0,
+    "SE": 0,
+    "S": 1,
+    "SW": 0,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    2,
+    7
+   ],
+   "terrain": 2,
+   "terrain_name": "path",
+   "kind": "blob",
+   "variant": 2,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 0,
@@ -1937,13 +3591,44 @@
   },
   {
    "atlas": [
-    13,
-    3
+    3,
+    7
    ],
    "terrain": 2,
    "terrain_name": "path",
    "kind": "blob",
-   "variant": 0,
+   "variant": 3,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 0,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 0,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 2,
+    "BOTTOM_LEFT_CORNER": 2,
+    "LEFT_SIDE": 2,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 0,
+    "NE": 0,
+    "E": 0,
+    "SE": 0,
+    "S": 1,
+    "SW": 1,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    4,
+    7
+   ],
+   "terrain": 2,
+   "terrain_name": "path",
+   "kind": "blob",
+   "variant": 3,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 0,
@@ -1968,13 +3653,44 @@
   },
   {
    "atlas": [
-    14,
-    3
+    5,
+    7
    ],
    "terrain": 2,
    "terrain_name": "path",
    "kind": "blob",
-   "variant": 0,
+   "variant": 4,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 0,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 2,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 0,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 2,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 0,
+    "NE": 0,
+    "E": 1,
+    "SE": 0,
+    "S": 0,
+    "SW": 0,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    6,
+    7
+   ],
+   "terrain": 2,
+   "terrain_name": "path",
+   "kind": "blob",
+   "variant": 4,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 0,
@@ -1999,13 +3715,44 @@
   },
   {
    "atlas": [
-    15,
-    3
+    7,
+    7
    ],
    "terrain": 2,
    "terrain_name": "path",
    "kind": "blob",
-   "variant": 0,
+   "variant": 5,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 0,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 2,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 2,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 0,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 0,
+    "NE": 0,
+    "E": 1,
+    "SE": 0,
+    "S": 1,
+    "SW": 0,
+    "W": 0,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    8,
+    7
+   ],
+   "terrain": 2,
+   "terrain_name": "path",
+   "kind": "blob",
+   "variant": 5,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 0,
@@ -2030,13 +3777,44 @@
   },
   {
    "atlas": [
-    0,
-    4
+    9,
+    7
    ],
    "terrain": 2,
    "terrain_name": "path",
    "kind": "blob",
-   "variant": 0,
+   "variant": 1,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 0,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 2,
+    "BOTTOM_RIGHT_CORNER": 2,
+    "BOTTOM_SIDE": 2,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 0,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 0,
+    "NE": 0,
+    "E": 1,
+    "SE": 1,
+    "S": 1,
+    "SW": 0,
+    "W": 0,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    10,
+    7
+   ],
+   "terrain": 2,
+   "terrain_name": "path",
+   "kind": "blob",
+   "variant": 1,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 2,
@@ -2061,13 +3839,44 @@
   },
   {
    "atlas": [
-    1,
-    4
+    11,
+    7
    ],
    "terrain": 2,
    "terrain_name": "path",
    "kind": "blob",
-   "variant": 0,
+   "variant": 2,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 2,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 0,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 0,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 2,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 0,
+    "SE": 0,
+    "S": 0,
+    "SW": 0,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    12,
+    7
+   ],
+   "terrain": 2,
+   "terrain_name": "path",
+   "kind": "blob",
+   "variant": 2,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 2,
@@ -2092,13 +3901,44 @@
   },
   {
    "atlas": [
-    2,
-    4
+    13,
+    7
    ],
    "terrain": 2,
    "terrain_name": "path",
    "kind": "blob",
-   "variant": 0,
+   "variant": 3,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 2,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 0,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 0,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 2,
+    "TOP_LEFT_CORNER": 2
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 0,
+    "SE": 0,
+    "S": 0,
+    "SW": 0,
+    "W": 1,
+    "NW": 1
+   }
+  },
+  {
+   "atlas": [
+    14,
+    7
+   ],
+   "terrain": 2,
+   "terrain_name": "path",
+   "kind": "blob",
+   "variant": 3,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 2,
@@ -2123,13 +3963,44 @@
   },
   {
    "atlas": [
-    3,
-    4
+    15,
+    7
    ],
    "terrain": 2,
    "terrain_name": "path",
    "kind": "blob",
-   "variant": 0,
+   "variant": 4,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 2,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 0,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 2,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 0,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 0,
+    "SE": 0,
+    "S": 1,
+    "SW": 0,
+    "W": 0,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    0,
+    8
+   ],
+   "terrain": 2,
+   "terrain_name": "path",
+   "kind": "blob",
+   "variant": 4,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 2,
@@ -2154,13 +4025,44 @@
   },
   {
    "atlas": [
-    4,
-    4
+    1,
+    8
    ],
    "terrain": 2,
    "terrain_name": "path",
    "kind": "blob",
-   "variant": 0,
+   "variant": 5,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 2,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 2,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 0,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 0,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 1,
+    "SE": 0,
+    "S": 0,
+    "SW": 0,
+    "W": 0,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    2,
+    8
+   ],
+   "terrain": 2,
+   "terrain_name": "path",
+   "kind": "blob",
+   "variant": 5,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 2,
@@ -2185,13 +4087,75 @@
   },
   {
    "atlas": [
-    5,
-    4
+    3,
+    8
    ],
    "terrain": 2,
    "terrain_name": "path",
    "kind": "blob",
-   "variant": 0,
+   "variant": 1,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 2,
+    "TOP_RIGHT_CORNER": 2,
+    "RIGHT_SIDE": 2,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 0,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 0,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 1,
+    "E": 1,
+    "SE": 0,
+    "S": 0,
+    "SW": 0,
+    "W": 0,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    4,
+    8
+   ],
+   "terrain": 2,
+   "terrain_name": "path",
+   "kind": "blob",
+   "variant": 1,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 0,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 2,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 2,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 2,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 0,
+    "NE": 0,
+    "E": 1,
+    "SE": 0,
+    "S": 1,
+    "SW": 0,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    5,
+    8
+   ],
+   "terrain": 2,
+   "terrain_name": "path",
+   "kind": "blob",
+   "variant": 2,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 0,
@@ -2217,12 +4181,12 @@
   {
    "atlas": [
     6,
-    4
+    8
    ],
    "terrain": 2,
    "terrain_name": "path",
    "kind": "blob",
-   "variant": 0,
+   "variant": 2,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 0,
@@ -2248,12 +4212,43 @@
   {
    "atlas": [
     7,
-    4
+    8
    ],
    "terrain": 2,
    "terrain_name": "path",
    "kind": "blob",
-   "variant": 0,
+   "variant": 3,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 0,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 2,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 2,
+    "BOTTOM_LEFT_CORNER": 2,
+    "LEFT_SIDE": 2,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 0,
+    "NE": 0,
+    "E": 1,
+    "SE": 0,
+    "S": 1,
+    "SW": 1,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    8,
+    8
+   ],
+   "terrain": 2,
+   "terrain_name": "path",
+   "kind": "blob",
+   "variant": 3,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 0,
@@ -2278,13 +4273,13 @@
   },
   {
    "atlas": [
-    8,
-    4
+    9,
+    8
    ],
    "terrain": 2,
    "terrain_name": "path",
    "kind": "blob",
-   "variant": 0,
+   "variant": 4,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 0,
@@ -2292,7 +4287,7 @@
     "RIGHT_SIDE": 2,
     "BOTTOM_RIGHT_CORNER": 2,
     "BOTTOM_SIDE": 2,
-    "BOTTOM_LEFT_CORNER": 2,
+    "BOTTOM_LEFT_CORNER": 0,
     "LEFT_SIDE": 2,
     "TOP_LEFT_CORNER": 0
    },
@@ -2301,37 +4296,6 @@
     "NE": 0,
     "E": 1,
     "SE": 1,
-    "S": 1,
-    "SW": 1,
-    "W": 1,
-    "NW": 0
-   }
-  },
-  {
-   "atlas": [
-    9,
-    4
-   ],
-   "terrain": 2,
-   "terrain_name": "path",
-   "kind": "blob",
-   "variant": 0,
-   "probability": 1.0,
-   "peering": {
-    "TOP_SIDE": 2,
-    "TOP_RIGHT_CORNER": 0,
-    "RIGHT_SIDE": 0,
-    "BOTTOM_RIGHT_CORNER": 0,
-    "BOTTOM_SIDE": 2,
-    "BOTTOM_LEFT_CORNER": 0,
-    "LEFT_SIDE": 2,
-    "TOP_LEFT_CORNER": 0
-   },
-   "blob_bits": {
-    "N": 1,
-    "NE": 0,
-    "E": 0,
-    "SE": 0,
     "S": 1,
     "SW": 0,
     "W": 1,
@@ -2341,12 +4305,136 @@
   {
    "atlas": [
     10,
-    4
+    8
    ],
    "terrain": 2,
    "terrain_name": "path",
    "kind": "blob",
-   "variant": 0,
+   "variant": 4,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 0,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 2,
+    "BOTTOM_RIGHT_CORNER": 2,
+    "BOTTOM_SIDE": 2,
+    "BOTTOM_LEFT_CORNER": 2,
+    "LEFT_SIDE": 2,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 0,
+    "NE": 0,
+    "E": 1,
+    "SE": 1,
+    "S": 1,
+    "SW": 1,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    11,
+    8
+   ],
+   "terrain": 2,
+   "terrain_name": "path",
+   "kind": "blob",
+   "variant": 5,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 0,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 2,
+    "BOTTOM_RIGHT_CORNER": 2,
+    "BOTTOM_SIDE": 2,
+    "BOTTOM_LEFT_CORNER": 2,
+    "LEFT_SIDE": 2,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 0,
+    "NE": 0,
+    "E": 1,
+    "SE": 1,
+    "S": 1,
+    "SW": 1,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    12,
+    8
+   ],
+   "terrain": 2,
+   "terrain_name": "path",
+   "kind": "blob",
+   "variant": 5,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 2,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 0,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 2,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 2,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 0,
+    "SE": 0,
+    "S": 1,
+    "SW": 0,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    13,
+    8
+   ],
+   "terrain": 2,
+   "terrain_name": "path",
+   "kind": "blob",
+   "variant": 1,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 2,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 0,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 2,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 2,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 0,
+    "SE": 0,
+    "S": 1,
+    "SW": 0,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    14,
+    8
+   ],
+   "terrain": 2,
+   "terrain_name": "path",
+   "kind": "blob",
+   "variant": 1,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 2,
@@ -2371,13 +4459,44 @@
   },
   {
    "atlas": [
-    11,
-    4
+    15,
+    8
    ],
    "terrain": 2,
    "terrain_name": "path",
    "kind": "blob",
-   "variant": 0,
+   "variant": 2,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 2,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 0,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 2,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 2,
+    "TOP_LEFT_CORNER": 2
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 0,
+    "SE": 0,
+    "S": 1,
+    "SW": 0,
+    "W": 1,
+    "NW": 1
+   }
+  },
+  {
+   "atlas": [
+    0,
+    9
+   ],
+   "terrain": 2,
+   "terrain_name": "path",
+   "kind": "blob",
+   "variant": 2,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 2,
@@ -2402,13 +4521,44 @@
   },
   {
    "atlas": [
-    12,
-    4
+    1,
+    9
    ],
    "terrain": 2,
    "terrain_name": "path",
    "kind": "blob",
-   "variant": 0,
+   "variant": 3,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 2,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 0,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 2,
+    "BOTTOM_LEFT_CORNER": 2,
+    "LEFT_SIDE": 2,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 0,
+    "SE": 0,
+    "S": 1,
+    "SW": 1,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    2,
+    9
+   ],
+   "terrain": 2,
+   "terrain_name": "path",
+   "kind": "blob",
+   "variant": 3,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 2,
@@ -2433,13 +4583,44 @@
   },
   {
    "atlas": [
-    13,
-    4
+    3,
+    9
    ],
    "terrain": 2,
    "terrain_name": "path",
    "kind": "blob",
-   "variant": 0,
+   "variant": 4,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 2,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 0,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 2,
+    "BOTTOM_LEFT_CORNER": 2,
+    "LEFT_SIDE": 2,
+    "TOP_LEFT_CORNER": 2
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 0,
+    "SE": 0,
+    "S": 1,
+    "SW": 1,
+    "W": 1,
+    "NW": 1
+   }
+  },
+  {
+   "atlas": [
+    4,
+    9
+   ],
+   "terrain": 2,
+   "terrain_name": "path",
+   "kind": "blob",
+   "variant": 4,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 2,
@@ -2454,6 +4635,285 @@
    "blob_bits": {
     "N": 1,
     "NE": 0,
+    "E": 1,
+    "SE": 0,
+    "S": 0,
+    "SW": 0,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    5,
+    9
+   ],
+   "terrain": 2,
+   "terrain_name": "path",
+   "kind": "blob",
+   "variant": 5,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 2,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 2,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 0,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 2,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 1,
+    "SE": 0,
+    "S": 0,
+    "SW": 0,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    6,
+    9
+   ],
+   "terrain": 2,
+   "terrain_name": "path",
+   "kind": "blob",
+   "variant": 5,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 2,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 2,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 0,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 2,
+    "TOP_LEFT_CORNER": 2
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 1,
+    "SE": 0,
+    "S": 0,
+    "SW": 0,
+    "W": 1,
+    "NW": 1
+   }
+  },
+  {
+   "atlas": [
+    7,
+    9
+   ],
+   "terrain": 2,
+   "terrain_name": "path",
+   "kind": "blob",
+   "variant": 1,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 2,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 2,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 0,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 2,
+    "TOP_LEFT_CORNER": 2
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 1,
+    "SE": 0,
+    "S": 0,
+    "SW": 0,
+    "W": 1,
+    "NW": 1
+   }
+  },
+  {
+   "atlas": [
+    8,
+    9
+   ],
+   "terrain": 2,
+   "terrain_name": "path",
+   "kind": "blob",
+   "variant": 1,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 2,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 2,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 2,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 0,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 1,
+    "SE": 0,
+    "S": 1,
+    "SW": 0,
+    "W": 0,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    9,
+    9
+   ],
+   "terrain": 2,
+   "terrain_name": "path",
+   "kind": "blob",
+   "variant": 2,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 2,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 2,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 2,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 0,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 1,
+    "SE": 0,
+    "S": 1,
+    "SW": 0,
+    "W": 0,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    10,
+    9
+   ],
+   "terrain": 2,
+   "terrain_name": "path",
+   "kind": "blob",
+   "variant": 2,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 2,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 2,
+    "BOTTOM_RIGHT_CORNER": 2,
+    "BOTTOM_SIDE": 2,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 0,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 1,
+    "SE": 1,
+    "S": 1,
+    "SW": 0,
+    "W": 0,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    11,
+    9
+   ],
+   "terrain": 2,
+   "terrain_name": "path",
+   "kind": "blob",
+   "variant": 3,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 2,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 2,
+    "BOTTOM_RIGHT_CORNER": 2,
+    "BOTTOM_SIDE": 2,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 0,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 1,
+    "SE": 1,
+    "S": 1,
+    "SW": 0,
+    "W": 0,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    12,
+    9
+   ],
+   "terrain": 2,
+   "terrain_name": "path",
+   "kind": "blob",
+   "variant": 3,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 2,
+    "TOP_RIGHT_CORNER": 2,
+    "RIGHT_SIDE": 2,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 0,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 2,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 1,
+    "E": 1,
+    "SE": 0,
+    "S": 0,
+    "SW": 0,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    13,
+    9
+   ],
+   "terrain": 2,
+   "terrain_name": "path",
+   "kind": "blob",
+   "variant": 4,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 2,
+    "TOP_RIGHT_CORNER": 2,
+    "RIGHT_SIDE": 2,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 0,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 2,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 1,
     "E": 1,
     "SE": 0,
     "S": 0,
@@ -2465,16 +4925,16 @@
   {
    "atlas": [
     14,
-    4
+    9
    ],
    "terrain": 2,
    "terrain_name": "path",
    "kind": "blob",
-   "variant": 0,
+   "variant": 4,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 2,
-    "TOP_RIGHT_CORNER": 0,
+    "TOP_RIGHT_CORNER": 2,
     "RIGHT_SIDE": 2,
     "BOTTOM_RIGHT_CORNER": 0,
     "BOTTOM_SIDE": 0,
@@ -2484,7 +4944,7 @@
    },
    "blob_bits": {
     "N": 1,
-    "NE": 0,
+    "NE": 1,
     "E": 1,
     "SE": 0,
     "S": 0,
@@ -2496,105 +4956,12 @@
   {
    "atlas": [
     15,
-    4
+    9
    ],
    "terrain": 2,
    "terrain_name": "path",
    "kind": "blob",
-   "variant": 0,
-   "probability": 1.0,
-   "peering": {
-    "TOP_SIDE": 2,
-    "TOP_RIGHT_CORNER": 0,
-    "RIGHT_SIDE": 2,
-    "BOTTOM_RIGHT_CORNER": 0,
-    "BOTTOM_SIDE": 2,
-    "BOTTOM_LEFT_CORNER": 0,
-    "LEFT_SIDE": 0,
-    "TOP_LEFT_CORNER": 0
-   },
-   "blob_bits": {
-    "N": 1,
-    "NE": 0,
-    "E": 1,
-    "SE": 0,
-    "S": 1,
-    "SW": 0,
-    "W": 0,
-    "NW": 0
-   }
-  },
-  {
-   "atlas": [
-    0,
-    5
-   ],
-   "terrain": 2,
-   "terrain_name": "path",
-   "kind": "blob",
-   "variant": 0,
-   "probability": 1.0,
-   "peering": {
-    "TOP_SIDE": 2,
-    "TOP_RIGHT_CORNER": 0,
-    "RIGHT_SIDE": 2,
-    "BOTTOM_RIGHT_CORNER": 2,
-    "BOTTOM_SIDE": 2,
-    "BOTTOM_LEFT_CORNER": 0,
-    "LEFT_SIDE": 0,
-    "TOP_LEFT_CORNER": 0
-   },
-   "blob_bits": {
-    "N": 1,
-    "NE": 0,
-    "E": 1,
-    "SE": 1,
-    "S": 1,
-    "SW": 0,
-    "W": 0,
-    "NW": 0
-   }
-  },
-  {
-   "atlas": [
-    1,
-    5
-   ],
-   "terrain": 2,
-   "terrain_name": "path",
-   "kind": "blob",
-   "variant": 0,
-   "probability": 1.0,
-   "peering": {
-    "TOP_SIDE": 2,
-    "TOP_RIGHT_CORNER": 2,
-    "RIGHT_SIDE": 2,
-    "BOTTOM_RIGHT_CORNER": 0,
-    "BOTTOM_SIDE": 0,
-    "BOTTOM_LEFT_CORNER": 0,
-    "LEFT_SIDE": 2,
-    "TOP_LEFT_CORNER": 0
-   },
-   "blob_bits": {
-    "N": 1,
-    "NE": 1,
-    "E": 1,
-    "SE": 0,
-    "S": 0,
-    "SW": 0,
-    "W": 1,
-    "NW": 0
-   }
-  },
-  {
-   "atlas": [
-    2,
-    5
-   ],
-   "terrain": 2,
-   "terrain_name": "path",
-   "kind": "blob",
-   "variant": 0,
+   "variant": 5,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 2,
@@ -2619,13 +4986,13 @@
   },
   {
    "atlas": [
-    3,
-    5
+    0,
+    10
    ],
    "terrain": 2,
    "terrain_name": "path",
    "kind": "blob",
-   "variant": 0,
+   "variant": 5,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 2,
@@ -2650,13 +5017,44 @@
   },
   {
    "atlas": [
-    4,
-    5
+    1,
+    10
    ],
    "terrain": 2,
    "terrain_name": "path",
    "kind": "blob",
-   "variant": 0,
+   "variant": 1,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 2,
+    "TOP_RIGHT_CORNER": 2,
+    "RIGHT_SIDE": 2,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 2,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 0,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 1,
+    "E": 1,
+    "SE": 0,
+    "S": 1,
+    "SW": 0,
+    "W": 0,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    2,
+    10
+   ],
+   "terrain": 2,
+   "terrain_name": "path",
+   "kind": "blob",
+   "variant": 1,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 2,
@@ -2681,13 +5079,75 @@
   },
   {
    "atlas": [
-    5,
-    5
+    3,
+    10
    ],
    "terrain": 2,
    "terrain_name": "path",
    "kind": "blob",
-   "variant": 0,
+   "variant": 2,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 2,
+    "TOP_RIGHT_CORNER": 2,
+    "RIGHT_SIDE": 2,
+    "BOTTOM_RIGHT_CORNER": 2,
+    "BOTTOM_SIDE": 2,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 0,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 1,
+    "E": 1,
+    "SE": 1,
+    "S": 1,
+    "SW": 0,
+    "W": 0,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    4,
+    10
+   ],
+   "terrain": 2,
+   "terrain_name": "path",
+   "kind": "blob",
+   "variant": 2,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 2,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 2,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 2,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 2,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 1,
+    "SE": 0,
+    "S": 1,
+    "SW": 0,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    5,
+    10
+   ],
+   "terrain": 2,
+   "terrain_name": "path",
+   "kind": "blob",
+   "variant": 3,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 2,
@@ -2713,12 +5173,12 @@
   {
    "atlas": [
     6,
-    5
+    10
    ],
    "terrain": 2,
    "terrain_name": "path",
    "kind": "blob",
-   "variant": 0,
+   "variant": 3,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 2,
@@ -2744,12 +5204,43 @@
   {
    "atlas": [
     7,
-    5
+    10
    ],
    "terrain": 2,
    "terrain_name": "path",
    "kind": "blob",
-   "variant": 0,
+   "variant": 4,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 2,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 2,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 2,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 2,
+    "TOP_LEFT_CORNER": 2
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 1,
+    "SE": 0,
+    "S": 1,
+    "SW": 0,
+    "W": 1,
+    "NW": 1
+   }
+  },
+  {
+   "atlas": [
+    8,
+    10
+   ],
+   "terrain": 2,
+   "terrain_name": "path",
+   "kind": "blob",
+   "variant": 4,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 2,
@@ -2774,13 +5265,13 @@
   },
   {
    "atlas": [
-    8,
-    5
+    9,
+    10
    ],
    "terrain": 2,
    "terrain_name": "path",
    "kind": "blob",
-   "variant": 0,
+   "variant": 5,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 2,
@@ -2790,7 +5281,7 @@
     "BOTTOM_SIDE": 2,
     "BOTTOM_LEFT_CORNER": 2,
     "LEFT_SIDE": 2,
-    "TOP_LEFT_CORNER": 2
+    "TOP_LEFT_CORNER": 0
    },
    "blob_bits": {
     "N": 1,
@@ -2799,37 +5290,6 @@
     "SE": 0,
     "S": 1,
     "SW": 1,
-    "W": 1,
-    "NW": 1
-   }
-  },
-  {
-   "atlas": [
-    9,
-    5
-   ],
-   "terrain": 2,
-   "terrain_name": "path",
-   "kind": "blob",
-   "variant": 0,
-   "probability": 1.0,
-   "peering": {
-    "TOP_SIDE": 2,
-    "TOP_RIGHT_CORNER": 0,
-    "RIGHT_SIDE": 2,
-    "BOTTOM_RIGHT_CORNER": 2,
-    "BOTTOM_SIDE": 2,
-    "BOTTOM_LEFT_CORNER": 0,
-    "LEFT_SIDE": 2,
-    "TOP_LEFT_CORNER": 0
-   },
-   "blob_bits": {
-    "N": 1,
-    "NE": 0,
-    "E": 1,
-    "SE": 1,
-    "S": 1,
-    "SW": 0,
     "W": 1,
     "NW": 0
    }
@@ -2837,12 +5297,74 @@
   {
    "atlas": [
     10,
-    5
+    10
    ],
    "terrain": 2,
    "terrain_name": "path",
    "kind": "blob",
-   "variant": 0,
+   "variant": 5,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 2,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 2,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 2,
+    "BOTTOM_LEFT_CORNER": 2,
+    "LEFT_SIDE": 2,
+    "TOP_LEFT_CORNER": 2
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 1,
+    "SE": 0,
+    "S": 1,
+    "SW": 1,
+    "W": 1,
+    "NW": 1
+   }
+  },
+  {
+   "atlas": [
+    11,
+    10
+   ],
+   "terrain": 2,
+   "terrain_name": "path",
+   "kind": "blob",
+   "variant": 1,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 2,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 2,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 2,
+    "BOTTOM_LEFT_CORNER": 2,
+    "LEFT_SIDE": 2,
+    "TOP_LEFT_CORNER": 2
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 1,
+    "SE": 0,
+    "S": 1,
+    "SW": 1,
+    "W": 1,
+    "NW": 1
+   }
+  },
+  {
+   "atlas": [
+    12,
+    10
+   ],
+   "terrain": 2,
+   "terrain_name": "path",
+   "kind": "blob",
+   "variant": 1,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 2,
@@ -2852,7 +5374,7 @@
     "BOTTOM_SIDE": 2,
     "BOTTOM_LEFT_CORNER": 0,
     "LEFT_SIDE": 2,
-    "TOP_LEFT_CORNER": 2
+    "TOP_LEFT_CORNER": 0
    },
    "blob_bits": {
     "N": 1,
@@ -2862,86 +5384,24 @@
     "S": 1,
     "SW": 0,
     "W": 1,
-    "NW": 1
-   }
-  },
-  {
-   "atlas": [
-    11,
-    5
-   ],
-   "terrain": 2,
-   "terrain_name": "path",
-   "kind": "blob",
-   "variant": 0,
-   "probability": 1.0,
-   "peering": {
-    "TOP_SIDE": 2,
-    "TOP_RIGHT_CORNER": 0,
-    "RIGHT_SIDE": 2,
-    "BOTTOM_RIGHT_CORNER": 2,
-    "BOTTOM_SIDE": 2,
-    "BOTTOM_LEFT_CORNER": 2,
-    "LEFT_SIDE": 2,
-    "TOP_LEFT_CORNER": 0
-   },
-   "blob_bits": {
-    "N": 1,
-    "NE": 0,
-    "E": 1,
-    "SE": 1,
-    "S": 1,
-    "SW": 1,
-    "W": 1,
     "NW": 0
    }
   },
   {
    "atlas": [
-    12,
-    5
+    13,
+    10
    ],
    "terrain": 2,
    "terrain_name": "path",
    "kind": "blob",
-   "variant": 0,
+   "variant": 2,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 2,
     "TOP_RIGHT_CORNER": 0,
     "RIGHT_SIDE": 2,
     "BOTTOM_RIGHT_CORNER": 2,
-    "BOTTOM_SIDE": 2,
-    "BOTTOM_LEFT_CORNER": 2,
-    "LEFT_SIDE": 2,
-    "TOP_LEFT_CORNER": 2
-   },
-   "blob_bits": {
-    "N": 1,
-    "NE": 0,
-    "E": 1,
-    "SE": 1,
-    "S": 1,
-    "SW": 1,
-    "W": 1,
-    "NW": 1
-   }
-  },
-  {
-   "atlas": [
-    13,
-    5
-   ],
-   "terrain": 2,
-   "terrain_name": "path",
-   "kind": "blob",
-   "variant": 0,
-   "probability": 1.0,
-   "peering": {
-    "TOP_SIDE": 2,
-    "TOP_RIGHT_CORNER": 2,
-    "RIGHT_SIDE": 2,
-    "BOTTOM_RIGHT_CORNER": 0,
     "BOTTOM_SIDE": 2,
     "BOTTOM_LEFT_CORNER": 0,
     "LEFT_SIDE": 2,
@@ -2949,9 +5409,9 @@
    },
    "blob_bits": {
     "N": 1,
-    "NE": 1,
+    "NE": 0,
     "E": 1,
-    "SE": 0,
+    "SE": 1,
     "S": 1,
     "SW": 0,
     "W": 1,
@@ -2961,18 +5421,18 @@
   {
    "atlas": [
     14,
-    5
+    10
    ],
    "terrain": 2,
    "terrain_name": "path",
    "kind": "blob",
-   "variant": 0,
+   "variant": 2,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 2,
-    "TOP_RIGHT_CORNER": 2,
+    "TOP_RIGHT_CORNER": 0,
     "RIGHT_SIDE": 2,
-    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_RIGHT_CORNER": 2,
     "BOTTOM_SIDE": 2,
     "BOTTOM_LEFT_CORNER": 0,
     "LEFT_SIDE": 2,
@@ -2980,9 +5440,9 @@
    },
    "blob_bits": {
     "N": 1,
-    "NE": 1,
+    "NE": 0,
     "E": 1,
-    "SE": 0,
+    "SE": 1,
     "S": 1,
     "SW": 0,
     "W": 1,
@@ -2992,18 +5452,49 @@
   {
    "atlas": [
     15,
-    5
+    10
    ],
    "terrain": 2,
    "terrain_name": "path",
    "kind": "blob",
-   "variant": 0,
+   "variant": 3,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 2,
-    "TOP_RIGHT_CORNER": 2,
+    "TOP_RIGHT_CORNER": 0,
     "RIGHT_SIDE": 2,
-    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_RIGHT_CORNER": 2,
+    "BOTTOM_SIDE": 2,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 2,
+    "TOP_LEFT_CORNER": 2
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 1,
+    "SE": 1,
+    "S": 1,
+    "SW": 0,
+    "W": 1,
+    "NW": 1
+   }
+  },
+  {
+   "atlas": [
+    0,
+    11
+   ],
+   "terrain": 2,
+   "terrain_name": "path",
+   "kind": "blob",
+   "variant": 3,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 2,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 2,
+    "BOTTOM_RIGHT_CORNER": 2,
     "BOTTOM_SIDE": 2,
     "BOTTOM_LEFT_CORNER": 2,
     "LEFT_SIDE": 2,
@@ -3011,9 +5502,9 @@
    },
    "blob_bits": {
     "N": 1,
-    "NE": 1,
+    "NE": 0,
     "E": 1,
-    "SE": 0,
+    "SE": 1,
     "S": 1,
     "SW": 1,
     "W": 1,
@@ -3022,62 +5513,31 @@
   },
   {
    "atlas": [
-    0,
-    6
-   ],
-   "terrain": 2,
-   "terrain_name": "path",
-   "kind": "blob",
-   "variant": 0,
-   "probability": 1.0,
-   "peering": {
-    "TOP_SIDE": 2,
-    "TOP_RIGHT_CORNER": 2,
-    "RIGHT_SIDE": 2,
-    "BOTTOM_RIGHT_CORNER": 0,
-    "BOTTOM_SIDE": 2,
-    "BOTTOM_LEFT_CORNER": 2,
-    "LEFT_SIDE": 2,
-    "TOP_LEFT_CORNER": 2
-   },
-   "blob_bits": {
-    "N": 1,
-    "NE": 1,
-    "E": 1,
-    "SE": 0,
-    "S": 1,
-    "SW": 1,
-    "W": 1,
-    "NW": 1
-   }
-  },
-  {
-   "atlas": [
     1,
-    6
+    11
    ],
    "terrain": 2,
    "terrain_name": "path",
    "kind": "blob",
-   "variant": 0,
+   "variant": 4,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 2,
-    "TOP_RIGHT_CORNER": 2,
+    "TOP_RIGHT_CORNER": 0,
     "RIGHT_SIDE": 2,
     "BOTTOM_RIGHT_CORNER": 2,
     "BOTTOM_SIDE": 2,
-    "BOTTOM_LEFT_CORNER": 0,
+    "BOTTOM_LEFT_CORNER": 2,
     "LEFT_SIDE": 2,
     "TOP_LEFT_CORNER": 0
    },
    "blob_bits": {
     "N": 1,
-    "NE": 1,
+    "NE": 0,
     "E": 1,
     "SE": 1,
     "S": 1,
-    "SW": 0,
+    "SW": 1,
     "W": 1,
     "NW": 0
    }
@@ -3085,12 +5545,384 @@
   {
    "atlas": [
     2,
-    6
+    11
    ],
    "terrain": 2,
    "terrain_name": "path",
    "kind": "blob",
-   "variant": 0,
+   "variant": 4,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 2,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 2,
+    "BOTTOM_RIGHT_CORNER": 2,
+    "BOTTOM_SIDE": 2,
+    "BOTTOM_LEFT_CORNER": 2,
+    "LEFT_SIDE": 2,
+    "TOP_LEFT_CORNER": 2
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 1,
+    "SE": 1,
+    "S": 1,
+    "SW": 1,
+    "W": 1,
+    "NW": 1
+   }
+  },
+  {
+   "atlas": [
+    3,
+    11
+   ],
+   "terrain": 2,
+   "terrain_name": "path",
+   "kind": "blob",
+   "variant": 5,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 2,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 2,
+    "BOTTOM_RIGHT_CORNER": 2,
+    "BOTTOM_SIDE": 2,
+    "BOTTOM_LEFT_CORNER": 2,
+    "LEFT_SIDE": 2,
+    "TOP_LEFT_CORNER": 2
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 1,
+    "SE": 1,
+    "S": 1,
+    "SW": 1,
+    "W": 1,
+    "NW": 1
+   }
+  },
+  {
+   "atlas": [
+    4,
+    11
+   ],
+   "terrain": 2,
+   "terrain_name": "path",
+   "kind": "blob",
+   "variant": 5,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 2,
+    "TOP_RIGHT_CORNER": 2,
+    "RIGHT_SIDE": 2,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 2,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 2,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 1,
+    "E": 1,
+    "SE": 0,
+    "S": 1,
+    "SW": 0,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    5,
+    11
+   ],
+   "terrain": 2,
+   "terrain_name": "path",
+   "kind": "blob",
+   "variant": 1,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 2,
+    "TOP_RIGHT_CORNER": 2,
+    "RIGHT_SIDE": 2,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 2,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 2,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 1,
+    "E": 1,
+    "SE": 0,
+    "S": 1,
+    "SW": 0,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    6,
+    11
+   ],
+   "terrain": 2,
+   "terrain_name": "path",
+   "kind": "blob",
+   "variant": 1,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 2,
+    "TOP_RIGHT_CORNER": 2,
+    "RIGHT_SIDE": 2,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 2,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 2,
+    "TOP_LEFT_CORNER": 2
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 1,
+    "E": 1,
+    "SE": 0,
+    "S": 1,
+    "SW": 0,
+    "W": 1,
+    "NW": 1
+   }
+  },
+  {
+   "atlas": [
+    7,
+    11
+   ],
+   "terrain": 2,
+   "terrain_name": "path",
+   "kind": "blob",
+   "variant": 2,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 2,
+    "TOP_RIGHT_CORNER": 2,
+    "RIGHT_SIDE": 2,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 2,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 2,
+    "TOP_LEFT_CORNER": 2
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 1,
+    "E": 1,
+    "SE": 0,
+    "S": 1,
+    "SW": 0,
+    "W": 1,
+    "NW": 1
+   }
+  },
+  {
+   "atlas": [
+    8,
+    11
+   ],
+   "terrain": 2,
+   "terrain_name": "path",
+   "kind": "blob",
+   "variant": 2,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 2,
+    "TOP_RIGHT_CORNER": 2,
+    "RIGHT_SIDE": 2,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 2,
+    "BOTTOM_LEFT_CORNER": 2,
+    "LEFT_SIDE": 2,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 1,
+    "E": 1,
+    "SE": 0,
+    "S": 1,
+    "SW": 1,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    9,
+    11
+   ],
+   "terrain": 2,
+   "terrain_name": "path",
+   "kind": "blob",
+   "variant": 3,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 2,
+    "TOP_RIGHT_CORNER": 2,
+    "RIGHT_SIDE": 2,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 2,
+    "BOTTOM_LEFT_CORNER": 2,
+    "LEFT_SIDE": 2,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 1,
+    "E": 1,
+    "SE": 0,
+    "S": 1,
+    "SW": 1,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    10,
+    11
+   ],
+   "terrain": 2,
+   "terrain_name": "path",
+   "kind": "blob",
+   "variant": 3,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 2,
+    "TOP_RIGHT_CORNER": 2,
+    "RIGHT_SIDE": 2,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 2,
+    "BOTTOM_LEFT_CORNER": 2,
+    "LEFT_SIDE": 2,
+    "TOP_LEFT_CORNER": 2
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 1,
+    "E": 1,
+    "SE": 0,
+    "S": 1,
+    "SW": 1,
+    "W": 1,
+    "NW": 1
+   }
+  },
+  {
+   "atlas": [
+    11,
+    11
+   ],
+   "terrain": 2,
+   "terrain_name": "path",
+   "kind": "blob",
+   "variant": 4,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 2,
+    "TOP_RIGHT_CORNER": 2,
+    "RIGHT_SIDE": 2,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 2,
+    "BOTTOM_LEFT_CORNER": 2,
+    "LEFT_SIDE": 2,
+    "TOP_LEFT_CORNER": 2
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 1,
+    "E": 1,
+    "SE": 0,
+    "S": 1,
+    "SW": 1,
+    "W": 1,
+    "NW": 1
+   }
+  },
+  {
+   "atlas": [
+    12,
+    11
+   ],
+   "terrain": 2,
+   "terrain_name": "path",
+   "kind": "blob",
+   "variant": 4,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 2,
+    "TOP_RIGHT_CORNER": 2,
+    "RIGHT_SIDE": 2,
+    "BOTTOM_RIGHT_CORNER": 2,
+    "BOTTOM_SIDE": 2,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 2,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 1,
+    "E": 1,
+    "SE": 1,
+    "S": 1,
+    "SW": 0,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    13,
+    11
+   ],
+   "terrain": 2,
+   "terrain_name": "path",
+   "kind": "blob",
+   "variant": 5,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 2,
+    "TOP_RIGHT_CORNER": 2,
+    "RIGHT_SIDE": 2,
+    "BOTTOM_RIGHT_CORNER": 2,
+    "BOTTOM_SIDE": 2,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 2,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 1,
+    "E": 1,
+    "SE": 1,
+    "S": 1,
+    "SW": 0,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    14,
+    11
+   ],
+   "terrain": 2,
+   "terrain_name": "path",
+   "kind": "blob",
+   "variant": 5,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 2,
@@ -3115,13 +5947,44 @@
   },
   {
    "atlas": [
-    3,
-    6
+    15,
+    11
    ],
    "terrain": 2,
    "terrain_name": "path",
    "kind": "blob",
-   "variant": 0,
+   "variant": 1,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 2,
+    "TOP_RIGHT_CORNER": 2,
+    "RIGHT_SIDE": 2,
+    "BOTTOM_RIGHT_CORNER": 2,
+    "BOTTOM_SIDE": 2,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 2,
+    "TOP_LEFT_CORNER": 2
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 1,
+    "E": 1,
+    "SE": 1,
+    "S": 1,
+    "SW": 0,
+    "W": 1,
+    "NW": 1
+   }
+  },
+  {
+   "atlas": [
+    0,
+    12
+   ],
+   "terrain": 2,
+   "terrain_name": "path",
+   "kind": "blob",
+   "variant": 1,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 2,
@@ -3146,8 +6009,39 @@
   },
   {
    "atlas": [
-    4,
-    6
+    1,
+    12
+   ],
+   "terrain": 2,
+   "terrain_name": "path",
+   "kind": "blob",
+   "variant": 2,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 2,
+    "TOP_RIGHT_CORNER": 2,
+    "RIGHT_SIDE": 2,
+    "BOTTOM_RIGHT_CORNER": 2,
+    "BOTTOM_SIDE": 2,
+    "BOTTOM_LEFT_CORNER": 2,
+    "LEFT_SIDE": 2,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 1,
+    "E": 1,
+    "SE": 1,
+    "S": 1,
+    "SW": 1,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    2,
+    12
    ],
    "terrain": 2,
    "terrain_name": "path",
@@ -3177,8 +6071,8 @@
   },
   {
    "atlas": [
-    5,
-    6
+    3,
+    12
    ],
    "terrain": 2,
    "terrain_name": "path",
@@ -3208,8 +6102,8 @@
   },
   {
    "atlas": [
-    6,
-    6
+    4,
+    12
    ],
    "terrain": 2,
    "terrain_name": "path",
@@ -3239,8 +6133,8 @@
   },
   {
    "atlas": [
-    7,
-    6
+    5,
+    12
    ],
    "terrain": 2,
    "terrain_name": "path",
@@ -3270,452 +6164,18 @@
   },
   {
    "atlas": [
-    8,
-    6
-   ],
-   "terrain": 3,
-   "terrain_name": "grass",
-   "kind": "blob",
-   "variant": 0,
-   "probability": 1.0,
-   "peering": {
-    "TOP_SIDE": 0,
-    "TOP_RIGHT_CORNER": 0,
-    "RIGHT_SIDE": 0,
-    "BOTTOM_RIGHT_CORNER": 0,
-    "BOTTOM_SIDE": 0,
-    "BOTTOM_LEFT_CORNER": 0,
-    "LEFT_SIDE": 0,
-    "TOP_LEFT_CORNER": 0
-   },
-   "blob_bits": {
-    "N": 0,
-    "NE": 0,
-    "E": 0,
-    "SE": 0,
-    "S": 0,
-    "SW": 0,
-    "W": 0,
-    "NW": 0
-   }
-  },
-  {
-   "atlas": [
-    9,
-    6
-   ],
-   "terrain": 3,
-   "terrain_name": "grass",
-   "kind": "blob",
-   "variant": 0,
-   "probability": 1.0,
-   "peering": {
-    "TOP_SIDE": 0,
-    "TOP_RIGHT_CORNER": 0,
-    "RIGHT_SIDE": 0,
-    "BOTTOM_RIGHT_CORNER": 0,
-    "BOTTOM_SIDE": 0,
-    "BOTTOM_LEFT_CORNER": 0,
-    "LEFT_SIDE": 3,
-    "TOP_LEFT_CORNER": 0
-   },
-   "blob_bits": {
-    "N": 0,
-    "NE": 0,
-    "E": 0,
-    "SE": 0,
-    "S": 0,
-    "SW": 0,
-    "W": 1,
-    "NW": 0
-   }
-  },
-  {
-   "atlas": [
-    10,
-    6
-   ],
-   "terrain": 3,
-   "terrain_name": "grass",
-   "kind": "blob",
-   "variant": 0,
-   "probability": 1.0,
-   "peering": {
-    "TOP_SIDE": 0,
-    "TOP_RIGHT_CORNER": 0,
-    "RIGHT_SIDE": 0,
-    "BOTTOM_RIGHT_CORNER": 0,
-    "BOTTOM_SIDE": 3,
-    "BOTTOM_LEFT_CORNER": 0,
-    "LEFT_SIDE": 0,
-    "TOP_LEFT_CORNER": 0
-   },
-   "blob_bits": {
-    "N": 0,
-    "NE": 0,
-    "E": 0,
-    "SE": 0,
-    "S": 1,
-    "SW": 0,
-    "W": 0,
-    "NW": 0
-   }
-  },
-  {
-   "atlas": [
-    11,
-    6
-   ],
-   "terrain": 3,
-   "terrain_name": "grass",
-   "kind": "blob",
-   "variant": 0,
-   "probability": 1.0,
-   "peering": {
-    "TOP_SIDE": 0,
-    "TOP_RIGHT_CORNER": 0,
-    "RIGHT_SIDE": 3,
-    "BOTTOM_RIGHT_CORNER": 0,
-    "BOTTOM_SIDE": 0,
-    "BOTTOM_LEFT_CORNER": 0,
-    "LEFT_SIDE": 0,
-    "TOP_LEFT_CORNER": 0
-   },
-   "blob_bits": {
-    "N": 0,
-    "NE": 0,
-    "E": 1,
-    "SE": 0,
-    "S": 0,
-    "SW": 0,
-    "W": 0,
-    "NW": 0
-   }
-  },
-  {
-   "atlas": [
-    12,
-    6
-   ],
-   "terrain": 3,
-   "terrain_name": "grass",
-   "kind": "blob",
-   "variant": 0,
-   "probability": 1.0,
-   "peering": {
-    "TOP_SIDE": 3,
-    "TOP_RIGHT_CORNER": 0,
-    "RIGHT_SIDE": 0,
-    "BOTTOM_RIGHT_CORNER": 0,
-    "BOTTOM_SIDE": 0,
-    "BOTTOM_LEFT_CORNER": 0,
-    "LEFT_SIDE": 0,
-    "TOP_LEFT_CORNER": 0
-   },
-   "blob_bits": {
-    "N": 1,
-    "NE": 0,
-    "E": 0,
-    "SE": 0,
-    "S": 0,
-    "SW": 0,
-    "W": 0,
-    "NW": 0
-   }
-  },
-  {
-   "atlas": [
-    13,
-    6
-   ],
-   "terrain": 3,
-   "terrain_name": "grass",
-   "kind": "blob",
-   "variant": 0,
-   "probability": 1.0,
-   "peering": {
-    "TOP_SIDE": 0,
-    "TOP_RIGHT_CORNER": 0,
-    "RIGHT_SIDE": 0,
-    "BOTTOM_RIGHT_CORNER": 0,
-    "BOTTOM_SIDE": 3,
-    "BOTTOM_LEFT_CORNER": 0,
-    "LEFT_SIDE": 3,
-    "TOP_LEFT_CORNER": 0
-   },
-   "blob_bits": {
-    "N": 0,
-    "NE": 0,
-    "E": 0,
-    "SE": 0,
-    "S": 1,
-    "SW": 0,
-    "W": 1,
-    "NW": 0
-   }
-  },
-  {
-   "atlas": [
-    14,
-    6
-   ],
-   "terrain": 3,
-   "terrain_name": "grass",
-   "kind": "blob",
-   "variant": 0,
-   "probability": 1.0,
-   "peering": {
-    "TOP_SIDE": 0,
-    "TOP_RIGHT_CORNER": 0,
-    "RIGHT_SIDE": 0,
-    "BOTTOM_RIGHT_CORNER": 0,
-    "BOTTOM_SIDE": 3,
-    "BOTTOM_LEFT_CORNER": 3,
-    "LEFT_SIDE": 3,
-    "TOP_LEFT_CORNER": 0
-   },
-   "blob_bits": {
-    "N": 0,
-    "NE": 0,
-    "E": 0,
-    "SE": 0,
-    "S": 1,
-    "SW": 1,
-    "W": 1,
-    "NW": 0
-   }
-  },
-  {
-   "atlas": [
-    15,
-    6
-   ],
-   "terrain": 3,
-   "terrain_name": "grass",
-   "kind": "blob",
-   "variant": 0,
-   "probability": 1.0,
-   "peering": {
-    "TOP_SIDE": 0,
-    "TOP_RIGHT_CORNER": 0,
-    "RIGHT_SIDE": 3,
-    "BOTTOM_RIGHT_CORNER": 0,
-    "BOTTOM_SIDE": 0,
-    "BOTTOM_LEFT_CORNER": 0,
-    "LEFT_SIDE": 3,
-    "TOP_LEFT_CORNER": 0
-   },
-   "blob_bits": {
-    "N": 0,
-    "NE": 0,
-    "E": 1,
-    "SE": 0,
-    "S": 0,
-    "SW": 0,
-    "W": 1,
-    "NW": 0
-   }
-  },
-  {
-   "atlas": [
-    0,
-    7
-   ],
-   "terrain": 3,
-   "terrain_name": "grass",
-   "kind": "blob",
-   "variant": 0,
-   "probability": 1.0,
-   "peering": {
-    "TOP_SIDE": 0,
-    "TOP_RIGHT_CORNER": 0,
-    "RIGHT_SIDE": 3,
-    "BOTTOM_RIGHT_CORNER": 0,
-    "BOTTOM_SIDE": 3,
-    "BOTTOM_LEFT_CORNER": 0,
-    "LEFT_SIDE": 0,
-    "TOP_LEFT_CORNER": 0
-   },
-   "blob_bits": {
-    "N": 0,
-    "NE": 0,
-    "E": 1,
-    "SE": 0,
-    "S": 1,
-    "SW": 0,
-    "W": 0,
-    "NW": 0
-   }
-  },
-  {
-   "atlas": [
-    1,
-    7
-   ],
-   "terrain": 3,
-   "terrain_name": "grass",
-   "kind": "blob",
-   "variant": 0,
-   "probability": 1.0,
-   "peering": {
-    "TOP_SIDE": 0,
-    "TOP_RIGHT_CORNER": 0,
-    "RIGHT_SIDE": 3,
-    "BOTTOM_RIGHT_CORNER": 3,
-    "BOTTOM_SIDE": 3,
-    "BOTTOM_LEFT_CORNER": 0,
-    "LEFT_SIDE": 0,
-    "TOP_LEFT_CORNER": 0
-   },
-   "blob_bits": {
-    "N": 0,
-    "NE": 0,
-    "E": 1,
-    "SE": 1,
-    "S": 1,
-    "SW": 0,
-    "W": 0,
-    "NW": 0
-   }
-  },
-  {
-   "atlas": [
-    2,
-    7
-   ],
-   "terrain": 3,
-   "terrain_name": "grass",
-   "kind": "blob",
-   "variant": 0,
-   "probability": 1.0,
-   "peering": {
-    "TOP_SIDE": 3,
-    "TOP_RIGHT_CORNER": 0,
-    "RIGHT_SIDE": 0,
-    "BOTTOM_RIGHT_CORNER": 0,
-    "BOTTOM_SIDE": 0,
-    "BOTTOM_LEFT_CORNER": 0,
-    "LEFT_SIDE": 3,
-    "TOP_LEFT_CORNER": 0
-   },
-   "blob_bits": {
-    "N": 1,
-    "NE": 0,
-    "E": 0,
-    "SE": 0,
-    "S": 0,
-    "SW": 0,
-    "W": 1,
-    "NW": 0
-   }
-  },
-  {
-   "atlas": [
-    3,
-    7
-   ],
-   "terrain": 3,
-   "terrain_name": "grass",
-   "kind": "blob",
-   "variant": 0,
-   "probability": 1.0,
-   "peering": {
-    "TOP_SIDE": 3,
-    "TOP_RIGHT_CORNER": 0,
-    "RIGHT_SIDE": 0,
-    "BOTTOM_RIGHT_CORNER": 0,
-    "BOTTOM_SIDE": 0,
-    "BOTTOM_LEFT_CORNER": 0,
-    "LEFT_SIDE": 3,
-    "TOP_LEFT_CORNER": 3
-   },
-   "blob_bits": {
-    "N": 1,
-    "NE": 0,
-    "E": 0,
-    "SE": 0,
-    "S": 0,
-    "SW": 0,
-    "W": 1,
-    "NW": 1
-   }
-  },
-  {
-   "atlas": [
-    4,
-    7
-   ],
-   "terrain": 3,
-   "terrain_name": "grass",
-   "kind": "blob",
-   "variant": 0,
-   "probability": 1.0,
-   "peering": {
-    "TOP_SIDE": 3,
-    "TOP_RIGHT_CORNER": 0,
-    "RIGHT_SIDE": 0,
-    "BOTTOM_RIGHT_CORNER": 0,
-    "BOTTOM_SIDE": 3,
-    "BOTTOM_LEFT_CORNER": 0,
-    "LEFT_SIDE": 0,
-    "TOP_LEFT_CORNER": 0
-   },
-   "blob_bits": {
-    "N": 1,
-    "NE": 0,
-    "E": 0,
-    "SE": 0,
-    "S": 1,
-    "SW": 0,
-    "W": 0,
-    "NW": 0
-   }
-  },
-  {
-   "atlas": [
-    5,
-    7
-   ],
-   "terrain": 3,
-   "terrain_name": "grass",
-   "kind": "blob",
-   "variant": 0,
-   "probability": 1.0,
-   "peering": {
-    "TOP_SIDE": 3,
-    "TOP_RIGHT_CORNER": 0,
-    "RIGHT_SIDE": 3,
-    "BOTTOM_RIGHT_CORNER": 0,
-    "BOTTOM_SIDE": 0,
-    "BOTTOM_LEFT_CORNER": 0,
-    "LEFT_SIDE": 0,
-    "TOP_LEFT_CORNER": 0
-   },
-   "blob_bits": {
-    "N": 1,
-    "NE": 0,
-    "E": 1,
-    "SE": 0,
-    "S": 0,
-    "SW": 0,
-    "W": 0,
-    "NW": 0
-   }
-  },
-  {
-   "atlas": [
     6,
-    7
+    12
    ],
    "terrain": 3,
    "terrain_name": "grass",
    "kind": "blob",
-   "variant": 0,
+   "variant": 1,
    "probability": 1.0,
    "peering": {
-    "TOP_SIDE": 3,
-    "TOP_RIGHT_CORNER": 3,
-    "RIGHT_SIDE": 3,
+    "TOP_SIDE": 0,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 0,
     "BOTTOM_RIGHT_CORNER": 0,
     "BOTTOM_SIDE": 0,
     "BOTTOM_LEFT_CORNER": 0,
@@ -3723,9 +6183,9 @@
     "TOP_LEFT_CORNER": 0
    },
    "blob_bits": {
-    "N": 1,
-    "NE": 1,
-    "E": 1,
+    "N": 0,
+    "NE": 0,
+    "E": 0,
     "SE": 0,
     "S": 0,
     "SW": 0,
@@ -3736,19 +6196,50 @@
   {
    "atlas": [
     7,
-    7
+    12
    ],
    "terrain": 3,
    "terrain_name": "grass",
    "kind": "blob",
-   "variant": 0,
+   "variant": 2,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 0,
     "TOP_RIGHT_CORNER": 0,
-    "RIGHT_SIDE": 3,
+    "RIGHT_SIDE": 0,
     "BOTTOM_RIGHT_CORNER": 0,
-    "BOTTOM_SIDE": 3,
+    "BOTTOM_SIDE": 0,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 0,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 0,
+    "NE": 0,
+    "E": 0,
+    "SE": 0,
+    "S": 0,
+    "SW": 0,
+    "W": 0,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    8,
+    12
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 2,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 0,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 0,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 0,
     "BOTTOM_LEFT_CORNER": 0,
     "LEFT_SIDE": 3,
     "TOP_LEFT_CORNER": 0
@@ -3756,9 +6247,9 @@
    "blob_bits": {
     "N": 0,
     "NE": 0,
-    "E": 1,
+    "E": 0,
     "SE": 0,
-    "S": 1,
+    "S": 0,
     "SW": 0,
     "W": 1,
     "NW": 0
@@ -3766,51 +6257,20 @@
   },
   {
    "atlas": [
-    8,
-    7
-   ],
-   "terrain": 3,
-   "terrain_name": "grass",
-   "kind": "blob",
-   "variant": 0,
-   "probability": 1.0,
-   "peering": {
-    "TOP_SIDE": 0,
-    "TOP_RIGHT_CORNER": 0,
-    "RIGHT_SIDE": 3,
-    "BOTTOM_RIGHT_CORNER": 0,
-    "BOTTOM_SIDE": 3,
-    "BOTTOM_LEFT_CORNER": 3,
-    "LEFT_SIDE": 3,
-    "TOP_LEFT_CORNER": 0
-   },
-   "blob_bits": {
-    "N": 0,
-    "NE": 0,
-    "E": 1,
-    "SE": 0,
-    "S": 1,
-    "SW": 1,
-    "W": 1,
-    "NW": 0
-   }
-  },
-  {
-   "atlas": [
     9,
-    7
+    12
    ],
    "terrain": 3,
    "terrain_name": "grass",
    "kind": "blob",
-   "variant": 0,
+   "variant": 3,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 0,
     "TOP_RIGHT_CORNER": 0,
-    "RIGHT_SIDE": 3,
-    "BOTTOM_RIGHT_CORNER": 3,
-    "BOTTOM_SIDE": 3,
+    "RIGHT_SIDE": 0,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 0,
     "BOTTOM_LEFT_CORNER": 0,
     "LEFT_SIDE": 3,
     "TOP_LEFT_CORNER": 0
@@ -3818,9 +6278,9 @@
    "blob_bits": {
     "N": 0,
     "NE": 0,
-    "E": 1,
-    "SE": 1,
-    "S": 1,
+    "E": 0,
+    "SE": 0,
+    "S": 0,
     "SW": 0,
     "W": 1,
     "NW": 0
@@ -3829,18 +6289,266 @@
   {
    "atlas": [
     10,
-    7
+    12
    ],
    "terrain": 3,
    "terrain_name": "grass",
    "kind": "blob",
-   "variant": 0,
+   "variant": 3,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 0,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 0,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 3,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 0,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 0,
+    "NE": 0,
+    "E": 0,
+    "SE": 0,
+    "S": 1,
+    "SW": 0,
+    "W": 0,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    11,
+    12
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 4,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 0,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 0,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 3,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 0,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 0,
+    "NE": 0,
+    "E": 0,
+    "SE": 0,
+    "S": 1,
+    "SW": 0,
+    "W": 0,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    12,
+    12
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 4,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 0,
     "TOP_RIGHT_CORNER": 0,
     "RIGHT_SIDE": 3,
-    "BOTTOM_RIGHT_CORNER": 3,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 0,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 0,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 0,
+    "NE": 0,
+    "E": 1,
+    "SE": 0,
+    "S": 0,
+    "SW": 0,
+    "W": 0,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    13,
+    12
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 5,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 0,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 3,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 0,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 0,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 0,
+    "NE": 0,
+    "E": 1,
+    "SE": 0,
+    "S": 0,
+    "SW": 0,
+    "W": 0,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    14,
+    12
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 5,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 3,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 0,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 0,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 0,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 0,
+    "SE": 0,
+    "S": 0,
+    "SW": 0,
+    "W": 0,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    15,
+    12
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 1,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 3,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 0,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 0,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 0,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 0,
+    "SE": 0,
+    "S": 0,
+    "SW": 0,
+    "W": 0,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    0,
+    13
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 1,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 0,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 0,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 3,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 3,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 0,
+    "NE": 0,
+    "E": 0,
+    "SE": 0,
+    "S": 1,
+    "SW": 0,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    1,
+    13
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 2,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 0,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 0,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 3,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 3,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 0,
+    "NE": 0,
+    "E": 0,
+    "SE": 0,
+    "S": 1,
+    "SW": 0,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    2,
+    13
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 2,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 0,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 0,
+    "BOTTOM_RIGHT_CORNER": 0,
     "BOTTOM_SIDE": 3,
     "BOTTOM_LEFT_CORNER": 3,
     "LEFT_SIDE": 3,
@@ -3849,289 +6557,41 @@
    "blob_bits": {
     "N": 0,
     "NE": 0,
-    "E": 1,
-    "SE": 1,
-    "S": 1,
-    "SW": 1,
-    "W": 1,
-    "NW": 0
-   }
-  },
-  {
-   "atlas": [
-    11,
-    7
-   ],
-   "terrain": 3,
-   "terrain_name": "grass",
-   "kind": "blob",
-   "variant": 0,
-   "probability": 1.0,
-   "peering": {
-    "TOP_SIDE": 3,
-    "TOP_RIGHT_CORNER": 0,
-    "RIGHT_SIDE": 0,
-    "BOTTOM_RIGHT_CORNER": 0,
-    "BOTTOM_SIDE": 3,
-    "BOTTOM_LEFT_CORNER": 0,
-    "LEFT_SIDE": 3,
-    "TOP_LEFT_CORNER": 0
-   },
-   "blob_bits": {
-    "N": 1,
-    "NE": 0,
-    "E": 0,
-    "SE": 0,
-    "S": 1,
-    "SW": 0,
-    "W": 1,
-    "NW": 0
-   }
-  },
-  {
-   "atlas": [
-    12,
-    7
-   ],
-   "terrain": 3,
-   "terrain_name": "grass",
-   "kind": "blob",
-   "variant": 0,
-   "probability": 1.0,
-   "peering": {
-    "TOP_SIDE": 3,
-    "TOP_RIGHT_CORNER": 0,
-    "RIGHT_SIDE": 0,
-    "BOTTOM_RIGHT_CORNER": 0,
-    "BOTTOM_SIDE": 3,
-    "BOTTOM_LEFT_CORNER": 0,
-    "LEFT_SIDE": 3,
-    "TOP_LEFT_CORNER": 3
-   },
-   "blob_bits": {
-    "N": 1,
-    "NE": 0,
-    "E": 0,
-    "SE": 0,
-    "S": 1,
-    "SW": 0,
-    "W": 1,
-    "NW": 1
-   }
-  },
-  {
-   "atlas": [
-    13,
-    7
-   ],
-   "terrain": 3,
-   "terrain_name": "grass",
-   "kind": "blob",
-   "variant": 0,
-   "probability": 1.0,
-   "peering": {
-    "TOP_SIDE": 3,
-    "TOP_RIGHT_CORNER": 0,
-    "RIGHT_SIDE": 0,
-    "BOTTOM_RIGHT_CORNER": 0,
-    "BOTTOM_SIDE": 3,
-    "BOTTOM_LEFT_CORNER": 3,
-    "LEFT_SIDE": 3,
-    "TOP_LEFT_CORNER": 0
-   },
-   "blob_bits": {
-    "N": 1,
-    "NE": 0,
     "E": 0,
     "SE": 0,
     "S": 1,
     "SW": 1,
     "W": 1,
-    "NW": 0
-   }
-  },
-  {
-   "atlas": [
-    14,
-    7
-   ],
-   "terrain": 3,
-   "terrain_name": "grass",
-   "kind": "blob",
-   "variant": 0,
-   "probability": 1.0,
-   "peering": {
-    "TOP_SIDE": 3,
-    "TOP_RIGHT_CORNER": 0,
-    "RIGHT_SIDE": 0,
-    "BOTTOM_RIGHT_CORNER": 0,
-    "BOTTOM_SIDE": 3,
-    "BOTTOM_LEFT_CORNER": 3,
-    "LEFT_SIDE": 3,
-    "TOP_LEFT_CORNER": 3
-   },
-   "blob_bits": {
-    "N": 1,
-    "NE": 0,
-    "E": 0,
-    "SE": 0,
-    "S": 1,
-    "SW": 1,
-    "W": 1,
-    "NW": 1
-   }
-  },
-  {
-   "atlas": [
-    15,
-    7
-   ],
-   "terrain": 3,
-   "terrain_name": "grass",
-   "kind": "blob",
-   "variant": 0,
-   "probability": 1.0,
-   "peering": {
-    "TOP_SIDE": 3,
-    "TOP_RIGHT_CORNER": 0,
-    "RIGHT_SIDE": 3,
-    "BOTTOM_RIGHT_CORNER": 0,
-    "BOTTOM_SIDE": 0,
-    "BOTTOM_LEFT_CORNER": 0,
-    "LEFT_SIDE": 3,
-    "TOP_LEFT_CORNER": 0
-   },
-   "blob_bits": {
-    "N": 1,
-    "NE": 0,
-    "E": 1,
-    "SE": 0,
-    "S": 0,
-    "SW": 0,
-    "W": 1,
-    "NW": 0
-   }
-  },
-  {
-   "atlas": [
-    0,
-    8
-   ],
-   "terrain": 3,
-   "terrain_name": "grass",
-   "kind": "blob",
-   "variant": 0,
-   "probability": 1.0,
-   "peering": {
-    "TOP_SIDE": 3,
-    "TOP_RIGHT_CORNER": 0,
-    "RIGHT_SIDE": 3,
-    "BOTTOM_RIGHT_CORNER": 0,
-    "BOTTOM_SIDE": 0,
-    "BOTTOM_LEFT_CORNER": 0,
-    "LEFT_SIDE": 3,
-    "TOP_LEFT_CORNER": 3
-   },
-   "blob_bits": {
-    "N": 1,
-    "NE": 0,
-    "E": 1,
-    "SE": 0,
-    "S": 0,
-    "SW": 0,
-    "W": 1,
-    "NW": 1
-   }
-  },
-  {
-   "atlas": [
-    1,
-    8
-   ],
-   "terrain": 3,
-   "terrain_name": "grass",
-   "kind": "blob",
-   "variant": 0,
-   "probability": 1.0,
-   "peering": {
-    "TOP_SIDE": 3,
-    "TOP_RIGHT_CORNER": 0,
-    "RIGHT_SIDE": 3,
-    "BOTTOM_RIGHT_CORNER": 0,
-    "BOTTOM_SIDE": 3,
-    "BOTTOM_LEFT_CORNER": 0,
-    "LEFT_SIDE": 0,
-    "TOP_LEFT_CORNER": 0
-   },
-   "blob_bits": {
-    "N": 1,
-    "NE": 0,
-    "E": 1,
-    "SE": 0,
-    "S": 1,
-    "SW": 0,
-    "W": 0,
-    "NW": 0
-   }
-  },
-  {
-   "atlas": [
-    2,
-    8
-   ],
-   "terrain": 3,
-   "terrain_name": "grass",
-   "kind": "blob",
-   "variant": 0,
-   "probability": 1.0,
-   "peering": {
-    "TOP_SIDE": 3,
-    "TOP_RIGHT_CORNER": 0,
-    "RIGHT_SIDE": 3,
-    "BOTTOM_RIGHT_CORNER": 3,
-    "BOTTOM_SIDE": 3,
-    "BOTTOM_LEFT_CORNER": 0,
-    "LEFT_SIDE": 0,
-    "TOP_LEFT_CORNER": 0
-   },
-   "blob_bits": {
-    "N": 1,
-    "NE": 0,
-    "E": 1,
-    "SE": 1,
-    "S": 1,
-    "SW": 0,
-    "W": 0,
     "NW": 0
    }
   },
   {
    "atlas": [
     3,
-    8
+    13
    ],
    "terrain": 3,
    "terrain_name": "grass",
    "kind": "blob",
-   "variant": 0,
+   "variant": 3,
    "probability": 1.0,
    "peering": {
-    "TOP_SIDE": 3,
-    "TOP_RIGHT_CORNER": 3,
-    "RIGHT_SIDE": 3,
+    "TOP_SIDE": 0,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 0,
     "BOTTOM_RIGHT_CORNER": 0,
-    "BOTTOM_SIDE": 0,
-    "BOTTOM_LEFT_CORNER": 0,
+    "BOTTOM_SIDE": 3,
+    "BOTTOM_LEFT_CORNER": 3,
     "LEFT_SIDE": 3,
     "TOP_LEFT_CORNER": 0
    },
    "blob_bits": {
-    "N": 1,
-    "NE": 1,
-    "E": 1,
+    "N": 0,
+    "NE": 0,
+    "E": 0,
     "SE": 0,
-    "S": 0,
-    "SW": 0,
+    "S": 1,
+    "SW": 1,
     "W": 1,
     "NW": 0
    }
@@ -4139,90 +6599,90 @@
   {
    "atlas": [
     4,
-    8
+    13
    ],
    "terrain": 3,
    "terrain_name": "grass",
    "kind": "blob",
-   "variant": 0,
+   "variant": 3,
    "probability": 1.0,
    "peering": {
-    "TOP_SIDE": 3,
-    "TOP_RIGHT_CORNER": 3,
+    "TOP_SIDE": 0,
+    "TOP_RIGHT_CORNER": 0,
     "RIGHT_SIDE": 3,
     "BOTTOM_RIGHT_CORNER": 0,
     "BOTTOM_SIDE": 0,
     "BOTTOM_LEFT_CORNER": 0,
     "LEFT_SIDE": 3,
-    "TOP_LEFT_CORNER": 3
+    "TOP_LEFT_CORNER": 0
    },
    "blob_bits": {
-    "N": 1,
-    "NE": 1,
+    "N": 0,
+    "NE": 0,
     "E": 1,
     "SE": 0,
     "S": 0,
     "SW": 0,
     "W": 1,
-    "NW": 1
+    "NW": 0
    }
   },
   {
    "atlas": [
     5,
-    8
+    13
    ],
    "terrain": 3,
    "terrain_name": "grass",
    "kind": "blob",
-   "variant": 0,
+   "variant": 4,
    "probability": 1.0,
    "peering": {
-    "TOP_SIDE": 3,
-    "TOP_RIGHT_CORNER": 3,
+    "TOP_SIDE": 0,
+    "TOP_RIGHT_CORNER": 0,
     "RIGHT_SIDE": 3,
     "BOTTOM_RIGHT_CORNER": 0,
-    "BOTTOM_SIDE": 3,
+    "BOTTOM_SIDE": 0,
     "BOTTOM_LEFT_CORNER": 0,
-    "LEFT_SIDE": 0,
+    "LEFT_SIDE": 3,
     "TOP_LEFT_CORNER": 0
    },
    "blob_bits": {
-    "N": 1,
-    "NE": 1,
+    "N": 0,
+    "NE": 0,
     "E": 1,
     "SE": 0,
-    "S": 1,
+    "S": 0,
     "SW": 0,
-    "W": 0,
+    "W": 1,
     "NW": 0
    }
   },
   {
    "atlas": [
     6,
-    8
+    13
    ],
    "terrain": 3,
    "terrain_name": "grass",
    "kind": "blob",
-   "variant": 0,
+   "variant": 4,
    "probability": 1.0,
    "peering": {
-    "TOP_SIDE": 3,
-    "TOP_RIGHT_CORNER": 3,
+    "TOP_SIDE": 0,
+    "TOP_RIGHT_CORNER": 0,
     "RIGHT_SIDE": 3,
-    "BOTTOM_RIGHT_CORNER": 3,
+    "BOTTOM_RIGHT_CORNER": 0,
     "BOTTOM_SIDE": 3,
     "BOTTOM_LEFT_CORNER": 0,
     "LEFT_SIDE": 0,
     "TOP_LEFT_CORNER": 0
    },
    "blob_bits": {
-    "N": 1,
-    "NE": 1,
+    "N": 0,
+    "NE": 0,
     "E": 1,
-    "SE": 1,
+    "SE": 0,
     "S": 1,
     "SW": 0,
     "W": 0,
@@ -4232,12 +6692,1407 @@
   {
    "atlas": [
     7,
-    8
+    13
    ],
    "terrain": 3,
    "terrain_name": "grass",
    "kind": "blob",
-   "variant": 0,
+   "variant": 5,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 0,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 3,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 3,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 0,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 0,
+    "NE": 0,
+    "E": 1,
+    "SE": 0,
+    "S": 1,
+    "SW": 0,
+    "W": 0,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    8,
+    13
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 5,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 0,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 3,
+    "BOTTOM_RIGHT_CORNER": 3,
+    "BOTTOM_SIDE": 3,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 0,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 0,
+    "NE": 0,
+    "E": 1,
+    "SE": 1,
+    "S": 1,
+    "SW": 0,
+    "W": 0,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    9,
+    13
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 1,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 0,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 3,
+    "BOTTOM_RIGHT_CORNER": 3,
+    "BOTTOM_SIDE": 3,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 0,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 0,
+    "NE": 0,
+    "E": 1,
+    "SE": 1,
+    "S": 1,
+    "SW": 0,
+    "W": 0,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    10,
+    13
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 1,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 3,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 0,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 0,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 3,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 0,
+    "SE": 0,
+    "S": 0,
+    "SW": 0,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    11,
+    13
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 2,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 3,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 0,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 0,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 3,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 0,
+    "SE": 0,
+    "S": 0,
+    "SW": 0,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    12,
+    13
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 2,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 3,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 0,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 0,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 3,
+    "TOP_LEFT_CORNER": 3
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 0,
+    "SE": 0,
+    "S": 0,
+    "SW": 0,
+    "W": 1,
+    "NW": 1
+   }
+  },
+  {
+   "atlas": [
+    13,
+    13
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 3,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 3,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 0,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 0,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 3,
+    "TOP_LEFT_CORNER": 3
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 0,
+    "SE": 0,
+    "S": 0,
+    "SW": 0,
+    "W": 1,
+    "NW": 1
+   }
+  },
+  {
+   "atlas": [
+    14,
+    13
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 3,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 3,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 0,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 3,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 0,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 0,
+    "SE": 0,
+    "S": 1,
+    "SW": 0,
+    "W": 0,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    15,
+    13
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 4,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 3,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 0,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 3,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 0,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 0,
+    "SE": 0,
+    "S": 1,
+    "SW": 0,
+    "W": 0,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    0,
+    14
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 4,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 3,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 3,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 0,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 0,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 1,
+    "SE": 0,
+    "S": 0,
+    "SW": 0,
+    "W": 0,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    1,
+    14
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 5,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 3,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 3,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 0,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 0,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 1,
+    "SE": 0,
+    "S": 0,
+    "SW": 0,
+    "W": 0,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    2,
+    14
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 5,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 3,
+    "TOP_RIGHT_CORNER": 3,
+    "RIGHT_SIDE": 3,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 0,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 0,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 1,
+    "E": 1,
+    "SE": 0,
+    "S": 0,
+    "SW": 0,
+    "W": 0,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    3,
+    14
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 1,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 3,
+    "TOP_RIGHT_CORNER": 3,
+    "RIGHT_SIDE": 3,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 0,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 0,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 1,
+    "E": 1,
+    "SE": 0,
+    "S": 0,
+    "SW": 0,
+    "W": 0,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    4,
+    14
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 1,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 0,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 3,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 3,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 3,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 0,
+    "NE": 0,
+    "E": 1,
+    "SE": 0,
+    "S": 1,
+    "SW": 0,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    5,
+    14
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 2,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 0,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 3,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 3,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 3,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 0,
+    "NE": 0,
+    "E": 1,
+    "SE": 0,
+    "S": 1,
+    "SW": 0,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    6,
+    14
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 2,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 0,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 3,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 3,
+    "BOTTOM_LEFT_CORNER": 3,
+    "LEFT_SIDE": 3,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 0,
+    "NE": 0,
+    "E": 1,
+    "SE": 0,
+    "S": 1,
+    "SW": 1,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    7,
+    14
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 3,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 0,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 3,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 3,
+    "BOTTOM_LEFT_CORNER": 3,
+    "LEFT_SIDE": 3,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 0,
+    "NE": 0,
+    "E": 1,
+    "SE": 0,
+    "S": 1,
+    "SW": 1,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    8,
+    14
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 3,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 0,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 3,
+    "BOTTOM_RIGHT_CORNER": 3,
+    "BOTTOM_SIDE": 3,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 3,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 0,
+    "NE": 0,
+    "E": 1,
+    "SE": 1,
+    "S": 1,
+    "SW": 0,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    9,
+    14
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 4,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 0,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 3,
+    "BOTTOM_RIGHT_CORNER": 3,
+    "BOTTOM_SIDE": 3,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 3,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 0,
+    "NE": 0,
+    "E": 1,
+    "SE": 1,
+    "S": 1,
+    "SW": 0,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    10,
+    14
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 4,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 0,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 3,
+    "BOTTOM_RIGHT_CORNER": 3,
+    "BOTTOM_SIDE": 3,
+    "BOTTOM_LEFT_CORNER": 3,
+    "LEFT_SIDE": 3,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 0,
+    "NE": 0,
+    "E": 1,
+    "SE": 1,
+    "S": 1,
+    "SW": 1,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    11,
+    14
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 5,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 0,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 3,
+    "BOTTOM_RIGHT_CORNER": 3,
+    "BOTTOM_SIDE": 3,
+    "BOTTOM_LEFT_CORNER": 3,
+    "LEFT_SIDE": 3,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 0,
+    "NE": 0,
+    "E": 1,
+    "SE": 1,
+    "S": 1,
+    "SW": 1,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    12,
+    14
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 5,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 3,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 0,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 3,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 3,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 0,
+    "SE": 0,
+    "S": 1,
+    "SW": 0,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    13,
+    14
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 1,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 3,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 0,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 3,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 3,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 0,
+    "SE": 0,
+    "S": 1,
+    "SW": 0,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    14,
+    14
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 1,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 3,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 0,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 3,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 3,
+    "TOP_LEFT_CORNER": 3
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 0,
+    "SE": 0,
+    "S": 1,
+    "SW": 0,
+    "W": 1,
+    "NW": 1
+   }
+  },
+  {
+   "atlas": [
+    15,
+    14
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 2,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 3,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 0,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 3,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 3,
+    "TOP_LEFT_CORNER": 3
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 0,
+    "SE": 0,
+    "S": 1,
+    "SW": 0,
+    "W": 1,
+    "NW": 1
+   }
+  },
+  {
+   "atlas": [
+    0,
+    15
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 2,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 3,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 0,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 3,
+    "BOTTOM_LEFT_CORNER": 3,
+    "LEFT_SIDE": 3,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 0,
+    "SE": 0,
+    "S": 1,
+    "SW": 1,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    1,
+    15
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 3,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 3,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 0,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 3,
+    "BOTTOM_LEFT_CORNER": 3,
+    "LEFT_SIDE": 3,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 0,
+    "SE": 0,
+    "S": 1,
+    "SW": 1,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    2,
+    15
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 3,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 3,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 0,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 3,
+    "BOTTOM_LEFT_CORNER": 3,
+    "LEFT_SIDE": 3,
+    "TOP_LEFT_CORNER": 3
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 0,
+    "SE": 0,
+    "S": 1,
+    "SW": 1,
+    "W": 1,
+    "NW": 1
+   }
+  },
+  {
+   "atlas": [
+    3,
+    15
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 4,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 3,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 0,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 3,
+    "BOTTOM_LEFT_CORNER": 3,
+    "LEFT_SIDE": 3,
+    "TOP_LEFT_CORNER": 3
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 0,
+    "SE": 0,
+    "S": 1,
+    "SW": 1,
+    "W": 1,
+    "NW": 1
+   }
+  },
+  {
+   "atlas": [
+    4,
+    15
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 4,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 3,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 3,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 0,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 3,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 1,
+    "SE": 0,
+    "S": 0,
+    "SW": 0,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    5,
+    15
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 5,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 3,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 3,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 0,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 3,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 1,
+    "SE": 0,
+    "S": 0,
+    "SW": 0,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    6,
+    15
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 5,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 3,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 3,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 0,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 3,
+    "TOP_LEFT_CORNER": 3
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 1,
+    "SE": 0,
+    "S": 0,
+    "SW": 0,
+    "W": 1,
+    "NW": 1
+   }
+  },
+  {
+   "atlas": [
+    7,
+    15
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 1,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 3,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 3,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 0,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 3,
+    "TOP_LEFT_CORNER": 3
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 1,
+    "SE": 0,
+    "S": 0,
+    "SW": 0,
+    "W": 1,
+    "NW": 1
+   }
+  },
+  {
+   "atlas": [
+    8,
+    15
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 1,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 3,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 3,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 3,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 0,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 1,
+    "SE": 0,
+    "S": 1,
+    "SW": 0,
+    "W": 0,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    9,
+    15
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 2,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 3,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 3,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 3,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 0,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 1,
+    "SE": 0,
+    "S": 1,
+    "SW": 0,
+    "W": 0,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    10,
+    15
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 2,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 3,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 3,
+    "BOTTOM_RIGHT_CORNER": 3,
+    "BOTTOM_SIDE": 3,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 0,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 1,
+    "SE": 1,
+    "S": 1,
+    "SW": 0,
+    "W": 0,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    11,
+    15
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 3,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 3,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 3,
+    "BOTTOM_RIGHT_CORNER": 3,
+    "BOTTOM_SIDE": 3,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 0,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 1,
+    "SE": 1,
+    "S": 1,
+    "SW": 0,
+    "W": 0,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    12,
+    15
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 3,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 3,
+    "TOP_RIGHT_CORNER": 3,
+    "RIGHT_SIDE": 3,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 0,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 3,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 1,
+    "E": 1,
+    "SE": 0,
+    "S": 0,
+    "SW": 0,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    13,
+    15
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 4,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 3,
+    "TOP_RIGHT_CORNER": 3,
+    "RIGHT_SIDE": 3,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 0,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 3,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 1,
+    "E": 1,
+    "SE": 0,
+    "S": 0,
+    "SW": 0,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    14,
+    15
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 4,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 3,
+    "TOP_RIGHT_CORNER": 3,
+    "RIGHT_SIDE": 3,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 0,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 3,
+    "TOP_LEFT_CORNER": 3
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 1,
+    "E": 1,
+    "SE": 0,
+    "S": 0,
+    "SW": 0,
+    "W": 1,
+    "NW": 1
+   }
+  },
+  {
+   "atlas": [
+    15,
+    15
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 5,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 3,
+    "TOP_RIGHT_CORNER": 3,
+    "RIGHT_SIDE": 3,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 0,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 3,
+    "TOP_LEFT_CORNER": 3
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 1,
+    "E": 1,
+    "SE": 0,
+    "S": 0,
+    "SW": 0,
+    "W": 1,
+    "NW": 1
+   }
+  },
+  {
+   "atlas": [
+    0,
+    16
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 5,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 3,
+    "TOP_RIGHT_CORNER": 3,
+    "RIGHT_SIDE": 3,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 3,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 0,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 1,
+    "E": 1,
+    "SE": 0,
+    "S": 1,
+    "SW": 0,
+    "W": 0,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    1,
+    16
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 1,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 3,
+    "TOP_RIGHT_CORNER": 3,
+    "RIGHT_SIDE": 3,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 3,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 0,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 1,
+    "E": 1,
+    "SE": 0,
+    "S": 1,
+    "SW": 0,
+    "W": 0,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    2,
+    16
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 1,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 3,
+    "TOP_RIGHT_CORNER": 3,
+    "RIGHT_SIDE": 3,
+    "BOTTOM_RIGHT_CORNER": 3,
+    "BOTTOM_SIDE": 3,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 0,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 1,
+    "E": 1,
+    "SE": 1,
+    "S": 1,
+    "SW": 0,
+    "W": 0,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    3,
+    16
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 2,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 3,
+    "TOP_RIGHT_CORNER": 3,
+    "RIGHT_SIDE": 3,
+    "BOTTOM_RIGHT_CORNER": 3,
+    "BOTTOM_SIDE": 3,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 0,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 1,
+    "E": 1,
+    "SE": 1,
+    "S": 1,
+    "SW": 0,
+    "W": 0,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    4,
+    16
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 2,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 3,
@@ -4262,13 +8117,44 @@
   },
   {
    "atlas": [
-    8,
-    8
+    5,
+    16
    ],
    "terrain": 3,
    "terrain_name": "grass",
    "kind": "blob",
-   "variant": 0,
+   "variant": 3,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 3,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 3,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 3,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 3,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 1,
+    "SE": 0,
+    "S": 1,
+    "SW": 0,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    6,
+    16
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 3,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 3,
@@ -4293,13 +8179,75 @@
   },
   {
    "atlas": [
-    9,
-    8
+    7,
+    16
    ],
    "terrain": 3,
    "terrain_name": "grass",
    "kind": "blob",
-   "variant": 0,
+   "variant": 4,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 3,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 3,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 3,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 3,
+    "TOP_LEFT_CORNER": 3
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 1,
+    "SE": 0,
+    "S": 1,
+    "SW": 0,
+    "W": 1,
+    "NW": 1
+   }
+  },
+  {
+   "atlas": [
+    8,
+    16
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 4,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 3,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 3,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 3,
+    "BOTTOM_LEFT_CORNER": 3,
+    "LEFT_SIDE": 3,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 1,
+    "SE": 0,
+    "S": 1,
+    "SW": 1,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    9,
+    16
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 5,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 3,
@@ -4325,12 +8273,12 @@
   {
    "atlas": [
     10,
-    8
+    16
    ],
    "terrain": 3,
    "terrain_name": "grass",
    "kind": "blob",
-   "variant": 0,
+   "variant": 5,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 3,
@@ -4356,12 +8304,43 @@
   {
    "atlas": [
     11,
-    8
+    16
    ],
    "terrain": 3,
    "terrain_name": "grass",
    "kind": "blob",
-   "variant": 0,
+   "variant": 1,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 3,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 3,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 3,
+    "BOTTOM_LEFT_CORNER": 3,
+    "LEFT_SIDE": 3,
+    "TOP_LEFT_CORNER": 3
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 1,
+    "SE": 0,
+    "S": 1,
+    "SW": 1,
+    "W": 1,
+    "NW": 1
+   }
+  },
+  {
+   "atlas": [
+    12,
+    16
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 1,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 3,
@@ -4386,13 +8365,13 @@
   },
   {
    "atlas": [
-    12,
-    8
+    13,
+    16
    ],
    "terrain": 3,
    "terrain_name": "grass",
    "kind": "blob",
-   "variant": 0,
+   "variant": 2,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 3,
@@ -4402,37 +8381,6 @@
     "BOTTOM_SIDE": 3,
     "BOTTOM_LEFT_CORNER": 0,
     "LEFT_SIDE": 3,
-    "TOP_LEFT_CORNER": 3
-   },
-   "blob_bits": {
-    "N": 1,
-    "NE": 0,
-    "E": 1,
-    "SE": 1,
-    "S": 1,
-    "SW": 0,
-    "W": 1,
-    "NW": 1
-   }
-  },
-  {
-   "atlas": [
-    13,
-    8
-   ],
-   "terrain": 3,
-   "terrain_name": "grass",
-   "kind": "blob",
-   "variant": 0,
-   "probability": 1.0,
-   "peering": {
-    "TOP_SIDE": 3,
-    "TOP_RIGHT_CORNER": 0,
-    "RIGHT_SIDE": 3,
-    "BOTTOM_RIGHT_CORNER": 3,
-    "BOTTOM_SIDE": 3,
-    "BOTTOM_LEFT_CORNER": 3,
-    "LEFT_SIDE": 3,
     "TOP_LEFT_CORNER": 0
    },
    "blob_bits": {
@@ -4441,7 +8389,7 @@
     "E": 1,
     "SE": 1,
     "S": 1,
-    "SW": 1,
+    "SW": 0,
     "W": 1,
     "NW": 0
    }
@@ -4449,12 +8397,12 @@
   {
    "atlas": [
     14,
-    8
+    16
    ],
    "terrain": 3,
    "terrain_name": "grass",
    "kind": "blob",
-   "variant": 0,
+   "variant": 2,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 3,
@@ -4462,7 +8410,7 @@
     "RIGHT_SIDE": 3,
     "BOTTOM_RIGHT_CORNER": 3,
     "BOTTOM_SIDE": 3,
-    "BOTTOM_LEFT_CORNER": 3,
+    "BOTTOM_LEFT_CORNER": 0,
     "LEFT_SIDE": 3,
     "TOP_LEFT_CORNER": 3
    },
@@ -4472,7 +8420,7 @@
     "E": 1,
     "SE": 1,
     "S": 1,
-    "SW": 1,
+    "SW": 0,
     "W": 1,
     "NW": 1
    }
@@ -4480,49 +8428,18 @@
   {
    "atlas": [
     15,
-    8
+    16
    ],
    "terrain": 3,
    "terrain_name": "grass",
    "kind": "blob",
-   "variant": 0,
+   "variant": 3,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 3,
-    "TOP_RIGHT_CORNER": 3,
+    "TOP_RIGHT_CORNER": 0,
     "RIGHT_SIDE": 3,
-    "BOTTOM_RIGHT_CORNER": 0,
-    "BOTTOM_SIDE": 3,
-    "BOTTOM_LEFT_CORNER": 0,
-    "LEFT_SIDE": 3,
-    "TOP_LEFT_CORNER": 0
-   },
-   "blob_bits": {
-    "N": 1,
-    "NE": 1,
-    "E": 1,
-    "SE": 0,
-    "S": 1,
-    "SW": 0,
-    "W": 1,
-    "NW": 0
-   }
-  },
-  {
-   "atlas": [
-    0,
-    9
-   ],
-   "terrain": 3,
-   "terrain_name": "grass",
-   "kind": "blob",
-   "variant": 0,
-   "probability": 1.0,
-   "peering": {
-    "TOP_SIDE": 3,
-    "TOP_RIGHT_CORNER": 3,
-    "RIGHT_SIDE": 3,
-    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_RIGHT_CORNER": 3,
     "BOTTOM_SIDE": 3,
     "BOTTOM_LEFT_CORNER": 0,
     "LEFT_SIDE": 3,
@@ -4530,9 +8447,9 @@
    },
    "blob_bits": {
     "N": 1,
-    "NE": 1,
+    "NE": 0,
     "E": 1,
-    "SE": 0,
+    "SE": 1,
     "S": 1,
     "SW": 0,
     "W": 1,
@@ -4541,19 +8458,19 @@
   },
   {
    "atlas": [
-    1,
-    9
+    0,
+    17
    ],
    "terrain": 3,
    "terrain_name": "grass",
    "kind": "blob",
-   "variant": 0,
+   "variant": 3,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 3,
-    "TOP_RIGHT_CORNER": 3,
+    "TOP_RIGHT_CORNER": 0,
     "RIGHT_SIDE": 3,
-    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_RIGHT_CORNER": 3,
     "BOTTOM_SIDE": 3,
     "BOTTOM_LEFT_CORNER": 3,
     "LEFT_SIDE": 3,
@@ -4561,9 +8478,40 @@
    },
    "blob_bits": {
     "N": 1,
-    "NE": 1,
+    "NE": 0,
     "E": 1,
-    "SE": 0,
+    "SE": 1,
+    "S": 1,
+    "SW": 1,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    1,
+    17
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 4,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 3,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 3,
+    "BOTTOM_RIGHT_CORNER": 3,
+    "BOTTOM_SIDE": 3,
+    "BOTTOM_LEFT_CORNER": 3,
+    "LEFT_SIDE": 3,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 1,
+    "SE": 1,
     "S": 1,
     "SW": 1,
     "W": 1,
@@ -4573,12 +8521,260 @@
   {
    "atlas": [
     2,
-    9
+    17
    ],
    "terrain": 3,
    "terrain_name": "grass",
    "kind": "blob",
-   "variant": 0,
+   "variant": 4,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 3,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 3,
+    "BOTTOM_RIGHT_CORNER": 3,
+    "BOTTOM_SIDE": 3,
+    "BOTTOM_LEFT_CORNER": 3,
+    "LEFT_SIDE": 3,
+    "TOP_LEFT_CORNER": 3
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 1,
+    "SE": 1,
+    "S": 1,
+    "SW": 1,
+    "W": 1,
+    "NW": 1
+   }
+  },
+  {
+   "atlas": [
+    3,
+    17
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 5,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 3,
+    "TOP_RIGHT_CORNER": 0,
+    "RIGHT_SIDE": 3,
+    "BOTTOM_RIGHT_CORNER": 3,
+    "BOTTOM_SIDE": 3,
+    "BOTTOM_LEFT_CORNER": 3,
+    "LEFT_SIDE": 3,
+    "TOP_LEFT_CORNER": 3
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 0,
+    "E": 1,
+    "SE": 1,
+    "S": 1,
+    "SW": 1,
+    "W": 1,
+    "NW": 1
+   }
+  },
+  {
+   "atlas": [
+    4,
+    17
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 5,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 3,
+    "TOP_RIGHT_CORNER": 3,
+    "RIGHT_SIDE": 3,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 3,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 3,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 1,
+    "E": 1,
+    "SE": 0,
+    "S": 1,
+    "SW": 0,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    5,
+    17
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 1,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 3,
+    "TOP_RIGHT_CORNER": 3,
+    "RIGHT_SIDE": 3,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 3,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 3,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 1,
+    "E": 1,
+    "SE": 0,
+    "S": 1,
+    "SW": 0,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    6,
+    17
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 1,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 3,
+    "TOP_RIGHT_CORNER": 3,
+    "RIGHT_SIDE": 3,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 3,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 3,
+    "TOP_LEFT_CORNER": 3
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 1,
+    "E": 1,
+    "SE": 0,
+    "S": 1,
+    "SW": 0,
+    "W": 1,
+    "NW": 1
+   }
+  },
+  {
+   "atlas": [
+    7,
+    17
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 2,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 3,
+    "TOP_RIGHT_CORNER": 3,
+    "RIGHT_SIDE": 3,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 3,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 3,
+    "TOP_LEFT_CORNER": 3
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 1,
+    "E": 1,
+    "SE": 0,
+    "S": 1,
+    "SW": 0,
+    "W": 1,
+    "NW": 1
+   }
+  },
+  {
+   "atlas": [
+    8,
+    17
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 2,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 3,
+    "TOP_RIGHT_CORNER": 3,
+    "RIGHT_SIDE": 3,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 3,
+    "BOTTOM_LEFT_CORNER": 3,
+    "LEFT_SIDE": 3,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 1,
+    "E": 1,
+    "SE": 0,
+    "S": 1,
+    "SW": 1,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    9,
+    17
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 3,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 3,
+    "TOP_RIGHT_CORNER": 3,
+    "RIGHT_SIDE": 3,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 3,
+    "BOTTOM_LEFT_CORNER": 3,
+    "LEFT_SIDE": 3,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 1,
+    "E": 1,
+    "SE": 0,
+    "S": 1,
+    "SW": 1,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    10,
+    17
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 3,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 3,
@@ -4603,13 +8799,44 @@
   },
   {
    "atlas": [
-    3,
-    9
+    11,
+    17
    ],
    "terrain": 3,
    "terrain_name": "grass",
    "kind": "blob",
-   "variant": 0,
+   "variant": 4,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 3,
+    "TOP_RIGHT_CORNER": 3,
+    "RIGHT_SIDE": 3,
+    "BOTTOM_RIGHT_CORNER": 0,
+    "BOTTOM_SIDE": 3,
+    "BOTTOM_LEFT_CORNER": 3,
+    "LEFT_SIDE": 3,
+    "TOP_LEFT_CORNER": 3
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 1,
+    "E": 1,
+    "SE": 0,
+    "S": 1,
+    "SW": 1,
+    "W": 1,
+    "NW": 1
+   }
+  },
+  {
+   "atlas": [
+    12,
+    17
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 4,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 3,
@@ -4634,13 +8861,44 @@
   },
   {
    "atlas": [
-    4,
-    9
+    13,
+    17
    ],
    "terrain": 3,
    "terrain_name": "grass",
    "kind": "blob",
-   "variant": 0,
+   "variant": 5,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 3,
+    "TOP_RIGHT_CORNER": 3,
+    "RIGHT_SIDE": 3,
+    "BOTTOM_RIGHT_CORNER": 3,
+    "BOTTOM_SIDE": 3,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 3,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 1,
+    "E": 1,
+    "SE": 1,
+    "S": 1,
+    "SW": 0,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    14,
+    17
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 5,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 3,
@@ -4665,13 +8923,44 @@
   },
   {
    "atlas": [
-    5,
-    9
+    15,
+    17
    ],
    "terrain": 3,
    "terrain_name": "grass",
    "kind": "blob",
-   "variant": 0,
+   "variant": 1,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 3,
+    "TOP_RIGHT_CORNER": 3,
+    "RIGHT_SIDE": 3,
+    "BOTTOM_RIGHT_CORNER": 3,
+    "BOTTOM_SIDE": 3,
+    "BOTTOM_LEFT_CORNER": 0,
+    "LEFT_SIDE": 3,
+    "TOP_LEFT_CORNER": 3
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 1,
+    "E": 1,
+    "SE": 1,
+    "S": 1,
+    "SW": 0,
+    "W": 1,
+    "NW": 1
+   }
+  },
+  {
+   "atlas": [
+    0,
+    18
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 1,
    "probability": 1.0,
    "peering": {
     "TOP_SIDE": 3,
@@ -4696,8 +8985,39 @@
   },
   {
    "atlas": [
-    6,
-    9
+    1,
+    18
+   ],
+   "terrain": 3,
+   "terrain_name": "grass",
+   "kind": "blob",
+   "variant": 2,
+   "probability": 1.0,
+   "peering": {
+    "TOP_SIDE": 3,
+    "TOP_RIGHT_CORNER": 3,
+    "RIGHT_SIDE": 3,
+    "BOTTOM_RIGHT_CORNER": 3,
+    "BOTTOM_SIDE": 3,
+    "BOTTOM_LEFT_CORNER": 3,
+    "LEFT_SIDE": 3,
+    "TOP_LEFT_CORNER": 0
+   },
+   "blob_bits": {
+    "N": 1,
+    "NE": 1,
+    "E": 1,
+    "SE": 1,
+    "S": 1,
+    "SW": 1,
+    "W": 1,
+    "NW": 0
+   }
+  },
+  {
+   "atlas": [
+    2,
+    18
    ],
    "terrain": 3,
    "terrain_name": "grass",
@@ -4727,8 +9047,8 @@
   },
   {
    "atlas": [
-    7,
-    9
+    3,
+    18
    ],
    "terrain": 3,
    "terrain_name": "grass",
@@ -4758,8 +9078,8 @@
   },
   {
    "atlas": [
-    8,
-    9
+    4,
+    18
    ],
    "terrain": 3,
    "terrain_name": "grass",
@@ -4789,8 +9109,8 @@
   },
   {
    "atlas": [
-    9,
-    9
+    5,
+    18
    ],
    "terrain": 3,
    "terrain_name": "grass",

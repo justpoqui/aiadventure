@@ -37,14 +37,14 @@
   "water_tower": 1,
   "fallen_log": 45,
   "mossy_rock": 25,
-  "oak": 378,
-  "pine": 520,
-  "birch": 352,
-  "snag": 92,
-  "berry_bush": 39,
+  "pine": 1792,
+  "birch": 1204,
+  "oak": 1409,
+  "snag": 141,
+  "berry_bush": 27,
   "fern": 260,
   "mushrooms": 70,
-  "lily_pads": 5
+  "lily_pads": 6
  },
- "animal_count": 66
+ "animal_count": 63
 }

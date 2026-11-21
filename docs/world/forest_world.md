@@ -59,6 +59,9 @@ One terrain set in **Match Corners and Sides** mode:
   sprite spans the floor gap where the trail meets the stream.
 - `forest_atlas.json` lists every atlas cell with its terrain, peering bits (using
   `TileSet.CellNeighbor` names), probability and variant.
+- **Known limit:** cells are 2 m, so long diagonal shorelines show some stair-stepping.
+  The random edge variants soften it; a smaller tile (e.g. 1 m) would remove most of it at
+  4x the map cells.
 - **Verified:** for the whole map, the tile chosen by our code and the tile Godot's own
   terrain painter (`set_cells_terrain_connect`) chooses have identical terrain and peering
   bits on 19,197 of 19,200 cells. The 3 differences are on the map border, where we
@@ -66,7 +69,7 @@ One terrain set in **Match Corners and Sides** mode:
 
 ## 4. Objects and places
 
-Trees (oak, pine, birch, dead snag), berry bushes, ferns, mushrooms, mossy rocks, fallen
+About 4,500 trees (oak, pine, birch, dead snag) with overlapping crowns, berry bushes, ferns, mushrooms, mossy rocks, fallen
 logs and lily pads are **separate sprites**, never baked into tiles. So are the named
 places from the architecture docs:
 
